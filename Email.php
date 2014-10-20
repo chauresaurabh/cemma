@@ -580,10 +580,22 @@ if($_GET['submit']!='yes' )
 	<script type="text/javascript">
 			function instclicked()
 	{
-var instr=document.getElementById('instlist').options[document.getElementById('instlist').selectedIndex].value;
-var emailgroup=document.getElementById('emailgroup').options[document.getElementById('emailgroup').selectedIndex].value;
-
-	var url="Email.php?all=2&inst="+instr+"&emailgroup="+emailgroup;
+		
+	var instrindex = document.getElementById('instlist').selectedIndex;
+	if(instrindex==0){
+		alert('Please Select Instrument Name');	
+		return;
+	}
+	var instr=document.getElementById('instlist').options[instrindex].value;
+	
+	var emailindex = document.getElementById('emailgroup').selectedIndex;
+	if(emailindex==0){
+		alert('Please Select List of Users');	
+		return;
+	}
+	var emailgroup=document.getElementById('emailgroup').options[emailindex].value;
+ 	
+ 	var url="Email.php?all=2&inst="+instr+"&emailgroup="+emailgroup;
 	//alert(url);
 	window.location =url;
 	}
