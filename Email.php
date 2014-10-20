@@ -9,6 +9,8 @@
 	
 	$emailtype=$_GET['all'];			
 	$instsel=$_GET['inst'];	
+	$emailgroup=$_GET['emailgroup'];
+	
 	//echo "inst-".$instsel;
 	//echo "type-".$emailtype;
 	$disabled='';
@@ -148,9 +150,8 @@ if($_GET['submit']!='yes' )
 
 	echo "<h2 class = 'Our'> Email All</h2>";
 
-echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font><br>";
-	echo "<font color='#FF0000'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emails without '@', '.' are not listed</font></p>";
-	
+echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font></p><br>";
+ 	
 	echo " <select id='emailgroup' name='emaillist[]' multiple='multiple'>
 		 
  		  <option value='0' $selval0 >All Customers & Users</option>
@@ -365,7 +366,7 @@ $fileName = $_FILES["file"]["name"];
   //if(in_array($extension, $allowedExts)){
 	if ($_FILES["file"]["error"] > 0)
 	  {
-	 	 //echo "Error : ";
+	 	 echo "Error : ";
  	  }
 	else
 	  {
@@ -428,12 +429,20 @@ $headers = 'From: cemma@usc.edu' . "\r\n". 'MIME-Version: 1.0'	. "\r\n" ."Conten
 	$emails[$i]=$emailandname[0];
 	$names[$i]=$emailandname[1];
     echo "$j. ".$names[$i]."- ".$emails[$i]. "<br> ";
-	$to = $emails[$i];
+	 $to = $emails[$i];
+	//$to ="chaure@usc.edu";
+	$mail->addAddress($to, $to);    
+	}
+	//$message = $bodyy;
+	//$message = $message."\n\nTo opt out of the group Mailing list, Click here   http://cemma-usc.net/cemma/testbed/EmailOptOut.php?email=".$emails[$i]."&first=true";
+	//$message = $message."\nNote: This is an auto generated mail. Please do not reply.";
+	//$message = "Hello ".$names[$i]." Your Email ".$emails[$i];
  
  	$bodyy = str_replace(' ', '&nbsp;', $bodyy);
 	
  $message = "Hello ". $names[$i]. ",<br><br>". nl2br($bodyy);
- 	
+//	$message = $message."\n\n\nTo opt out of the group Mailing list, Click here http://cemma-usc.net/cemma/testbed/EmailOptOut.php?email=".$emails[$i]."&first=true";
+	
 	$message = $message."<br><br><br>Center for Electron Microscopy and Microanalysis<br><br>
 	<span style='color:#980F07;'>University of Southern California</span><br>814 Bloom Walk<br>CEM Building<br>Los Angeles, CA 90089-1010
 	<br>Tel:   &nbsp;&nbsp;213.740.1990<br>Fax: 213.821.0458";
@@ -445,10 +454,14 @@ $headers = 'From: cemma@usc.edu' . "\r\n". 'MIME-Version: 1.0'	. "\r\n" ."Conten
 	$message = $message."<br><br>Note: This is an auto generated mail. Please do not reply.";
  
   	$message = stripslashes($message);
-  		 
+	
+	// mail($to,$subject,$message,$headers);
+ 	    
+		 
 		$mail->From = 'cemma@usc.edu';
 		$mail->FromName = 'CEMMA';
- 		 $mail->addAddress($to, $to);   
+		
+		 
 		$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
 		$mail->addAttachment(DOCUMENT_ROOT."emailattachments/".$fileName);         // Add attachments
 		$mail->isHTML(true);                                  // Set email format to HTML
@@ -464,9 +477,7 @@ $headers = 'From: cemma@usc.edu' . "\r\n". 'MIME-Version: 1.0'	. "\r\n" ."Conten
 			echo 'Message has been sent';
 		}
     
-		 
-	}
-  
+	
 	// Email to copied persons
 	$subject2="Emails Sent-".$subject;
 	if( $N==1)
@@ -514,7 +525,7 @@ if($_GET['submit']!='yes' )
 
 	echo "<form name='myForm' id='myForm' method='post' action='Email.php?submit=yes&inst=$instsel&emailtypee=2'>";
 	echo "<h2 class = 'Our'> Email Instrument List</h2>";
-	
+	 
 //SELECT INSTRUMENT START
 		
 	include_once(DOCUMENT_ROOT."includes/database.php");
@@ -553,15 +564,26 @@ if($_GET['submit']!='yes' )
 		$jj++;
 	}
 	echo "</select>";
+	
+	echo "  <select id='emailgroup' name='emailgroup' >
+		 
+		  <option value='0' $selval1>Select Users</option>
+ 		  <option value='1' $selval1>All Users</option>
+		  <option value='2' $selval2>Life Science</option>
+		  <option value='3' $selval3>Physical Science</option>
+		  <option value='4' $selval3>Both Life Science & Physical Science</option>
+ 		</select>  ";
 ?>
 		
-		<input type="button" name="go" id="go" onClick="javascript:instclicked()" value="GO" >
+		<input type="button" name="go" id="go" onClick="javascript:instclicked()" value="Load Users" >
 		
 	<script type="text/javascript">
 			function instclicked()
 	{
 var instr=document.getElementById('instlist').options[document.getElementById('instlist').selectedIndex].value;
-	var url="Email.php?all=2&inst="+instr;
+var emailgroup=document.getElementById('emailgroup').options[document.getElementById('emailgroup').selectedIndex].value;
+
+	var url="Email.php?all=2&inst="+instr+"&emailgroup="+emailgroup;
 	//alert(url);
 	window.location =url;
 	}
@@ -608,7 +630,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 	}
 
  	echo "<br><table id='email_list' style='display:none;' width='100%' cellspacing='0' border='1'>";
-
+	 
 	echo "<tr><td><b>No. </b></td><td><b>Name</b></td> <td><b>Opt in </b></td> <td><input type='checkbox' name='AllSelected'   id='AllSelected' value='AllSelected'  onClick='selectall()' checked/><b>All&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Email</b></td></tr>";
 
 	if ($instcount==0)
@@ -616,16 +638,28 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 		echo "<tr><td colspan =4><center><b>No Records Found</center></b></td></tr>";
 	}
  
-	$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt, ActiveUser FROM user where Email IN (SELECT Email FROM instr_group where InstrNo='$instnolist[0]')  ORDER BY FirstName";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+ 	$displayString="";
+	if($emailgroup==1){
+				$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt, ActiveUser FROM user where ActiveUser='active' and Email like '%@%' and Email IN (SELECT Email FROM instr_group where InstrNo='$instnolist[0]') ORDER BY FirstName";	
+				$displayString="All Users";
+	}
+  	else if($emailgroup==2){
+				$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt, ActiveUser FROM user where ActiveUser='active' and Email like '%@%' and Email IN (SELECT Email FROM instr_group where InstrNo='$instnolist[0]') and FieldofInterest='Life Science' ORDER BY FirstName";
+				$displayString="Life Science Users";
+	}else if($emailgroup==3){
+				$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt, ActiveUser FROM user where ActiveUser='active' and Email like '%@%' and Email IN (SELECT Email FROM instr_group where InstrNo='$instnolist[0]') and FieldofInterest='Physical Science' ORDER BY FirstName";
+				$displayString="Physical Science Users";
+	}else if($emailgroup==4){
+		$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt, ActiveUser FROM user where ActiveUser='active' and Email like '%@%' and Email IN (SELECT Email FROM instr_group where InstrNo='$instnolist[0]') and FieldofInterest='Life Science,Physical Science' ORDER BY FirstName";
+		$displayString="Life Science & Physical Science Users";
+	}
+ 	
+ 	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
  	$totalemailcountuser=0;
 
  	while($row33 = mysql_fetch_array($values))
 	{
-	if ($row33['Email']!=NULL && strstr($row33['Email'], '@') && strstr($row33['Email'], '.'))
-		{
-		if($row33['ActiveUser']!='inactive')
-		{
+	 
 		$emaillist2[$totalemailcountuser]=$row33['Email'];
 		$firstnamelist2[$totalemailcountuser]=$row33['FirstName'];
 		$lastnamelist2[$totalemailcountuser]=$row33['LastName'];
@@ -647,15 +681,13 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 	echo "<td><font color='$color'><input type='checkbox' name='email[]' id='email' value='".$emaillist2[$totalemailcountuser].":".$fullname[$totalemailcountuser]."' ".$disabled." checked/>&nbsp;".$emaillist2[$totalemailcountuser]."</font></td></tr>";//<br>";
  		$totalemailcountuser++;
-		}
-		}
-
+  
 	}
 
 	echo "</table>";
-	echo "<p id='note' style='display:none;'><font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font><br>";
-	echo "<font color='#FF0000'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emails without '@', '.' are not listed</font></p>";
-	echo "<input type='hidden' id='Emailclicked' name='Emailclicked' />";
+	echo "<p id='note' style='display:none;'><font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font><br></p>";
+ 
+ 	echo "<input type='hidden' id='Emailclicked' name='Emailclicked' />";
 	echo "<input type='hidden' id='all' name='all' />";
 	
 	echo "<br><table id='email_form' style='display:none;' border='1' cellspacing='0'";
