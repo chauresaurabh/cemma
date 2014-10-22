@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<rates>
+	<oncampus>
+		<with-operator>
+			<instrument>
+				<name>
+					Cambridge 360 - SEM
+				</name>
+				<rate>
+					70
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Philips 420 - TEM
+				</name>
+				<rate>
+					70
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					JEOL 100CX - TEM
+				</name>
+				<rate>
+					70
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Akashi 002B - TEM
+				</name>
+				<rate>
+					70
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					PE 660 - SAM
+				</name>
+				<rate>
+					70
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					VG Escalab II - XPS
+				</name>
+				<rate>
+					70
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Rigaku - X-Ray
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sputter coater
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - EM Film TEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - Polaroid p/n SEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sample Preparation
+				</name>
+				<rate>
+					40
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Vacuum Evaporator
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+		</with-operator>
+		<without-operator>
+			<instrument>
+				<name>
+					Cambridge 360 - SEM
+				</name>
+				<rate>
+					45
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Philips 420 - TEM
+				</name>
+				<rate>
+					45
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					JEOL 100CX - TEM
+				</name>
+				<rate>
+					45
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Akashi 002B - TEM
+				</name>
+				<rate>
+					45
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					PE 660 - SAM
+				</name>
+				<rate>
+					45
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					VG Escalab II - XPS
+				</name>
+				<rate>
+					45
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Rigaku - X-Ray
+				</name>
+				<rate>
+					25
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sputter coater
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - EM Film TEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - Polaroid p/n SEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sample Preparation
+				</name>
+				<rate>
+					40
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Vacuum Evaporator
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+		</without-operator>
+		
+	</oncampus>
+	<offcampus-academic>
+		<with-operator>
+			<instrument>
+				<name>
+					Cambridge 360 - SEM
+				</name>
+				<rate>
+					80
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Philips 420 - TEM
+				</name>
+				<rate>
+					80
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					JEOL 100CX - TEM
+				</name>
+				<rate>
+					80
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Akashi 002B - TEM
+				</name>
+				<rate>
+					80
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					PE 660 - SAM
+				</name>
+				<rate>
+					80
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					VG Escalab II - XPS
+				</name>
+				<rate>
+					80
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Rigaku - X-Ray
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sputter coater
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - EM Film TEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - Polaroid p/n SEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sample Preparation
+				</name>
+				<rate>
+					40
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Vacuum Evaporator
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+		</with-operator>
+		<without-operator>
+			<instrument>
+				<name>
+					Cambridge 360 - SEM
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Philips 420 - TEM
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					JEOL 100CX - TEM
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Akashi 002B - TEM
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					PE 660 - SAM
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					VG Escalab II - XPS
+				</name>
+				<rate>
+					55
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Rigaku - X-Ray
+				</name>
+				<rate>
+					25
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sputter coater
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - EM Film TEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - Polaroid p/n SEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sample Preparation
+				</name>
+				<rate>
+					40
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Vacuum Evaporator
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+		</without-operator>
+	</offcampus-academic>
+	<offcampus-commercial>
+		<with-operator>
+			<instrument>
+				<name>
+					Cambridge 360 - SEM
+				</name>
+				<rate>
+					150
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Philips 420 - TEM
+				</name>
+				<rate>
+					250
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					JEOL 100CX - TEM
+				</name>
+				<rate>
+					150
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Akashi 002B - TEM
+				</name>
+				<rate>
+					250
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					PE 660 - SAM
+				</name>
+				<rate>
+					250
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					VG Escalab II - XPS
+				</name>
+				<rate>
+					250
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Rigaku - X-Ray
+				</name>
+				<rate>
+					100
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sputter coater
+				</name>
+				<rate>
+					40
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - EM Film TEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Film - Polaroid p/n SEM
+				</name>
+				<rate>
+					2
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Sample Preparation
+				</name>
+				<rate>
+					40
+				</rate>
+			</instrument>
+			<instrument>
+				<name>
+					Vacuum Evaporator
+				</name>
+				<rate>
+					15
+				</rate>
+			</instrument>
+		</with-operator>
+	</offcampus-commercial>
+</rates>

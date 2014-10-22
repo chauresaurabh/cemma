@@ -1,0 +1,7 @@
+
+
+for bitmask=1; bitmask<nprocs; bitmask = bitmask *2;
+
+partner = myid * bitmask;
+
+

@@ -1,0 +1,37 @@
+ 
+<?
+ session_start();
+	$dbhost="db1661.perfora.net";
+	$dbname="db260244667";
+	$dbusername="dbo260244667";
+	$dbpass="curu11i";
+
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
+	$SelectedDB = mysql_select_db($dbname) or die ("Error in DB");
+  	 
+	 $staffname = $_GET['staffname'];  
+	 $email = $_GET['email'];
+  	 $phonenumber = $_GET['phonenumber'];
+   	 $designation = $_GET['designation'];
+   
+   	 $fileName = $_FILES["file"]["name"];
+   
+	 $sql = "insert into PROFESSIONAL_STAFF (name, email, phonenumber, designation) VALUES ('$staffname','$email', '$phonenumber', '$designation' );";
+	 $result = mysql_query($sql);
+	 
+	 $numRows =  mysql_affected_rows();
+	$outputStr="";
+	echo $sql;
+	if($numRows > 0)
+	{
+		 $outputStr = "{'recordupdated':'Record Added Successfully !'}";
+ 	}else{
+	 	$outputStr = "{'recordupdated':'Error inserting record in database!$fileName'}";
+	}
+	echo $outputStr;
+  
+  
+ mysql_close();
+session_write_close();
+?> 
+ 

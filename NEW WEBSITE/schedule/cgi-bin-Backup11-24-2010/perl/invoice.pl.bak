@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+use CGI::Carp qw(fatalsToBrowser);
+
+use LWP::Simple;
+
+
+use LWP::Simple;
+
+$request_method = $ENV{'REQUEST_METHOD'};
+$size_of_form_info=$ENV{'CONTENT_LENGTH'};
+
+read(STDIN, $buffer, $size_of_form_info);
+
+print "Content-type: text/html \n\n";
+
+print "<p>" . "hello" . "</p>";
+@nvpairs = split(/&/, $buffer);
+foreach $pair (@nvpairs) {
+    ($name, $value) = split(/=/, $pair);
+    $value =~ tr/+/ /;
+    $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+    
+	if($name eq "invoice")
+	{
+   		$st = $value;
+	}	
+}
+#for each pair, extract name and value
+
+#$value =~ s/%([\dA-Fa-f][\dA-Fa-f])/pack ("C", hex ($1))/eg;
+
+$filename = '/srv/www/htdocs/invoice.xml';
+
+open("output", ">$filename");	# Open for output
+
+print output $st;
+
+close(output);
+
+
+

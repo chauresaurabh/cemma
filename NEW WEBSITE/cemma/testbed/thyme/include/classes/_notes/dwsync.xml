@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="class.access.php" server="cemma-usc.net" local="130584369525119720" remote="129648636000000000" Dst="2" />
+<file name="class.attachment.php" server="cemma-usc.net" local="130584369525119720" remote="129648636000000000" Dst="2" />
+<file name="class.attachment_minimal.php" server="cemma-usc.net" local="130584369532164595" remote="129648636000000000" Dst="2" />
+<file name="class.cal_obj.php" server="cemma-usc.net" local="130584369533866481" remote="129648636000000000" Dst="2" />
+<file name="class.calendar.php" server="cemma-usc.net" local="130584369533866481" remote="129648636000000000" Dst="2" />
+<file name="class.dst.php" server="cemma-usc.net" local="130584369540390842" remote="129648636000000000" Dst="2" />
+<file name="class.calendar_real.php" server="cemma-usc.net" local="130584369541135012" remote="129648636000000000" Dst="2" />
+<file name="class.event.php" server="cemma-usc.net" local="130584369541929179" remote="129648636000000000" Dst="2" />
+<file name="class.event_list.php" server="cemma-usc.net" local="130584369548436772" remote="129648636000000000" Dst="2" />
+<file name="class.event_matrix.php" server="cemma-usc.net" local="130584369548436772" remote="129648636000000000" Dst="2" />
+<file name="class.event_minimal.php" server="cemma-usc.net" local="130584369549549215" remote="129648636000000000" Dst="2" />
+<file name="class.event_type.php" server="cemma-usc.net" local="130584369557454743" remote="129648636000000000" Dst="2" />
+<file name="class.form.php" server="cemma-usc.net" local="130584369557454743" remote="129648636000000000" Dst="2" />
+<file name="class.group.php" server="cemma-usc.net" local="130584369558245769" remote="129648636000000000" Dst="2" />
+<file name="class.html.php" server="cemma-usc.net" local="130584369564371540" remote="129648636000000000" Dst="2" />
+<file name="class.mailer.php" server="cemma-usc.net" local="130584369565982612" remote="129648636000000000" Dst="2" />
+<file name="class.options.php" server="cemma-usc.net" local="130584369565982612" remote="129648636000000000" Dst="2" />
+<file name="class.repeater.php" server="cemma-usc.net" local="130584369573337532" remote="129648636000000000" Dst="2" />
+<file name="class.request.php" server="cemma-usc.net" local="130584369574228127" remote="129648636000000000" Dst="2" />
+<file name="class.rss.php" server="cemma-usc.net" local="130584369579421592" remote="129648636000000000" Dst="2" />
+<file name="class.session.php" server="cemma-usc.net" local="130584369580156220" remote="129648636000000000" Dst="2" />
+<file name="class.pclzip.php" server="cemma-usc.net" local="130584369584659216" remote="129648636000000000" Dst="2" />
+<file name="class.sort_table.php" server="cemma-usc.net" local="130584369585629864" remote="129648636000000000" Dst="2" />
+<file name="class.smtp.php" server="cemma-usc.net" local="130584369586440405" remote="129648636000000000" Dst="2" />
+<file name="class.sql.php" server="cemma-usc.net" local="130584369591454543" remote="129648636000000000" Dst="2" />
+<file name="class.sql_based.php" server="cemma-usc.net" local="130584369591454543" remote="129648636000000000" Dst="2" />
+<file name="class.sql_based_adv.php" server="cemma-usc.net" local="130584369593956233" remote="129648636000000000" Dst="2" />
+<file name="class.table.php" server="cemma-usc.net" local="130584369598581362" remote="129648636000000000" Dst="2" />
+<file name="class.template.php" server="cemma-usc.net" local="130584369600938861" remote="129648636000000000" Dst="2" />
+<file name="class.template_tabbed.php" server="cemma-usc.net" local="130584369601760124" remote="129648636000000000" Dst="2" />
+<file name="class.template_tabbed_real.php" server="cemma-usc.net" local="130584369606244215" remote="129648636000000000" Dst="2" />
+<file name="class.url.php" server="cemma-usc.net" local="130584369608565777" remote="129648636000000000" Dst="2" />
+<file name="class.user.php" server="cemma-usc.net" local="130584369609490371" remote="129648636000000000" Dst="2" />
+<file name="class.vcal.php" server="cemma-usc.net" local="130584369614173503" remote="129648636000000000" Dst="2" />
+<file name="class.ziplib.php" server="cemma-usc.net" local="130584369617175508" remote="129648636000000000" Dst="2" />
+<file name="php.ini" server="cemma-usc.net" local="130584369625571667" remote="129654684000000000" Dst="2" />
+</dwsync>

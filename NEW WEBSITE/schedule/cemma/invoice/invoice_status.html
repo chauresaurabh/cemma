@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>
+			CEMMA - Center for Electron Microscopy and Microanalysis
+		</title>
+		<script type="text/javascript" src="date.js" ></script>
+		<script type="text/javascript" src="search.js" >
+		
+		</script>
+	</head>
+	<body background="images/valtxtr.gif"onload="javascript: onload1()">
+		<table cellpadding="0" cellspacing="0" border="1" width="1200" id="tabl">
+			
+			<tr>
+				<td valign="top" width="300"><br>&nbsp;&nbsp;<b>Select Name:</b>
+					<table cellpadding="10" cellspacing="10" border="0">
+					<tr>
+					<td>
+					<select name="search" value="" id="field" size="25" onchange="javscript: submitted(this.value)">
+					</select>
+					</td>
+					</tr>
+					</table>
+					<br><br><div id="user"></div>
+					<br><br><br>
+					
+				</td>
+			<td valign="top">
+			<table cellpadding="0" cellspacing="0" border="0" width="1000">
+			<tr>
+				<td>
+					<table cellpadding="10" cellspacing="10" border="0">
+					<tr>
+					<td>
+					<div id="nam"></div>
+					</td>
+					</tr>
+					</table>
+					</td>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				<div id="edit_amount"></div>
+					
+				</td>
+				
+			</tr>
+			
+			<!--<tr>
+				<td colspan="3">
+					<div id="tab2">
+					</div>
+				<br>
+					<div id="tab3">
+					</div>
+				<br>
+					<div id="tab4">
+					</div>
+				</td>
+			</tr>-->
+			
+			<tr>
+				<td>
+				<table cellpadding="10" cellspacing="10" border="0">
+					<tr>
+					
+					<td colspan="3">
+						<div id="tab">
+						</div>
+					</td>
+					
+					</tr>
+				</table>
+				</td>
+			</tr>
+			
+			
+			</table>
+			</td>
+			</tr>
+		</table>
+		<form id="form1" action="cgi-bin/perl/invoice_print.pl" method="post">
+		<input id="number" name="number" type="hidden" >
+		</form>
+	</body>
+	</html>

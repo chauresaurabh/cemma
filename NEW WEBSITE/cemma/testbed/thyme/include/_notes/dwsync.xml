@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="ask_delete.php" server="cemma-usc.net" local="130584369500020153" remote="129648636000000000" Dst="2" />
+<file name="attachments.php" server="cemma-usc.net" local="130584369502934920" remote="129648636000000000" Dst="2" />
+<file name="config-example.txt" server="cemma-usc.net" local="130584369639133277" remote="129648636000000000" Dst="2" />
+<file name="config.php" server="cemma-usc.net" local="130584369642305419" remote="129654684000000000" Dst="2" />
+<file name="custom_functions.php" server="cemma-usc.net" local="130584369643065919" remote="129648636000000000" Dst="2" />
+<file name="date_utils.php" server="cemma-usc.net" local="130584369647100108" remote="129648636000000000" Dst="2" />
+<file name="editor.php" server="cemma-usc.net" local="130584369649361607" remote="129648636000000000" Dst="2" />
+<file name="event_email.php" server="cemma-usc.net" local="130584369650222197" remote="129648636000000000" Dst="2" />
+<file name="event_export.php" server="cemma-usc.net" local="130584369655105431" remote="129648636000000000" Dst="2" />
+<file name="event_notes_popup.php" server="cemma-usc.net" local="130584369657358490" remote="129648636000000000" Dst="2" />
+<file name="events.php" server="cemma-usc.net" local="130584369662822135" remote="129648636000000000" Dst="2" />
+<file name="global_settings.php" server="cemma-usc.net" local="130584369662822135" remote="129648636000000000" Dst="2" />
+<file name="http_get.php" server="cemma-usc.net" local="130584369663622669" remote="129648636000000000" Dst="2" />
+<file name="images.php" server="cemma-usc.net" local="130584369670949819" remote="129648636000000000" Dst="2" />
+<file name="install.mysql" server="cemma-usc.net" local="130584369672660958" remote="129648636000000000" Dst="2" />
+<file name="mime-types.conf" server="cemma-usc.net" local="130584369748401016" remote="129648636000000000" Dst="2" />
+<file name="modules.php" server="cemma-usc.net" local="130584369749161509" remote="129648636000000000" Dst="2" />
+<file name="multi_reminders.php" server="cemma-usc.net" local="130584369753664528" remote="129648636000000000" Dst="2" />
+<file name="php-compat.php" server="cemma-usc.net" local="130584369756686530" remote="129648636000000000" Dst="2" />
+<file name="php.ini" server="cemma-usc.net" local="130584369757517085" remote="129654684000000000" Dst="2" />
+<file name="quick_add_event.php" server="cemma-usc.net" local="130584369761459730" remote="129648636000000000" Dst="2" />
+<file name="reminders.php" server="cemma-usc.net" local="130584369764461719" remote="129648636000000000" Dst="2" />
+<file name="send_event.php" server="cemma-usc.net" local="130584369765302284" remote="129648636000000000" Dst="2" />
+<file name="theme_engine.php" server="cemma-usc.net" local="130584369788565169" remote="129648636000000000" Dst="2" />
+</dwsync>

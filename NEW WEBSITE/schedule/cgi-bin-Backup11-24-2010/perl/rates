@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+#use CGI::Carp qw(fatalsToBrowser);
+
+use LWP::Simple;
+use DBI;
+
+$db="db220007334";
+$host="db1157.perfora.net";
+$userid="dbo220007334";
+$passwd="XhYpxT5v";
+$connectionInfo="dbi:mysql:$db;$host";
+
+print "Content-type: text/xml\n\n";
+
+
+# make connection to database
+$dbh = DBI->connect($connectionInfo,$userid,$passwd);
+
+print "<?xml version=\"1.0\"?>\n";
+   
+
+$query = 'select machine_name,oncampus_with_operator,oncampus_without_operator,acad_with_operator,acad_without_operator,comm_with_operator_price  from rates';
+
+
+
+
+
+$sth = $dbh->prepare($query);
+
+print '<rates>';
+
+$sth->execute();
+
+$sth->bind_columns(\$name, \$oncampus_with_operator, \$oncampus_without_operator, \$acad_with_operator, \$acad_without_operator, \$comm_with_operator_price);
+
+while($sth->fetch()) {
+   print "<machine><name>$name</name><oncampus_with_operator>$oncampus_with_operator</oncampus_with_operator><oncampus_without_operator>$oncampus_without_operator</oncampus_without_operator><acad_with_operator>$acad_with_operator</acad_with_operator><acad_without_operator>$acad_without_operator</acad_without_operator><comm_with_operator>$comm_with_operator_price</comm_with_operator></machine>";
+}
+
+print '</rates>';
+$sth->finish();
+$dbh->disconnect();

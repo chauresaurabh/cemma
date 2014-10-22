@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>MO 12/119</title>
+	<style>
+	@media print {
+		.printImg{
+			display:none;
+		}
+		.paginationRow{
+			display:none;
+		}
+	}
+	.break { page-break-before: always; }
+
+	</style>
+	<script type="text/javascript">
+	function sendInvoiceEmail()
+	{
+		if(confirm("Are you sure to send this invoice by Email?"))
+		{
+			alert("SEND EMAIL");
+			alert(document.documentElement.innerHTML);
+		}
+		else
+		{
+			alert("FAILED");
+		}
+	}
+		
+	</script>
+</head>
+</html>
+<body>
+
+<div id="page1">
+		<table bgcolor="white" border="0" cellpadding="5" cellspacing="0" width="760">
+		<tbody><tr><td width="700"></td></tr><tr>
+		<td align="right">
+			<div id="inv_num">
+           		<img src="images/printer.png" class="printImg" onclick="window.print();return false;" value=" Print  " height="50" width="50" style="cursor:pointer">
+        	    <img src="images/outgoing-email-icon.jpg" class="emailImg" onclick="sendInvoiceEmail();" value=" Email  " height="50" width="60" style="cursor:pointer">
+				<input type="button" onclick="window.close()" value="Close" class="printImg">
+			</div>
+		</td>
+		</tr>
+			<!---------start of header  ------------>
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr>
+							<td valign="top">
+								<img src="images/usc-logo.jpg">							</td>
+							<td width="40">							</td>
+							<td valign="top">
+								<table border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr>
+										<td height="15">										</td>...le width="100%">
+						<tbody><tr>
+							<td>
+								<font size="2"><i>* Indicates discounted items:</i></font>
+							</td>
+							<td align="right">
+								<font size="2"><i>H-Hourly, M-Membership, A-Advance Payment </i></font>
+							</td>
+						</tr>
+					</tbody></table>
+					  
+					<br>
+						
+					<table width="100%">
+					<tbody><tr>
+								
+									<td align="right" width="60%">
+										<!--<div id="Total" align="right"><font size="5"><b>Total: $55.00</b></font></div>-->
+										<div id="Total" align="right"><font size="5"><b>Amount Due: $55.00</b></font></div>
+									</td>
+										
+																<td align="right" width="40%">
+								
+														</td>
+						<td align="right" width="25%">
+							<div id="submit">							</div>						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="3">
+					<center><br><br>
+					<font color="#000000">
+						Please return a Requisition or Check for the total shown above to:<br>
+						Attn: 
+                        John Curulli                        
+						<br>University of Southern California
+						<br>Univeristy Park Campus
+						
+                        <br>814 West 36 Place, CEM 101B, MC 0101						<br>Los Angeles, CA 90089-0101
+						<br>Checks should be payable to: University of Southern California
+                      </font>
+				</center></td>
+			</tr>
+		</tbody></table></td>
+		</tr>
+		</tbody></table>
+<noscript></noscript></td></tr></tbody></table>
+	
+	</div></body>

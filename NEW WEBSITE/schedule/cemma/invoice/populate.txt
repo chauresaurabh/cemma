@@ -1,0 +1,23 @@
+CREATE TABLE rates
+(
+machine_number varchar(9) not null primary key,
+machine_name varchar(50) not null,
+oncampus_with_operator float not null,
+oncampus_without_operator float not null,
+acad_with_operator float not null,
+acad_without_operator float not null,
+comm_with_operator_price float not null
+);
+
+insert into rates values ('100000001','Cambridge 360 - SEM',70,45,80,55,150);
+insert into rates values ('100000002','Philips 420 - TEM',70,45,80,55,250);
+insert into rates values ('100000003','JEOL 100CX - TEM',70,45,80,55,150);
+insert into rates values ('100000004','Akashi 002B - TEM',70,45,80,55,250);
+insert into rates values ('100000005','PE 660 - SAM',70,45,80,55,250);
+insert into rates values ('100000006','VG Escalab II - XPS',70,45,80,55,250);
+insert into rates values ('100000007','Rigaku - X-Ray',55,25,55,25,100);
+insert into rates values ('100000008','Film - EM Film TEM',2,2,2,2,2);
+insert into rates values ('100000009','Film - Polaroid p/n SEM',2,2,2,2,2);
+insert into rates values ('100000010','Sample Preparation',40,40,40,40,40);
+insert into rates values ('100000011','Vacuum Evaporator',15,15,15,15,40);
+insert into rates values ('100000012','Sputter coater',15,15,15,15,40);

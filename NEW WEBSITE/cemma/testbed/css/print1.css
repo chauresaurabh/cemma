@@ -1,0 +1,27 @@
+
+body * { visibility: hidden; }
+
+.printcontent1 * { visibility: visible; }
+.printcontent1 { position: absolute; top: 40px; left: 225px; } 
+
+
+.printcontent2 * { visibility: visible; }
+.printcontent2 { 
+	position:absolute;
+left:225px;
+top:250px;
+}  
+
+
+		.dont1 {
+			 visibility: hidden;
+		}
+		P.breakhere * {page-break-before: always}
+table {width:500; height:43px; vertical-align:top; background:url(../images/table-top-bg.gif) no-repeat top left;  }
+td
+{
+border: 1px solid black;
+width: 250;
+}
+.page-break * { display:block; page-break-before:always; }
+

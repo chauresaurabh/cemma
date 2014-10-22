@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<machines>
+	
+		<name>
+			Cambridge 360 - SEM
+		</name>
+		
+		<name>
+			Philips 420 - TEM
+		</name>
+		
+		<name>
+			JEOL 100CX - TEM
+		</name>
+		
+		<name>
+			Akashi 002B - TEM
+		</name>
+		
+		<name>
+			PE 660 - SAM
+		</name>
+		
+		<name>
+			VG Escalab II - XPS
+		</name>
+		
+		<name>
+			Rigaku - X-Ray
+		</name>
+				
+		<name>
+			Sputter coater
+		</name>
+				
+		<name>
+			Film - EM Film TEM
+		</name>
+				
+		<name>
+			Film - Polaroid p/n SEM
+		</name>
+				
+		<name>
+			Sample Preparation
+		</name>
+		
+		<name>
+			Vacuum Evaporator
+		</name>
+				
+</machines>

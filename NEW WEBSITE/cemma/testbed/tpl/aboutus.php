@@ -1,0 +1,3 @@
+<h2 class="about">About us</h2>
+        <p>The Center for Electron Microscopy and Microanalysis (CEMMA) provides a central facility at the University of Southern California for the acquisition, use, and maintenance of major instruments for characterization of the microstructure and composition of all types of solid materials</p>
+        <p style="width:100%; text-align:right; padding-bottom:20px;"><a href="#">More Info</a></p>

@@ -1,0 +1,251 @@
+#!/usr/bin/perl
+$instr_name = param("Instr");#!/usr/bin/perl#!/usr/bin/perl
+use lib "/kunden/homepages/40/d209127057/htdocs/schedule/cgi-bin/";
+use CGI qw/:standard/;
+use CGI::kSession;
+use DBI;
+use Date::Business;
+require 'enmonth.pl';
+require 'enweekday.pl';
+
+$dsn = "DBI:mysql:database=db210021972:host=db948.perfora.net";
+$db= DBI->connect($dsn, "dbo210021972", "XhYpxT5v");
+
+
+
+	$instr_name = param("Instr");
+	$day=param("day");
+	$month=param("month");
+	$year=param("year");
+	if($day>23){
+	$month=$month+1;
+	$day=$day+7-30;}
+	else{$day=$day+7;}
+	if($day<10){$this_day='0'."$day"; }else{$this_day=$day;}
+	$current_year = $year+1900;	
+	if($month<10){$this_month='0'."$month"; }else{$this_month=$month;}
+	$date = "$current_year"."$this_month"."$this_day";
+	#print "$date";
+	$d = new Date::Business(DATE => "$date");
+	$this_weekday=$d->day_of_week();	
+	$offset = ($this_weekday - 1) % 7;
+	$d->sub($offset);
+	$date1 = $d->image();
+	$d->add(7);
+	$date2 = $d->image();
+	$d->sub(1);
+	$date3 = $d->image();
+	$d->sub(6);
+	 
+	print "Content-type: text/html\r\n\r\n";
+	print "<html>";
+	print "<title>";
+	print "View Schedule";
+	print "</title>";	
+   	
+   	print "<body background=\"../_image/valtxtr.gif\">";
+   	print "<p align=\"right\"><a href=\"Javascript:self.print()\"><b>PRINT</b></a></p>";
+	print "<h3> Instrument: $instr_name</h3>";
+	
+
+	$_ = $date1;
+	if (/(\d{4})(\d{2})(\d{2})/) 
+	{
+		$enmonth = monthconvert($2);
+		print "<h3> Date: From $enmonth $3, $1 To ";
+	}
+	else
+	{
+		print "<h3> Date: From $date1 To";
+	}
+	$_ = $date3;
+	if (/(\d{4})(\d{2})(\d{2})/) 
+	{
+		$enmonth = monthconvert($2);
+		print "$enmonth $3, $1 </h3>";
+	}
+	else
+	{
+		print "$date3 </h3>";
+	}
+	print "<div align=\"center\">";
+  	print "<center>";
+
+	print "<table border=\"3\" cellpadding=\"3\" cellspacing=\"3\" >";
+	print "<tr>";
+    	print "<td width=\"150\"><b>Timeslot</b></td>";
+
+	$date = $date1;
+    	while ( $date ne $date2)
+    	{
+    		$weekday=$d->day_of_week();
+    		$enweekday = convert_weekday($weekday);
+		$_ = $date;
+		if (/(\d{4})(\d{2})(\d{2})/) 
+		{
+			$enmonth = monthconvert($2);
+	   		print "<td width=\"100\"><b>$enmonth $3 $enweekday</b></td>";
+		}
+		else
+		{
+	   		print "<td width=\"100\"><b>$date $enweekday</b></td>";
+		}    		
+
+	   	$d->next();
+	   	$date = $d->image();
+	}	
+	print "</tr>";
+
+	for ($i = 0; $i <= 11; $i++)
+	{
+		print "<tr>";	
+		print "<td width=\"150\">";	
+		
+		if ($i == 0)
+		{
+			print "12 am - 7 am\n";
+		}
+		elsif ($i == 1)
+		{
+			print "8 am - 9 am";
+		}
+		elsif ($i == 2)
+		{
+			print "9 am - 10 am";
+		}
+		elsif ($i == 3)
+		{
+			print "10 am - 11 am";
+		}
+		elsif ($i == 4)
+		{
+			print "11 am - 12 pm";
+		}
+		elsif ($i == 5)
+		{
+			print "1 pm - 2 pm";
+		}
+		elsif ($i == 6)
+		{
+			print "2 pm - 3 pm";
+		}
+		elsif ($i == 7)
+		{
+			print "3 pm - 4 pm";
+		}
+		elsif ($i == 8)
+		{
+			print "4 pm - 5 pm";
+		}
+		elsif ($i == 9)
+		{
+			print "5 pm - 7 pm";
+		}
+		elsif ($i == 10)
+		{
+			print "7 pm - 9 pm";
+		}
+		else
+		{
+			print "9 pm - 12 am";
+		}
+		print "</td>";
+
+		# query the date with the specified slot
+		$sth = $db->prepare("select Date, UsedBy from schedule where InstrumentName = '$instr_name' and Slot = '$i' and Date >= '$date1' and Date < '$date2' ");
+		$sth->execute();
+		$count = 0;
+		while(($datesigned[$count], $user[$count])=$sth->fetchrow_array)
+		{
+			$count ++;
+		}
+
+		# creat table and fill table
+		$d->sub(7);
+		$date = $date1;
+   		while ( $date ne $date2 )
+    		{
+    			for ($jj = 0; $jj < $count; $jj ++)
+    			{
+    				@ymn = split(/-/, $datesigned[$jj]);
+    				#$text = sprintf("%4d-%2d-%2d", $year, $month, $day);
+    				#print $text;
+  
+				$_ = $date;
+				if (/(\d{4})(\d{2})(\d{2})/) 
+				{
+    					if (($1 == $ymn[0]) && ($2 == $ymn[1]) && ($3 == $ymn[2]))
+    					{
+    						last;
+    					}
+    				}
+    			}
+    			
+    			$wday = $d->day_of_week();
+    			#different background for timeslot
+    			if (($i > 8) || ($wday == 6) || ($wday == 0) || ($i < 2))
+    			{
+    				print "	   <td width =\"100\" bgcolor=\"#C0C0C0\">";
+    			}
+    			else
+    			{
+    				print "	   <td width =\"100\">";
+    			}
+    			
+    			if ($jj != $count)
+    			{
+		   		print "$user[$jj]</td>";
+		   	}
+		   	else
+		   	{
+		   		print " &nbsp;  </td>";
+		   	}
+		   	
+		   	$d->add(1);
+		   	$date = $d->image();	
+		} 
+		print "</tr>";
+	
+		if ($i == 4)
+		{
+			# for slot : 12 pm to 1 pm
+			print "<tr>";
+			print "	   <td width =\"150\" bgcolor=\"#808080\">";
+			print "12 pm - 1 pm </td>";			
+			print "	   <td bgcolor=\"#808080\" colspan=\"7\"><p align=\"center\">";
+			print "THIS PERIOD IS RESERVED ON A FIRST COME FIRST SERVE BASIS. THE MORNING USER CAN CONTINUE IF NO ONE ARRIVES TO USE THE INSTRUMENT.</p>";
+			print "    </td>";
+			#print "	   <td width=\"120\" bgcolor=\"#C0C0C0\">&nbsp;</td>";
+			#print "	   <td width=\"120\" bgcolor=\"#C0C0C0\">&nbsp;</td>";			
+			print "</tr>";		
+		}
+		
+	}
+	
+	print "</table>";
+	print "</center>";
+	print "</br></br>";
+	print "<tr><td>";
+	print "<a href='schedulepre.pl?Instr=$instr_name&day=$day&month=$month&year=$year'>";
+	print "<input type='submit' value='PreWeek' style='width:200px'></a></td>";
+	print "<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp</td>";
+	print "<td><a href='schedulenext.pl?Instr=$instr_name&day=$day&month=$month&year=$year'>";
+	print "<input type='submit' value='NextWeek' style='width:200px'></a></td></tr>";
+	print "</br></br>";
+	print "<tr><td><a href='http://www.usc.edu/dept/CEMMA/sign_up.htm'>";
+	print "<input type='submit' value='Sign Up' style='width:200px'></a></td></tr>";
+	print "</br></br>";
+	print "<tr><td><a href='http://www.usc.edu/dept/CEMMA/sign_up.htm'>";
+	print "<input type='submit' value='Sign Up' style='width:200px'></a></td></tr>";
+	print "</div>";
+	print "</body>";
+	print "</html>";
+
+	$sth->finish();
+	$db->disconnect;		
+
+
+
+$sth->finish;
+
+

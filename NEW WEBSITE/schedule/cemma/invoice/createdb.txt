@@ -1,0 +1,40 @@
+create database cemma;
+
+use cemma;
+
+
+
+CREATE TABLE rates
+(
+machine_number varchar(9) not null primary key,
+machine_name varchar(50) not null,
+oncampus_with_operator float not null,
+oncampus_without_operator float not null,
+acad_with_operator float not null,
+acad_without_operator float not null,
+comm_with_operator_price float not null
+);
+
+
+CREATE TABLE invoice
+(
+invoice_number varchar(9) not null primary key,
+PO_REQ varchar(9) not null,
+name varchar(100) not null,
+address varchar(100) not null,
+city varchar(50) not null,
+state varchar(50) not null,
+zip varchar(15) not null,
+phone varchar(15) not null,
+fax varchar(15) not null,
+date1 date not null
+);
+
+CREATE TABLE invoice_data
+(
+invoice_number varchar(9) not null,
+quantity float not null,
+date1 date not null,
+machine_name varchar(50) not null,
+FOREIGN KEY (invoice_number) REFERENCES invoice (invoice_number)
+);

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name=".gitignore" server="cemma-usc.net" local="130584366593085901" remote="130569811200000000" Dst="2" />
+<file name=".scrutinizer.yml" server="cemma-usc.net" local="130584366601392948" remote="130569811200000000" Dst="2" />
+<file name=".travis.yml" server="cemma-usc.net" local="130584366601392948" remote="130569811200000000" Dst="2" />
+<file name="LICENSE" server="cemma-usc.net" local="130584366602205194" remote="130569811200000000" Dst="2" />
+<file name="PHPMailerAutoload.php" server="cemma-usc.net" local="130584366608542026" remote="130569811200000000" Dst="2" />
+<file name="README.md" server="cemma-usc.net" local="130584366610163108" remote="130569811200000000" Dst="2" />
+<file name="VERSION" server="cemma-usc.net" local="130584366610163108" remote="130569811200000000" Dst="2" />
+<file name="changelog.md" server="cemma-usc.net" local="130584366618720934" remote="130569811200000000" Dst="2" />
+<file name="class.pop3.php" server="cemma-usc.net" local="130584366619631554" remote="130569811200000000" Dst="2" />
+<file name="class.phpmailer.php" server="cemma-usc.net" local="130584366626610882" remote="130569811200000000" Dst="2" />
+<file name="class.smtp.php" server="cemma-usc.net" local="130584366628412085" remote="130569811200000000" Dst="2" />
+<file name="composer.json" server="cemma-usc.net" local="130584366628432087" remote="130569811200000000" Dst="2" />
+<file name="testemail.php" server="cemma-usc.net" local="130584366903934835" remote="130569816600000000" Dst="2" />
+<file name="travis.phpunit.xml.dist" server="cemma-usc.net" local="130584366907497198" remote="130569811200000000" Dst="2" />
+</dwsync>

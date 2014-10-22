@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="add_user.pl" server="cemma-usc.net" local="130584372119920485" remote="128373372000000000" Dst="2" />
+<file name="change_rate.pl" server="cemma-usc.net" local="130584372120660979" remote="128373372000000000" Dst="2" />
+<file name="delete_machine.pl" server="cemma-usc.net" local="130584372126806073" remote="128373372000000000" Dst="2" />
+<file name="edit_balance.pl" server="cemma-usc.net" local="130584372128357121" remote="128373372000000000" Dst="2" />
+<file name="get_details.pl" server="cemma-usc.net" local="130584372128367108" remote="128381148000000000" Dst="2" />
+<file name="get_invoice.pl" server="cemma-usc.net" local="130584372136058075" remote="128373372000000000" Dst="2" />
+<file name="infocat" server="cemma-usc.net" local="130584372136058075" remote="128373372000000000" Dst="2" />
+<file name="invoice.pl" server="cemma-usc.net" local="130584372136950035" remote="128388060000000000" Dst="2" />
+<file name="invoice.pl.bak" server="cemma-usc.net" local="130584372144565117" remote="128373372000000000" Dst="2" />
+<file name="invoice.pl.new" server="cemma-usc.net" local="130584372146255876" remote="128373372000000000" Dst="2" />
+<file name="invoice_print.pl" server="cemma-usc.net" local="130584372146265859" remote="128373372000000000" Dst="2" />
+<file name="machines" server="cemma-usc.net" local="130584372152753398" remote="128373372000000000" Dst="2" />
+<file name="machines.bak" server="cemma-usc.net" local="130584372154404501" remote="128373372000000000" Dst="2" />
+<file name="names.pl" server="cemma-usc.net" local="130584372154404501" remote="128373372000000000" Dst="2" />
+<file name="number" server="cemma-usc.net" local="130584372161959744" remote="128388060000000000" Dst="2" />
+<file name="page.pl" server="cemma-usc.net" local="130584372162741075" remote="128373372000000000" Dst="2" />
+<file name="qtest" server="cemma-usc.net" local="130584372164121981" remote="128373372000000000" Dst="2" />
+<file name="rat" server="cemma-usc.net" local="130584372169716408" remote="128373372000000000" Dst="2" />
+<file name="rates" server="cemma-usc.net" local="130584372172399963" remote="128373372000000000" Dst="2" />
+<file name="rates.bak" server="cemma-usc.net" local="130584372173522287" remote="128373372000000000" Dst="2" />
+<file name="rates.pl.bak" server="cemma-usc.net" local="130584372178986496" remote="128373372000000000" Dst="2" />
+<file name="rates.txt" server="cemma-usc.net" local="130584372181258005" remote="128373372000000000" Dst="2" />
+<file name="rates.txt.bak" server="cemma-usc.net" local="130584372182238676" remote="128373372000000000" Dst="2" />
+<file name="search.pl" server="cemma-usc.net" local="130584372187482162" remote="128381148000000000" Dst="2" />
+</dwsync>

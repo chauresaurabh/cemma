@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="install.mssql" server="cemma-usc.net" local="130584368984816836" remote="129648636000000000" Dst="2" />
+<file name="install.mysql" server="cemma-usc.net" local="130584368991271786" remote="129648636000000000" Dst="2" />
+<file name="install.pgsql" server="cemma-usc.net" local="130584368992772800" remote="129648636000000000" Dst="2" />
+<file name="post-install.sql" server="cemma-usc.net" local="130584369024238596" remote="129648636000000000" Dst="2" />
+</dwsync>

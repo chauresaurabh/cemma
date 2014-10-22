@@ -1,0 +1,60 @@
+#!/usr/bin/perl
+use CGI::Carp qw(fatalsToBrowser);
+
+use LWP::Simple;
+
+
+#$request_method = $ENV{'REQUEST_METHOD'};
+#$size_of_form_info=$ENV{'CONTENT_LENGTH'};
+
+#read(STDIN, $buffer, $size_of_form_info);
+
+#print "Content-type: text/html\n\n";
+
+#print "<p>" . "hello" . "</p>";
+#@nvpairs = split(/&/, $buffer);
+#foreach $pair (@nvpairs) {
+#    ($name, $value) = split(/=/, $pair);
+ #   $value =~ tr/+/ /;
+ #   $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+    
+#	if($name eq "invoice")
+#	{
+  # 		$st = $value;
+#	}	
+#}
+#for each pair, extract name and value
+
+#$value =~ s/%([\dA-Fa-f][\dA-Fa-f])/pack ("C", hex ($1))/eg;
+
+#$filename = '/srv/www/htdocs/cemma/invoice/invoice.xml';
+
+#open("output", ">$filename");	# Open for output
+
+#print output $st;
+#print $st;
+#close(output);
+
+#!/usr/bin/perl
+
+# use module
+use XML::Simple;
+use Data::Dumper;
+
+# create object
+$xml = new XML::Simple (KeyAttr=>[]);
+
+# read XML file
+$data = $xml->XMLin("/srv/www/htdocs/cemma/invoice/invoice.xml");
+
+# dereference hash ref
+# access <employee> array
+foreach $e (@{$data->{invoice}->[0]->header})
+{
+	print $e->{name}, "\n";
+	print "Age/Sex: ", $e->{age}, "/",  $e->{sex}, "\n"; 
+	print "Department: ", $e->{department}, "\n"; 
+	print "\n";
+}
+
+

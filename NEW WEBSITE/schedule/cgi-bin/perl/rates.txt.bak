@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+#use CGI::Carp qw(fatalsToBrowser);
+
+use LWP::Simple;
+use DBI;
+
+$db="cemma";
+$host="localhost";
+$userid="root";
+$passwd="";
+$connectionInfo="dbi:mysql:$db;$host";
+
+print "Content-type: text/xml\n\n";
+
+
+# make connection to database
+$dbh = DBI->connect($connectionInfo,$userid,$passwd);
+
+print "<?xml version=\"1.0\"?>\n";
+   
+
+$query = 'select machine_name from rates';
+$sth = $dbh->prepare($query);
+
+print '<machines>';
+
+$sth->execute();
+
+$sth->bind_columns(\$NAME);
+
+while($sth->fetch()) {
+   print "<name>$NAME</name>";
+}
+$sth->finish();
+print '</machines>';
+
+$dbh->disconnect();

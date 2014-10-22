@@ -1,0 +1,80 @@
+
+This license covers modification, use, and distribution of the Software, use of
+third-party works based on the Software, and services based on this Software
+provided to a third party. 
+
+"Works based on the Software" means either the Software or any derivative work
+of the Software, as defined in the United States Copyright Act of 1976, such as
+a translation or a modification. 
+
+1. Granted Rights
+
+The licensor hereby grants you the following rights, provided that you comply
+with all of the restrictions set forth in this License and provided, further,
+that you distribute an unmodified copy of this License with the Software: 
+
+
+   (*) You may use this software on a computer supplying it's service to one web
+       site.
+
+
+   (*) You may create works based on the Software and distribute copies of such
+       throughout the world, provided such works meet the criteria set out below. 
+
+2. Restrictions
+
+This license is subject to the following restrictions:
+
+
+   (*) Creating works based on this Software, that may compete with this
+       Software is prohibited by this license, whether directly (such as
+       a work designed to replace or function in lieu of this Software)
+       or indirectly (such as a software suite that may include parts of
+       this Software; these are only examples and not an exhaustive
+       enumeration of prohibited works).
+
+
+   (*) If any payment is made in connection with modification and or
+       distribution of this software, the publisher must be paid the full price
+       for each copy that is distributed. 
+
+
+   (*) Providing a service or services based on this software such as a scheduling
+       service or remote calendar (these are only examples and not an exhaustive
+       enumeration of such works) to a third party is prohibited.
+
+3. Request for Prohibited Use/Works
+
+If you would like to use this Software in a manner described in this license as
+Prohibited, you may contact the licensor to request a license that does not prohibit
+such activities. Rights to perform such activities may be granted based on an
+additional license agreement and in some cases, an additional fee. 
+
+4. Reservation of Rights
+
+No rights are granted to the Software except as expressly set forth herein. You may
+not copy, modify, sub-license, or distribute the Software except as expressly provided
+under this License. Any attempt otherwise to copy, modify, sub-license or distribute
+the Software is void, and will automatically terminate your rights under this License.
+However, parties who have received copies, or rights, from you under this License will
+not have their licenses terminated so long as such parties remain in full compliance. 
+
+5. Refunds.
+
+The licensor does not provide refunds for the Software. It is your responsibility to
+verify the Software's compatibility with the target system by downloading, installing
+and using the trial version before purchasing the Software.
+
+6. Limitations of Liability
+
+In no event shall the initial developers or copyright holders be liable for any damages
+whatsoever, including - but not restricted to - lost revenue or profits or other
+direct, indirect, special, incidental or consequential damages, even if they have been
+advised of the possibility of such damages, except to the extent invariable law, if
+any, provides otherwise.
+
+7. Warranty
+
+The Software is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF
+DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+

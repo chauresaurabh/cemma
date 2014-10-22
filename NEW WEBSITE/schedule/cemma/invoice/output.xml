@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<invoice>
+	<header>
+		<name>		</name>
+		<address>		</address>
+		<city>		</city>
+		<state>		</state>
+		<zip>		</zip>
+		<phone>		</phone>
+		<fax>		</fax>
+		<invoice-date>		</invoice-date>
+		<po-req>		</po-req>
+		<client-type>	</client-type>
+	</header>
+	<data>
+		<quantity></quantity>
+		<date></date>
+		<machine></machine>
+		<operator></operator>
+		<with-operator></with-operator>
+		<price></price>
+		<total></total>
+	</data>
+	<grand-total>
+	</grand-total>
+	
+</invoice>

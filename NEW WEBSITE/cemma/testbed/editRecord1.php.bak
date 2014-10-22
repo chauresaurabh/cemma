@@ -1,0 +1,283 @@
+
+
+<? 	
+	include_once('constants.php');
+	include_once(DOCUMENT_ROOT."includes/checklogin.php");
+	include_once(DOCUMENT_ROOT."includes/checkadmin.php");
+	include (DOCUMENT_ROOT.'tpl/header.php'); 
+	include_once (DOCUMENT_ROOT.'DAO/recordDAO.php'); 
+	
+	include_once("includes/action.php");
+
+	if(isset($_POST['Name'])){
+		
+		$rs = new CustomerDAO();
+	
+		if($_GET['submit_mode'] != 'add')
+			echo($rs->update($_GET['id'],$_POST));
+		else
+			echo($rs->add($_POST));
+	}
+?>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="body" valign="top" align="center"><table border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td class="body_resize"><table border="0" cellpadding="0" cellspacing="0" align="center">
+              <tr>
+                <td class="left" valign="top"><?	include (DOCUMENT_ROOT.'tpl/admin-loged-in.php'); ?>
+                </td>
+                <td><?php
+	   if($_GET['submit_mode'] == 'add')
+	   {
+			$row['Phone'] = '';
+			$row['Name'] = '';
+			$row['Address1'] = '';
+			$row['Address2'] = '';
+			$row['City'] = '';
+			$row['State'] = '';
+			$row['Zip'] = '';
+			$row['EmailId'] = '';
+			$row['Fax'] = '';
+			$row['Activated'] = '';
+			$row['Manager_ID'] = $_SESSION['mid'];
+		}
+		else
+	   {
+		   $rs = new RecordDAO();
+		   $rs->getSingleRecord($_GET['id']);
+		   while($row1 = $rs->fetchSingleRecord()){
+		    	$row = $row1;
+				$date_array = explode("-",$row['Date']);
+				$var_year = $date_array[0];
+				$var_month = $date_array[1];
+				$var_day = $date_array[2];
+			
+			}
+		}
+		
+		?>
+
+		  <table width="100%" border="0" cellpadding="5" cellspacing="0">
+			<tr valign="top">
+			  <td width="100%"><div align="center" class="err" id="error" style="display:none"></div>
+				<div align="center" class="alert" style="font-size:13;display:none" id="alert"></div></td>
+			</tr>
+		  </table>
+
+		  <table width="100%" border="0" cellpadding="5" cellspacing="0">
+			<tr>
+			  <td class="t-top"><div class="title2"><?php echo (($_GET['submit_mode'] == 'add') ? 'Add ': 'Edit ');?>Record</div></td>
+			</tr>
+			<tr>
+			  <td class="t-mid"><br />
+				<br />
+				<form id="myForm" name="myForm" method="post" action="editRecord.php?id=<?=$_GET['id']?>&submit_mode=<?php echo $_GET['submit_mode'];?>">
+				<input type="hidden" id="Manager_ID" name="Manager_ID" value="<? echo $_SESSION['mid'] ?>" />
+				  <table width="75%" align="center">
+                        <tr class="Trow">
+                            <td width="45%">Customer Name: *</td>
+                            <td width="55%"><input type="text" size="30" name="CustomerName" value = "<?php echo $row['Name'] ?>"></td>
+                        </tr>
+                        <tr class="Trow">
+                            <td>Instrument: *</td>
+                            <td><select id= "MachineName" name="MachineName" style="font-weight:normal; width:40mm">
+                                </select></td>
+                        </tr>
+                        <tr class="Trow">
+                            <td>Operator: *</td>
+                            <td><div id = "divop">
+                                    <select id="OperatorName" name="OperatorName" style="font-weight:normal; width:40mm" onChange ="checkOther()">
+                                    </select>
+                                </div></td>
+                        </tr>
+                        <tr class="Trow">
+                            <td>If Other, please enter here</td>
+                            <td><input type="text" class="box" size="20" name="otheroperator" id = "otheroperator" disabled="disabled"></td>
+                        </tr>
+                        <tr class="Trow">
+                            <td>Date: *</td>
+                            <td><input type="text" name="date" id="date" readonly="readonly" size = "10" value = "<?php echo $var_month.'/'.$var_day.'/'.$var_year ?>"/>
+                                <img src = "images/calendar.gif" height="20" width = "20" id="date_calendar" value="calendar" onClick="showCalendar('date', 'mm/dd/y')" style="cursor:pointer" /> </td>
+                        </tr>
+                        <tr class="Trow">
+                            <td>Quantity: *</td>
+                            <td><input type="text" class="box" size="20" name="qty" id = "qty" value = "<?php echo $row['Qty'] ?>"></td>
+                        </tr>
+                        <tr class="Trow">
+                        
+                        <td>Type: *</td>
+                        <td><select id="type" name="type" style="font-weight:normal; width:40mm" onChange = "checkType()"></select>
+                        </td>
+                        </tr>
+                        <tr class="Trow">
+                        <td>With Cemma Operator: *</td>
+                        <td>
+                        <input type = "radio" name = "woperator" id= "woperator" value = "1" checked = "checked">Yes
+                        <input type = "radio" name = "woperator" id= "woperator" value = "0">No
+                        </td>
+                        </tr>
+                        <tr class="Trow">
+                        
+                        <td colspan="2">
+                        
+                        &nbsp;
+                        
+                        </td>
+                        
+                        </tr>                       
+                    </table>
+				  <br />
+				  <br />
+				</form>
+			   
+			  </td>
+			</tr>
+			<tr>
+			  <td class="t-bot2"><a href="javascript: document.myForm.submit();"  onClick = "validate()"><?php echo (($_GET['submit_mode'] == 'add') ? 'Add': 'Modify');?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#"  onClick="history.go(-1)">Cancel</a></td>
+			</tr>
+		  </table></td>
+              </tr>
+            </table>
+            <div class="clr"></div></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+
+
+function loadOperator(){
+
+var xmlHttp = checkajax();
+   
+   xmlHttp.onreadystatechange=function() {
+      
+	   if(xmlHttp.readyState!=4)
+			document.getElementById("error").innerHTML = "<img src = images/busy.gif>";
+	   
+	   if(xmlHttp.readyState==4) {
+	   document.getElementById("error").innerHTML = "&nbsp;";
+	   document.getElementById("divop").innerHTML = xmlHttp.responseText;
+	 }
+   }   
+
+	xmlHttp.open("GET","loadOperator.php?CustomerName=<?php echo $row['Name']?>&OperatorName=<?php echo $row['Operator']?>" ,true);
+    xmlHttp.send(null);   
+
+
+}
+
+
+
+function initializeData(){
+	
+
+	i=0;
+	j=0;
+	k=0;
+	
+	document.getElementById("MachineName").options[i++] = new Option("Select the Instrument", "Default");
+	document.getElementById("OperatorName").options[k++] = new Option("Select the Operator", "Default");
+	// Filling Instrument Box
+	<?
+	$sql = "SELECT machine_name FROM rates order by machine_name";
+	$result = mysql_query($sql);
+	
+	while($row2 = mysql_fetch_array($result, MYSQL_ASSOC))
+	{
+	?>
+	
+	document.getElementById("MachineName").options[i++] = new Option("<? echo $row2['machine_name']; ?>", "<? echo $row2['machine_name']; ?>");
+	if(document.getElementById("MachineName").options[i-1].value == "<?php echo $row['Machine'] ?>"){
+		document.getElementById("MachineName").options[i-1].selected = true;
+	}
+
+	<?
+	}
+	
+	?>
+	// Filling Type Box
+
+
+	document.getElementById("type").options[0] = new Option("USC Campus Users","On-Campus")
+	document.getElementById("type").options[1] = new Option("Off Campus Academic","Off-Campus")
+	document.getElementById("type").options[2] = new Option("Commerical-Industry", "Commerical")
+	for(i=0;i<2;i++){
+		
+		if(document.getElementById("type").options[i].value == "<?php echo $row['Type'] ?>"){
+			document.getElementById("type").options[i].selected = true;
+		}
+
+	}
+
+	// Loading Operators
+
+	loadOperator();
+	operatorObj = document.getElementById("OperatorName");
+
+	// Inserting Date
+	
+}
+
+
+function checkOther()
+{
+	if(document.getElementById("OperatorName").value == "Other")
+		document.getElementById("otheroperator").disabled = false;
+	else{
+		document.getElementById("otheroperator").value = "";
+		document.getElementById("otheroperator").disabled = true;
+	
+	}
+}
+
+function checkType()
+{
+	if(document.getElementById("type").selectedIndex == 2){
+		window.document.getElementById("myform").woperator[1].disabled = true;
+		window.document.getElementById("myform").woperator[0].checked = true;
+	}
+	else
+		window.document.getElementById("myform").woperator[1].disabled = false;
+}
+
+function checkajax() {
+   var xmlHttp;
+   try {
+        // Firefox, Opera 8.0+, Safari
+        xmlHttp=new XMLHttpRequest();
+     } catch (e) {
+        // Internet Explorer
+        try {
+          xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+       } catch (e) {
+          try {
+               xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+               alert("Your browser does not support AJAX!");
+               return false;
+            }
+       }
+     }
+   
+   return xmlHttp;
+}
+
+
+
+</script>
+
+<script type="text/javascript">
+initializeData();
+</script>
+
+
+
+
+
+<? include ('tpl/footer.php'); ?>

@@ -1,0 +1,172 @@
+
+<html> 
+	<head> 
+		<meta charset="utf-8" /> 
+		<title>Geolocation sample</title> 
+		<link rel="stylesheet" type="text/css" href="style.css" /> 
+		<script src="main.js"></script> 
+	</head> 
+	<body onload="init()"> 
+ 
+		<h1>Geolocation sample</h1> 
+		<div id="summary"></div> 
+		<hr> 
+		<a href="javascript:getCurrent()">Get current position</a> 
+		<div id="currentposition"></div> 
+		<hr> 
+		<a href="javascript:startWatch()">Watch position</a> 
+ 
+		<a href="javascript:clearWatch()">stop</a> 
+		<a href="javascript:deleteWatchHistory()">clear</a> 
+		<div id="watchposition"> 
+			<table id="watchtable"></table> 
+		</div> 
+		<hr> 
+		<div id="map"></div> 
+		<hr> 
+ 
+		<div id="log"></div> 
+	</body> 
+</html> 
+<script type="text/javascript"> 
+ 
+/*
+ * Convenience global variables
+ */
+var geolocationAPI;
+var watchId = undefined;
+var watchOptions = {
+		enableHighAccuracy: true,
+		maximumAge: 0,
+		timeout: 60000
+	};
+ 
+var currentOptions = {
+		enableHighAccuracy: true,
+		maximumAge: 30000,
+		timeout: 60000
+	};
+ 
+/*
+ * Initialise the widget
+ */
+function init() {
+	var contentStr = "";
+	
+	geolocationAPI = navigator.geolocation;
+	if(geolocationAPI) {
+		contentStr += "<p>Geolocation API available</p>";
+	} else {
+		contentStr += "<p>Geolocation API not available</p>";
+	}
+	document.getElementById('summary').innerHTML = contentStr;
+}
+ 
+/*
+ * Generate a table containing a single position value and link to map
+ */
+function showPosition(position) {
+	var lat = position.coords.latitude;
+	var long = position.coords.longitude;
+	var str = '<table>';
+	str += '<tr>';
+	str +=   '<td>latitude: ' + lat + '</td>';
+	str +=   '<td><a href="javascript:showMap(' + lat + ', ' + long + ')">(map)</a></td>';
+	str += '</tr>';
+	str += '<tr><td>longitude: ' + long + '</td></tr>';
+	str += '<tr><td>speed: ' + position.coords.speed + '</td></tr>';
+	str += '<tr><td>timestamp: ' + position.timestamp + '</td></tr>';
+	str += '</table>';
+	return str;
+}
+ 
+/*
+ * Get the current position
+ */
+function getCurrent() {
+	var currentSuccess = function(position) {
+		document.getElementById('currentposition').innerHTML = showPosition(position);
+	};
+	
+	var currentError = function(error) {
+		document.getElementById('currentposition').innerHTML = "Unable to get current position: " + error;
+	};
+	
+	geolocationAPI.getCurrentPosition(currentSuccess, currentError, currentOptions);
+}
+ 
+/*
+ * Start a watch for acceleration, and keep the last 5 results in a table
+ */
+function startWatch() {
+	var watchSuccess = function(position) {
+		var watchTable = document.getElementById('watchtable');
+		if(watchTable.childNodes.length >= 5) {
+			watchTable.removeChild(watchTable.firstChild);
+		}
+		watchTable.innerHTML += '<tr><td>' + showPosition(position) + '</td></tr>';
+	};
+	
+	var watchError = function(error) {
+		document.getElementById('watchposition').innerHTML += "Unable to watch position: " + error;
+	};
+	
+	clearWatch();
+	watchId = geolocationAPI.watchPosition(watchSuccess, watchError, watchOptions);
+}
+ 
+/*
+ * Stop the current watch, if it is active
+ */
+function clearWatch() {
+	if(watchId !== undefined) {
+		geolocationAPI.clearWatch(watchId);
+		watchId = undefined;
+	}
+}
+ 
+/*
+ * Delete the table of watch history
+ */
+function deleteWatchHistory() {
+	document.getElementById('watchtable').innerHTML = '';
+}
+ 
+/*
+ * Show a static map for a given position
+ */
+function showMap(lat, long) {
+	document.getElementById('map').innerHTML =
+		'<img src=http://maps.google.com/maps/api/staticmap?center=' + lat + ',' + long +
+		'&zoom=14&size=240x240&markers=color:blue|label:S|' + lat + ',' + long +
+		'&sensor=false></img>';
+}
+ 
+</script>
+<form name="counter"><input type="text" size="8" 
+name="d2"></form> 
+
+<script> 
+<!-- 
+// 
+ var milisec=0 
+ var seconds=30 
+ document.counter.d2.value='30' 
+
+function display(){ 
+ if (milisec<=0){ 
+    milisec=9 
+    seconds-=1 
+ } 
+ if (seconds<=-1){ 
+    milisec=0 
+    seconds+=1 
+ } 
+ else 
+    milisec-=1 
+    document.counter.d2.value=seconds+"."+milisec 
+    setTimeout("display()",100) 
+} 
+display() 
+--> 
+</script> 

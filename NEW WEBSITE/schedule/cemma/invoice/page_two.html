@@ -1,0 +1,275 @@
+
+<html>
+	<head>
+		<title>
+			CEMMA - Center for Electron Microscopy and Microanalysis
+		</title>
+		<script type="text/javascript" src="date.js">
+		
+		</script>
+		
+		<script type="text/javascript" src="invoice2.js">
+		
+		</script>
+
+	</head>
+	<body onload="javascript:loadXML()" background="images/valtxtr.gif">
+	<div id="main_div">
+		<table cellspacing="0" cellpadding="10" border="0" width="1100" bgcolor="white">
+		<tr>
+		<td align="right">
+			<div id="inv_num"></div>
+		</td>
+		</tr>
+			<!---------start of header  ------------>
+			<tr>
+				<td>
+					<table cellspacing="0" cellpadding="0" border="0" width="100%">
+						<tr>
+							<td valign="top">
+								<img src="images/usc-logo.gif"/>
+							</td>
+							<td width="40">
+							</td>
+							<td valign="top">
+								<table cellspacing="0" cellpadding="0" border="0" width="100%">
+									<tr>
+										<td height="5">
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3" valign="top">
+											
+											<H2><font color="#990000">Center for Electron Microscopy and Microanalysis</font></H2>
+											<font color="#990000">University of Sountern California<br>
+											CEM 200, CA 90089-0101<br>
+											(213)740-1990, Fax (213)821-0458</font>
+										</td>
+									</tr>
+									<tr>
+										<td height="10">
+										</td>
+									</tr>
+									<tr>
+										<td valign="center" width="700">
+											<table cellspacing="0" cellpadding="0" border="0" width="100%">
+												<tr>
+													<td height="5" bgcolor="#990000">
+													</td>
+												</tr>
+											</table>
+										</td>				
+										<td height="5" valign="bottom">
+											<font color="#990000" size="4"> &nbsp;&nbsp;<b><i>INVOICE</i></b>&nbsp;&nbsp;</font>
+										</td>
+										<td valign="center" width="100">
+											<table cellspacing="0" cellpadding="0" border="0" width="100%">
+												<tr>
+													<td height="5"  bgcolor="#990000">
+													</td>
+												</tr>
+											</table>
+										</td>	
+									</tr>
+
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!---------end of header  ------------>
+			
+			<tr>
+			<!---------invoice goes here  ------------>
+			<td colspan="3">
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="60%">
+							
+							<fieldset> 
+								<legend> Customer</legend>
+									<table cellpadding="0" cellspacing="0" border="0">
+									<tr>
+									<td height="150" width="600">
+									<table cellpadding="0" cellspacing="10" border="0">
+										<tr>
+											<td>
+												<b>Name</b>
+											</td>
+											<td colspan="5">
+												<div id="name"><input type="text" name="nam" id="nam" size="83"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<b>Address</b>
+											</td>
+											<td colspan="5">
+												<div id="address"><input type="text" name="addr" id="addr" size="83"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<b>City</b>
+											</td>
+											<td width="150">
+												<div id="city"><input type="text" name="city" id="cit" size="15"> </div>
+											</td>
+											<td>
+												<b>State</b>
+											</td>
+											<td width="150">
+												<div id="state"><input type="text" name="stat" id="stat" size="2"> </div>
+											</td>
+											<td>
+												<b>Zip</b>
+											</td>
+											<td width="150">
+												<div id="zip"><input type="text" name="zp" id="zp" size="15"> </div>
+											</td>
+
+										</tr>
+										<tr>
+											<td>
+												<b>Phone</b>
+											</td>
+											<td>
+												<div id="phone"><input type="text" name="phon" id="phon" size="15"></div>
+											</td>
+											<td>
+												<b>Fax</b>
+											</td>
+											<td>
+												<div id="fax"><input type="text" name="fx" id="fx" size="15"></div>
+											</td>
+											<td nowrap="nowrap" colspan="2" nowrap="nowrap">
+												<div id="oc1"><input type="radio" name="camp" id="camp" value="1" checked="checked" onclick="return oc_change(this);"><b>On-Campus</b></div>
+											
+												<div id="oc2"><input type="radio" name="camp" id="camp" value="2" onclick="return oc_change(this);"><b>Off-Campus (Academic)</b></div>
+												<div id="oc3"><input type="radio" name="camp" id="camp" value="3" onclick="return oc_change(this);"><b>Off-Campus (Commercial)</b></div>
+											</td>
+										</tr>
+									</table>
+									</td>
+									</tr>
+									</table>
+							
+							</fieldset>
+							
+						</td>
+						<td width="10%">
+							&nbsp;
+						</td>
+						<td align="right" width="30%">
+							<fieldset>
+								<table cellpadding="0" cellspacing="0" border="0">
+									<tr>
+									<td height="155">
+								<table cellpadding="5" cellspacing="5" border="0">
+									<tr>
+										<td>
+											<b>Invoice Date</b>
+										</td>
+										<td width="150">
+											<div id="date"><input type="text" name="dat" id="dat" size="15" onkeypress="return inv_date_change(event)" onchange="this.value=inv_extractDate(this.value)"></div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<b>PO / Req #</b>
+										</td>
+										<td width="150">
+											<div id="req"><input type="text" name="rq" id="rq" size="15"></div>
+										</td>
+									</tr>
+
+								</table>
+								</td>
+									</tr>
+									</table>
+							</fieldset>
+						</td>
+					</tr>
+				
+				</td>
+			</tr>
+			<tr>
+				<td height="20">
+					
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" width="100%">
+					<table border="1" width="100%" id="inv_table">
+						<tr>
+							<td width="9%" height="20" align="center">
+								<b>Qt.</b>
+							</td>
+							<td width="10%" align="center" nowrap="nowrap">
+								<b>Date</b>
+							</td>
+							<td width="55%" align="center">
+								<b>Description</b>
+							</td>
+							<td width="5%" align="center">
+								<b>With Operator</b>
+							</td>
+							<td width="9%" align="center">
+								<b>Unit Price</b>
+							</td>
+							<td width="9%" align="center">
+								<b>TOTAL</b>
+							</td>
+							<td width="*" align="center">
+								&nbsp;
+							</td>
+						</tr>
+					</table>
+					<table width="100%">
+					<tr>
+						<td width="25%">
+							<div id="add"><a href="javascript:add_entry()" >Add Entry</a></div>
+						</td>
+						<td width="50%" align="center">
+							<div id="grand_total"><font size="5"><b>TOTAL: $ 0.00</b></font></div>
+						</td>
+						<td align="right" width="25%">
+							<div id="submit"><a href="javascript:submited()">Submit</a></div>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="3" height="20"></td>
+			</tr>
+			<tr>
+				<td colspan="3" bgcolor="#990000" height="5"></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<center>
+					<font color="#990000">
+						<br><br>Please return a Requisition or Check for the total shown above to:<br><br>
+						Attn: John Curulli
+						<br>University of Southern California
+						<br>Univeristy Park
+						<br>CEM 200, MC 0101
+						<br>Los Angeles, CA 90089-0101
+						<br>Checks should be payable to:
+						<br>University of Southern California		
+					</font>
+				</td>
+			</tr>
+		</table>
+		</td>
+		</tr>
+		</table>
+		
+		</div>
+	<noscript></noscript>
+	</body>
+
+</html>
