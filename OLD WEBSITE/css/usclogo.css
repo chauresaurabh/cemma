@@ -1,0 +1,15 @@
+#usclogo{
+	float: right;
+	width: 1030px;
+	height: 60px;
+	margin: 0;
+}
+#anchorlogo {
+	display: block;
+	width: 176px;
+	height: 38px;
+	padding:11px;
+ 	background:url(/dept/CEMMA/images/gateway-usc-shield-name.png) 0 11px no-repeat;
+	text-indent: -9999px;
+	float: right;
+}

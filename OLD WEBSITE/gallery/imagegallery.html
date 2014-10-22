@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CEMMA - Image Gallery</title>
+</head>
+
+<script type="text/javascript">
+
+var i=-1;
+var imageUrl = [
+    "Picture9.jpg",
+    "Picture8.jpg",
+    "Picture7.jpg",
+    "test4.jpg",
+    "zzz.jpg",
+    "test6.jpg",
+    "test7.jpg",
+     "test8.jpg",
+     "test9.jpg",
+     "test10.jpg",
+     "test11.jpg",
+     "test12.jpg",
+     "test13.jpg",
+     "test14.jpg",
+     "test15.jpg",
+     "test16.jpg",
+     "test17.jpg",
+     "img15.jpg"
+
+];
+
+var imageDesc = [
+    "Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Annular dark field. Image credit:  Matthew Mecklenburg",
+    "Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Incoherent bright field. Image credit:  Matthew Mecklenburg",
+    "Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Coherent bright field. Image credit:  Matthew Mecklenburg",
+    "Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors: (a) annular dark field, (b) incoherent bright field, and (c) coherent bright field. Image credit: Matthew Mecklenburg.",
+    "Convergent beam electron diffraction pattern of silicon. Image credit:  Matthew Mecklenburg.",
+    "Scanning transmission electron microscopy, images of a gold on carbon at different accelerating voltages: left, 200 kV and right, 80 kV. Image credit: Matthew Mecklenburg.",
+    "Scanning transmission electron microscopy, images of a gold on carbon at different accelerating voltages: left, 200 kV and right, 80 kV. Image credit: Matthew Mecklenburg.",
+     "High resolution transmission electron microscopy image of silicon : The fast Fourier transform of the image, Image credit:  Matthew Mecklenburg.",
+     "High resolution transmission electron microscopy image of silicon : The select area electron diffraction pattern, Image credit:  Matthew Mecklenburg.",
+     "Image credit:  Matthew Mecklenburg.",
+     "High resolution transmission electron microscopy image of silicon, (a), the fast Fourier transform of the image, (b), and the select area electron diffraction pattern, (c). Image credit: Matthew Mecklenburg.",
+     "High resolution scanning transmission electron microscopy images of gold on carbon. Image credit:  Matthew Mecklenburg.",
+     "High resolution scanning transmission electron microscopy images of gold on carbon. Image credit:  Matthew Mecklenburg.",
+     "A scanning transmission electron microscopy image of the silicon lattice. Image credit:  Matthew Mecklenburg.",
+     "A scanning transmission electron microscopy image of the silicon lattice. Image credit: Matthew Mecklenburg.",
+     "A scanning transmission electron microscopy image of the silicon lattice. Image credit: Matthew Mecklenburg.",
+     "Convergent beam electron diffraction pattern of silicon. Image credit: Matthew Mecklenburg.",
+     "An electron energy loss spectrum with 1 eV per channel dispersion, showing the core loss of oxygen and silicon simultaneously. Image credit: Matthew Mecklenburg."
+
+];
+
+function showNext(){
+		i=i+1;
+		if(i>=imageUrl.length){
+			i=0;			 
+		}
+		if(i ==imageUrl.length-1){
+			document.getElementById('imageDiv').innerHTML="<img style='display: block; margin-left: auto; margin-right: auto'   ; width='75%' height='75%' src='"+imageUrl[i]+"'/>";
+ 		}else{
+		document.getElementById('imageDiv').innerHTML="<img style='display: block; margin-left: auto; margin-right: auto' src='"+imageUrl[i]+"'/>";
+		}
+		document.getElementById('imageDesc').innerHTML= imageDesc[i] ;
+	}
+	
+	function showPrevious(){
+		i=i-1;
+		if(i<0){
+			i=imageUrl.length-1;
+		}
+		if(i ==imageUrl.length-1){
+			document.getElementById('imageDiv').innerHTML="<img style='display: block; margin-left: auto; margin-right: auto'   ; width='75%' height='75%' src='"+imageUrl[i]+"'/>";
+ 		}else{
+		document.getElementById('imageDiv').innerHTML="<img style='display: block; margin-left: auto; margin-right: auto' src='"+imageUrl[i]+"'/>";
+		}
+		 
+		document.getElementById('imageDesc').innerHTML= imageDesc[i] ;
+	}
+</script>
+
+<body onload="showNext()">
+
+<div id="imageDiv"></div>
+<div id="imageDesc"></div>
+<br />
+
+<div style="margin-left:50%">
+<input type="button" value="Previous" onclick="showPrevious()"/>
+<input type="button" value="Next" onclick="showNext()"/>
+<div>
+
+</body>
+</html>

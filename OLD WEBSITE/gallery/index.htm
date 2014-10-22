@@ -1,0 +1,247 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+
+<script type="text/javascript">
+
+	function openGallery(){
+	window.open("imagegallery.html",'_blank', 'fullscreen=yes,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes');
+	}
+	function openCusomtomImage(imageUrl,descriptionString,imageid){
+		 var myWindow;
+		 myWindow = window.open("",'popUpWindow', 'fullscreen=yes,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes');
+ 
+ myWindow.document.write("<img style='display: block; margin-left: auto; margin-right: auto' src='"+imageUrl+"'/> <br>");
+		 myWindow.document.write(descriptionString);
+
+	}
+	function openWindow(imageUrl, descriptionString, flag, specialFlag){
+			
+		var myWindow;
+		 myWindow = window.open("",'popUpWindow', 'fullscreen=yes,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes');
+		myWindow.document.write("<img style='display: block; margin-left: auto; margin-right: auto'  width='75%' height='75%'  src='"+imageUrl+"'/> <br>");
+		/*if( specialFlag == "true" ) {
+			alert('true');
+		 myWindow = window.open("",'popUpWindow', 'fullscreen=yes,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes');
+		myWindow.document.write("<img style='display: block; margin-left: auto; margin-right: auto'  src='"+imageUrl+"'/> <br>");
+		}
+		else if( flag == "true" ) {
+		  myWindow = window.open("",'popUpWindow', 'left=10,top=10,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes');
+		myWindow.document.write("<img style='display: block; margin-left: auto; margin-right: auto' width='75%' height='75%' src='"+imageUrl+"'/> <br>");
+		}else{
+			 myWindow = window.open("",'popUpWindow', 'fullscreen=yes,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes');
+		myWindow.document.write("<img style='display: block; margin-left: auto; margin-right: auto'  src='"+imageUrl+"'/> <br>");
+		} */
+    	//myWindow.document.body.style.backgroundColor="red"; 
+		myWindow.document.write(descriptionString);
+		
+ 	}
+
+</script>
+
+<title>CEMMA - Gallery</title>
+<link rel="stylesheet" href="/dept/CEMMA/css/masc.css" type="text/css">
+<link rel="stylesheet" href="/dept/CEMMA/css/usclogo.css" type="text/css">
+
+</head>
+<body bgcolor="#eeeeee"><center>
+<table width="1024px" border="0" cellspacing="0" cellpadding="0" valign="top" style="table-layout:fixed:">
+	<tr>
+		<td>
+			<table class="gold" width="100%" border="0" cellspacing="0" cellpadding="0" valign="top">
+				<tr>
+	 	<td id="usclogo" bgcolor="#000000" colspan="5"><a id="anchorlogo" target="_blank" href="http://www.usc.edu/"> </a></td>
+
+				</tr>
+				<tr>
+				<td align="center" height="100">
+			 <span style="font-size:40px;  ">Center for Electron Microscopy and Microanalysis</span>
+						<!--<img src="/dept/CEMMA/images/cemmab.gif" width="200" height="115" align="right">-->
+					</td>
+				</tr>
+				<tr>
+					<td valign="bottom" align="right">
+						
+						<a href="http://cemma-usc.net/cemma/testbed/login.php"><img src="/dept/CEMMA/images/login_black.gif" BORDER=0></a>
+						<a href="/dept/CEMMA/account-set-up.htm"><img src="/dept/CEMMA/images/new_user_black.gif" BORDER=0></a>
+						<a href="/dept/CEMMA/policy/"><img src="/dept/CEMMA/images/user_policy_black.gif" BORDER=0></a>
+						<a href="/dept/CEMMA/instruments/status.html"><img src="/dept/CEMMA/images/instrument_availability.gif" BORDER=0></a>
+						<!--<a href="/dept/CEMMA/sign_up.htm">Log In</a>
+						<a href="/dept/CEMMA/account-set-up.htm">New User</a>-->
+					</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top" width="180" align="left" class="gold">
+												
+						<div class="content">
+							<center>In Association with:<br>
+							<a href="http://viterbi.usc.edu/"><img src="/dept/CEMMA/images/viterbi.gif" width="140" style="margin:2px"></a><br>
+							<a href="http://www.usc.edu/schools/college/" border="0"><img src="/dept/CEMMA/images/Dornsife_Logo.jpg" width="140"style="margin:2px"></a>
+							</center>
+						</div>
+						
+						<div class="menu-button"><a href="/dept/CEMMA/"><img src="/dept/CEMMA/images/home_180.gif" BORDER=0></a></div>
+						<div class="menu-button"><a href="/dept/CEMMA/mission"><img src="/dept/CEMMA/images/mission_statement_180.jpg" BORDER=0></a></div>
+						<div class="menu-button"><a href="/dept/CEMMA/instruments/"><img src="/dept/CEMMA/images/instruments_180.jpg" BORDER=0></a></div>
+						<div class="menu-button"><a href="http://cemma-usc.net/cemma/testbed/cemmastaff.php"><img src="/dept/CEMMA/images/professional_staff_180.jpg" BORDER=0></a></div>
+						<div class="menu-button"><a href="/dept/CEMMA/people_2/"><img src="/dept/CEMMA/images/oversight_committee_180.gif" BORDER=0></a></div>
+						<div class="menu-button"><a href="/dept/CEMMA/gallery/"><img src="/dept/CEMMA/images/gallery.jpg" BORDER=0></a></div>
+						<div class="menu-button"><a href="/dept/CEMMA/publication/"><img src="/dept/CEMMA/images/publications.jpg" BORDER=0></a></div>
+						<!--<div class="menu-button"><a href="/dept/CEMMA/policy/"><img src="/dept/CEMMA/images/policy_180.gif" BORDER=0></a></div>-->
+						<div class="menu-button"><a href="/dept/CEMMA/location/"><img src="/dept/CEMMA/images/visit_us_180.jpg" BORDER=0></a></div>
+					</td>
+
+
+					<td valign="top" class="silver" height="100%">
+
+						<!-- PAGE TITLE -->
+						<div align="center">
+							<h3 class="page-title">GALLERY</h3>
+						</div>
+                        
+                        <div class="gallery" align="center">
+
+
+<h3>CEMMA Image Gallery</h3> 
+<input type="button" value="Physical Science" onClick="openGallery()" />
+<br/> <br/> 
+
+
+
+<!--
+
+<div class="thumbnails">
+
+<a href=""><img  onClick="openCusomtomImage('Picture9.jpg','Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Annular dark field. Image credit:  Matthew Mecklenburg',1)" id="img1" src="img1a.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Annular dark field. Image credit:  Matthew Mecklenburg" /></a>
+
+<a href=""><img  onClick="openWindow('img1a_big.jpg','Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Annular dark field. Image credit:  Matthew Mecklenburg')" id="img1" src="img1a.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Annular dark field. Image credit:  Matthew Mecklenburg" /></a> -->
+
+<!--
+<a href=""><img  onClick="openCusomtomImage('Picture8.jpg','Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Incoherent bright field. Image credit:  Matthew Mecklenburg',2)" id="img2" src="img2b.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Incoherent bright field. Image credit:  Matthew Mecklenburg" /></a>
+ 
+ <a href=""><img onClick="openCusomtomImage('Picture7.jpg','Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Coherent bright field. Image credit:  Matthew Mecklenburg', 3 )" id="img3" src="img3c.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors - Coherent bright field. Image credit:  Matthew Mecklenburg" /></a>
+
+
+ <a href=""><img onClick="openCusomtomImage('test4.jpg','Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors: (a) annular dark field, (b) incoherent bright field, and (c) coherent bright field. Image credit: Matthew Mecklenburg.', 4 )" id="img123" src="img1_2_3_togethr.JPG" alt="Image Not Loaded" width="100px" height="100px"
+title="Scanning transmission electron microscopy, images of a graphitic nanostructure made with various detectors: (a) annular dark field, (b) incoherent bright field, and (c) coherent bright field. Image credit: Matthew Mecklenburg." /></a>
+
+
+ <a href=""><img onClick="openCusomtomImage('zzz.jpg','Convergent beam electron diffraction pattern of silicon. Image credit:  Matthew Mecklenburg.',5)" id="img4" src="img4.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Convergent beam electron diffraction pattern of silicon. Image credit:  Matthew Mecklenburg." /></a>
+
+ <a href=""><img onClick="openCusomtomImage('test6.jpg','Scanning transmission electron microscopy, images of a gold on carbon at different accelerating voltages: left, 200 kV and right, 80 kV. Image credit: Matthew Mecklenburg.',6)" id="img5" src="img5.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Scanning transmission electron microscopy, images of a gold on carbon at different accelerating voltages: left, 200 kV and right, 80 kV. Image credit: Matthew Mecklenburg." /></a>
+<br/></a>
+ <a href=""><img onClick="openCusomtomImage('test7.jpg','Scanning transmission electron microscopy, images of a gold on carbon at different accelerating voltages: left, 200 kV and right, 80 kV. Image credit: Matthew Mecklenburg.',7)" id="img6" src="img6.jpg" alt="Image Not Loaded" width="100px" height="100px" title="Scanning transmission electron microscopy, images of a gold on carbon at different accelerating voltages: left, 200 kV and right, 80 kV. Image credit: Matthew Mecklenburg." /></a>
+
+ <a href=""><img onClick="openCusomtomImage('test8.jpg','High resolution transmission electron microscopy image of silicon : The fast Fourier transform of the image, Image credit:  Matthew Mecklenburg.',8)" id="img7" src="img7.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="High resolution transmission electron microscopy image of silicon : The fast Fourier transform of the image, Image credit:  Matthew Mecklenburg." /></a>
+
+ <a href=""><img onClick="openCusomtomImage('test9.jpg','High resolution transmission electron microscopy image of silicon : The select area electron diffraction pattern, Image credit:  Matthew Mecklenburg.',9)" id="img8" src="img8.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="High resolution transmission electron microscopy image of silicon : The select area electron diffraction pattern, Image credit:  Matthew Mecklenburg." /></a>
+
+
+ <a href=""><img onClick="openCusomtomImage('test10.jpg','Image credit:  Matthew Mecklenburg.',10)" id="img9" src="img9.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Image credit:  Matthew Mecklenburg." /></a>
+
+<a href=""><img onClick="openCusomtomImage('test11.jpg','High resolution transmission electron microscopy image of silicon, (a), the fast Fourier transform of the image, (b), and the select area electron diffraction pattern, (c). Image credit: Matthew Mecklenburg., Image credit:  Matthew Mecklenburg.',11)" id="img7_8" src="img7_8_Together.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="High resolution transmission electron microscopy image of silicon, (a), the fast Fourier transform of the image, (b), and the select area electron diffraction pattern, (c). Image credit: Matthew Mecklenburg." /></a>
+
+
+
+<a href=""><img onClick="openCusomtomImage('test12.jpg','High resolution scanning transmission electron microscopy images of gold on carbon. Image credit:  Matthew Mecklenburg.',12)" id="img10" src="img10.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="High resolution scanning transmission electron microscopy images of gold on carbon. Image credit:  Matthew Mecklenburg." /></a>
+
+<br/></a>
+ <a href=""><img onClick="openCusomtomImage('test13.jpg','High resolution scanning transmission electron microscopy images of gold on carbon. Image credit:  Matthew Mecklenburg.',13)" id="img11" src="img11.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="High resolution scanning transmission electron microscopy images of gold on carbon. Image credit:  Matthew Mecklenburg." /></a>
+
+
+ <a href=""><img onClick="openCusomtomImage('test14.jpg','A scanning transmission electron microscopy image of the silicon lattice. Image credit:  Matthew Mecklenburg.',14)" id="img12" src="img12.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="A scanning transmission electron microscopy image of the silicon lattice. Image credit:  Matthew Mecklenburg." /></a>
+
+
+ <a href=""><img onClick="openCusomtomImage('test15.jpg','A scanning transmission electron microscopy image of the silicon lattice. Image credit: Matthew Mecklenburg.',15)" id="img13" src="img13.jpg" alt="Image Not Loaded" width="100px" height="100px".
+title="A scanning transmission electron microscopy image of the silicon lattice. Image credit: Matthew Mecklenburg." /></a>
+
+
+ <a href=""><img onClick="openCusomtomImage('test16.jpg','A scanning transmission electron microscopy image of the silicon lattice. Image credit: Matthew Mecklenburg.',16)" id="img14" src="img14.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="A scanning transmission electron microscopy image of the silicon lattice. Image credit: Matthew Mecklenburg." /></a>
+
+<a href=""><img onClick="openCusomtomImage('test17.jpg','Convergent beam electron diffraction pattern of silicon. Image credit: Matthew Mecklenburg.',17)" id="test17" src="test17.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="Convergent beam electron diffraction pattern of silicon. Image credit: Matthew Mecklenburg." /></a>
+
+
+ <a href=""><img onClick="openWindow('img15.jpg','An electron energy loss spectrum with 1 eV per channel dispersion, showing the core loss of oxygen and silicon simultaneously. Image credit: Matthew Mecklenburg.','true')" id="img15" src="img15.jpg" alt="Image Not Loaded" width="100px" height="100px"
+title="An electron energy loss spectrum with 1 eV per channel dispersion, showing the core loss of oxygen and silicon simultaneously. Image credit: Matthew Mecklenburg." /></a>
+
+
+ 
+</div><br/>
+
+<!--
+
+
+<div class="preview" align="center">
+  
+</div>
+
+</div> 
+
+						<!-- END PAGE TITLE -->
+
+						<!-- CEAMMA IMAGE -->
+						<!--
+						<div>
+							<p>
+								<center><img width="300" src="/dept/CEMMA/assets/001/49353.gif" alt="" /></center>
+							</p>
+						</div>
+						-->
+						<!-- END CEAMMA IMAGE -->
+
+						<!-- MISSION - CONTENT -->
+					
+						<!-- END MISSION - CONTENT -->
+
+						<!-- END TEMPLATE - CONTENT -->
+					</td>
+
+				</tr>
+
+				<tr>
+					<td class="gold" align="center"></td>
+
+					<td class="silver" height="100%" valign="top">
+
+						<!-- footer  -->
+						<center>
+						<hr width="100%">
+
+						  <h3> <span class="content-link">
+						  <!-- footer  -->
+													 
+									<a href="/dept/CEMMA/">Home</a> |
+									<!--<a href="/dept/CEMMA/mission/index.htm">Mission Statement</a> |-->
+									Mission Statement |
+									<a href="/dept/CEMMA/instruments/">Instruments</a> | 
+									<a href="http://cemma-usc.net/cemma/testbed/cemmastaff.php">Professional Staff</a> |        
+									<a href="/dept/CEMMA/people_2/">Advisery Committee</a> |        
+									<a href="/dept/CEMMA/policy/">Policy</a> |        
+									<a href="/dept/CEMMA/location/">Visit Us</a>
+						  <!-- END FOOTER -->
+							</span>
+							</h3>
+						</center>
+					</td>
+				</tr>
+</table>
+<center>
+</body>
+</html>

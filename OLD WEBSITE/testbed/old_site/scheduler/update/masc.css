@@ -1,0 +1,161 @@
+.banner-dept {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: ffffff;
+}
+.banner-page {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: ffffff;
+}
+.footnote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	text-decoration: none;
+	color: #000000;
+
+
+
+}
+.banner-sub {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #666666;
+	text-decoration: none;
+
+
+}
+.news-box {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px solid #CCCCCC;
+	color: #000000;
+	text-decoration: none;
+
+
+}
+
+.news-headline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #990000;
+	text-decoration: none;
+	font-weight: bold;
+
+
+
+}
+.homepage-content {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.return-link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	text-decoration: none;
+}
+.page-title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: bbbbbb;
+
+
+}
+.tree-cell {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.news-text {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	text-decoration: none;
+}
+.content {
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 10pt;
+; line-height: 18pt
+}
+.content-link {
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 10pt;
+	color: 990000;
+	text-decoration: none;
+; line-height: 18pt
+}
+.content-header {
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 12pt;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+.news-announcement {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+}
+.page-title-main {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+.news-date {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	background-color: #CCCCCC;
+	font-weight: bold;
+
+}
+.page-title-small {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+.news-page-headline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: 990000;
+	text-decoration: none;
+}
+.nav-area {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #990000;
+	text-decoration: none;
+}
+.menu-bar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+	text-decoration: none;
+}
+
+.content-normal {
+	mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     	mso-list:l0 level1 lfo1;tab-stops:list 36.0pt
+     }
+     
+a { TEXT-DECORATION: none }
+a:active {  }
+a:link {  }
+a:visited {  }
+a:hover {  color: #FF9900; text-decoration: underline}
