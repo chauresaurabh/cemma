@@ -149,9 +149,7 @@ if($_GET['submit']!='yes' )
 	echo "<html><body style='margin-top: 0px; margin-left: 0px; margin-right: 0px;'><form name='myForm' id='myForm' method='post' enctype='multipart/form-data' action='Email.php?submit=yes&emailtypee=1'>";
 
 	echo "<h2 class = 'Our'> Email All</h2>";
-
-echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font></p><br>";
- 	
+  	
 	echo " <select id='emailgroup' name='emaillist[]' multiple='multiple'>
 		 
  		  <option value='0' $selval0 >All Customers & Users</option>
@@ -230,7 +228,8 @@ echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing 
 	echo "<input type='hidden' name = 'emailtypee' value='1'>";
 	echo "<input type='hidden' name = 'temp' id = 'temp' value='1'>";
 	
-	
+	echo " <font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font> <br>";
+
 	echo "<div style='float:left;valign:top; margin-top:0; text-align:top;'>";
 	echo "<table width='100%' cellspacing='0' border='1'>";// style='padding-top:0; margin-top:0;' align='top'>";
 //	echo "<tr><td colspan='3'>Users</td></tr>";

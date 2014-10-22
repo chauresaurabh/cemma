@@ -138,11 +138,7 @@
             }    
             function View(data)
             {
-                /*var str = "";
-                $.each(data, function(i, item){
-                    str += "[" + i + "]: " + item + "\n";
-                });*/
-				<? /*cemma changes*/
+ 				<? /*cemma changes*/
 				if($_SESSION['ClassLevel'] < 4){?>
 					var url="calendar/showUserDetails.php?user_name="+data[1];
 					
@@ -328,95 +324,46 @@
     </script>    
 
 <? }
-/*if(getfilename()=='administration.php')
-	echo '<link rel=\'stylesheet\' type=\'text/css\' href=\'php_calendar/calendar_style.css\' /><script type=\'text/javascript\' src="php_calendar/calendar.js"></script>';
-else if(getfilename()=='schedule.php') {
-
-	echo '<link rel="stylesheet" type="text/css" href="css/supercali.css">';
-	if ($_REQUEST["size"] == "small") echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/small.css\">\n";
-	if ($css) echo $css;
-	echo '<script language="JavaScript" src="js/CalendarPopup.js"></script>';
-	echo '<script language="JavaScript">document.write(getCalendarStyles());</script>';
-	echo '<script language="JavaScript" src="js/ColorPicker2.js"></script>';
-	echo '<script language="JavaScript" src="js/miscfunctions.js"></script>';
-	if ($javascript) echo $javascript;
-}*/
+ 
 ?>
-<!--<script type="text/javascript" src="scripts/menuScript.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/easySlider1.5.js"></script>
-<script type="text/javascript" src="js/js_utils.js"></script>
-<script type="text/javascript">
-// <![CDATA[
-/*$(document).ready(function(){	
-	$("#slider").easySlider({
-		controlsBefore:	'<p id="controls">',
-		controlsAfter:	'</p>',
-		auto: true, 
-		continuous: true
-	});	
-});*/
-// ]]>
-</script>
--->
-
-
-
+ 
 </head>
 
 <?
-/*if(getfilename()=='administration.php')
-	echo '<body onLoad=\'navigate("","")\'>';
-else
-	echo '<body>';
-	*/
+ 
 ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td class="main">
 	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td class="header" align="center">
 		<table border="0" cellpadding="0" cellspacing="0">
         	<tr>
-                <td bgcolor="#000000" id="usclogo">
+              <td  bgcolor="#000000" class="block_header"  >
+                	 <a target="_blank" href="http://viterbi.usc.edu/"><img width="120" style="margin:2px" src="../testbed/images/viterbi.gif.png" height="50px"></a>&nbsp;
+                        	<a target="_blank" border="0" href="http://www.usc.edu/schools/college/"><img width="120" style="margin:2px" src="../testbed/images/Dornsife_Logo.jpg" height="50px"></a>
+                </td>
+                <td bgcolor="#000000" id="usclogo" >
                 	<a target="_blank" id="anchorlogo" href="http://www.usc.edu/"> University of Southern California
                     </a>
                 </td>
             </tr>
+             
             <tr>
-                <td height="100" align="center">
-                      <span style="font-size:40px;  ">Center for Electron Microscopy and Microanalysis</span>
-                </td>
+                <td align="center">
+                      <span style="font-size:40px;  ">Center for Electron Microscopy and Microanalysis  </span>
+                 </td>
             </tr>
 			<tr>
-				<td class="block_header">
-					<!--<div class="logo"><a href="index.html"><img src="images/logo.png"  height="124" border="0" alt="logo" /></a></div>
-					<div class="search">
-						<form id="form1" name="form1" method="post" action="">
-							<label>
-								<input name="q" type="text" class="keywords" id="textfield" maxlength="50" />
-								<input name="b" type="image" src="images/search.gif" class="button" />
-							</label>
-						</form>
-					</div>-->
+			<!--	<td class="block_header">
+	 
 					<div style="width:100%" class="clr"></div>
 						<div class="association">
                         	<a target="_blank" href="http://viterbi.usc.edu/"><img width="120" style="margin:2px" src="../testbed/images/viterbi.gif.png" height="40px"></a>&nbsp;
                         	<a target="_blank" border="0" href="http://www.usc.edu/schools/college/"><img width="120" style="margin:2px" src="../testbed/images/Dornsife_Logo.jpg" height="40px"></a>
                         </div>
-						
-						<!--<div class="menu">
-							<ul>
-								<li><a href="index.php">Home</a></li>                                   
-								<li><a href="index.php">About Us</a></li>
-								<li><a href="index.php">Services</a></li>
-								<li><a href="login.php">Login</a></li>
-								<li><a href="logout.php">Logout</a></li>
-								<li><a href="index.php">Contact Us</a></li>
-							</ul>
-						</div>-->
+ 					 
 					</div>
 					<div class="clr"></div>
                     
-				</td>
+				</td> -->
 			</tr>
 		</table></td></tr>
 	</table>
@@ -424,8 +371,7 @@ else
   
   
 <?
-//echo "pop-".$_SESSION['login'];
-function getfilename()
+ function getfilename()
 {
 	$x= explode("/",$_SERVER['SCRIPT_NAME']);
 	$f=count($x)-1;

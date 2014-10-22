@@ -91,9 +91,7 @@ if($_GET['submit']!='yes' )
 	
 	echo "<h2 class = 'Our'> Email Status Update</h2>";
 
-	echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font><br>";
-	echo "<font color='#FF0000'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emails without '@', '.' are not listed</font></p>";
-	echo "<input type='hidden' id='Emailclicked' name='Emailclicked' />";
+ 	echo "<input type='hidden' id='Emailclicked' name='Emailclicked' />";
 	echo "<input type='hidden' id='all' name='all' />";
 	echo "<br><table border='1' cellspacing='0'";
 	echo "<tr>";
@@ -115,6 +113,9 @@ if($_GET['submit']!='yes' )
 	echo "<input type='hidden' name = 'temp' id = 'temp' value='1'>";
 	
 	echo "<div style='float:left;valign:top; margin-top:0; text-align:top;'>";
+	
+	echo "<font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font><br/> ";
+
 	echo "<table width='100%' cellspacing='0' border='1'>";// style='padding-top:0; margin-top:0;' align='top'>";
 	echo "<tr><td><b>No.</b></td><td><b>Name</b></td> <td><b>Opt in </b></td> <td><input type='checkbox' name='AllSelected'   id='AllSelected' value='AllSelected'  onClick='selectall()' checked/><b>All&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Email</b></td></tr>";
 

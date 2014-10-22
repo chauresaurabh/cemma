@@ -7,10 +7,7 @@ if($class != 1 || $ClassLevel==3 || $ClassLevel==4){
 }
 include (DOCUMENT_ROOT.'tpl/header.php');
 
-include_once("includes/instrument_action.php");
-
- 
- $updateFlag = $_GET['submit'];
+  $updateFlag = $_GET['submit'];
  if( $updateFlag == 1 ){
  session_start();
 	$dbhost="db1661.perfora.net";

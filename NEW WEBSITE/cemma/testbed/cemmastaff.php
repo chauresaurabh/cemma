@@ -16,7 +16,7 @@
 				</tr>
 				<tr>
 					<td align="center" height="100">
-						  <span style="font-size:40px;  ">Center for Electron Microscopy and Microanalysis</span>
+						  <span style="font-size:40px;">Center for Electron Microscopy and Microanalysis</span>
  						<!--<img src="http://www.usc.edu/dept/CEMMA/images/cemmab.gif" width="200" height="115" align="right">-->
 					</td>
 				</tr>

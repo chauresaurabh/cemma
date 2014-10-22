@@ -19,15 +19,15 @@
 <file name="EditCurrentUser.php" server="cemma-usc.net" local="130584362172292736" remote="130573189800000000" Dst="2" />
 <file name="EditMyAccountUser.php" server="cemma-usc.net" local="130584362174484192" remote="130445352600000000" Dst="2" />
 <file name="EditQueryUsers.php" server="cemma-usc.net" local="130584362176685662" remote="130465486800000000" Dst="2" />
-<file name="Email.php" server="cemma-usc.net" local="130584362178897155" remote="130583295600000000" Dst="2" />
+<file name="Email.php" server="cemma-usc.net" local="130584801394607154" remote="130584909000000000" Dst="2" />
 <file name="EmailAllNew.php" server="cemma-usc.net" local="130584362181178667" remote="130389084000000000" Dst="2" />
-<file name="EmailAnnually.php" server="cemma-usc.net" local="130584362183570260" remote="130553996400000000" Dst="2" />
+<file name="EmailAnnually.php" server="cemma-usc.net" local="130584804550820570" remote="130584912000000000" Dst="2" />
 <file name="EmailCustomers.php" server="cemma-usc.net" local="130584362184320761" remote="130408092000000000" Dst="2" />
 <file name="EmailCustomersTheMail.php" server="cemma-usc.net" local="130584362188118181" remote="130364028000000000" Dst="2" />
-<file name="EmailInstrStatus.php" server="cemma-usc.net" local="130584362190319643" remote="130546156800000000" Dst="2" />
+<file name="EmailInstrStatus.php" server="cemma-usc.net" local="130584804025966736" remote="130584912000000000" Dst="2" />
 <file name="EmailMainPage.php" server="cemma-usc.net" local="130584362191120178" remote="130389084000000000" Dst="2" />
 <file name="EmailOptOut.php" server="cemma-usc.net" local="130584362195593177" remote="130389084000000000" Dst="2" />
-<file name="EmailPending.php" server="cemma-usc.net" local="130584362197824659" remote="130553996400000000" Dst="2" />
+<file name="EmailPending.php" server="cemma-usc.net" local="130584806380152743" remote="130584913800000000" Dst="2" />
 <file name="EndCode.php" server="cemma-usc.net" local="130584362199645694" remote="129669372000000000" Dst="2" />
 <file name="Export_File.txt" server="cemma-usc.net" local="130584362197834666" remote="130016700000000000" Dst="2" />
 <file name="Export_File.php" server="cemma-usc.net" local="130584362195593177" remote="130016700000000000" Dst="2" />
@@ -61,7 +61,7 @@
 <file name="Signup.php" server="cemma-usc.net" local="130584362284902084" remote="130358844000000000" Dst="2" />
 <file name="SignupAdddata.php" server="cemma-usc.net" local="130584362300877408" remote="129669372000000000" Dst="2" />
 <file name="SignupTable.php" server="cemma-usc.net" local="130584362304302062" remote="129669372000000000" Dst="2" />
-<file name="StaffMembers.php" server="cemma-usc.net" local="130584362304312057" remote="130584456600000000" Dst="2" />
+<file name="StaffMembers.php" server="cemma-usc.net" local="130584744010000000" remote="130584852000000000" Dst="2" />
 <file name="StartCode.php" server="cemma-usc.net" local="130584362316313524" remote="130440889200000000" Dst="2" />
 <file name="TestManual.php" server="cemma-usc.net" local="130584362318064709" remote="130287132000000000" Dst="2" />
 <file name="TransferUsersInQueryToUsers.php" server="cemma-usc.net" local="130584362318064709" remote="130579224600000000" Dst="2" />
@@ -83,7 +83,7 @@
 <file name="cemmalogo.jpg" server="cemma-usc.net" local="130584362811349510" remote="130259484000000000" Dst="2" />
 <file name="cemmalogo_pricing.jpg" server="cemma-usc.net" local="130584362819054656" remote="130322556000000000" Dst="2" />
 <file name="cemmalogo_quote.jpg" server="cemma-usc.net" local="130584362820555651" remote="130263804000000000" Dst="2" />
-<file name="cemmastaff.php" server="cemma-usc.net" local="130584362820555651" remote="130584174600000000" Dst="2" />
+<file name="cemmastaff.php" server="cemma-usc.net" local="130584742373125389" remote="130584850200000000" Dst="2" />
 <file name="change_status.php" server="cemma-usc.net" local="130584362829222480" remote="129669372000000000" Dst="2" />
 <file name="contact.php" server="cemma-usc.net" local="130584362820575668" remote="129669372000000000" Dst="2" />
 <file name="constants.php" server="cemma-usc.net" local="130584362830263164" remote="129684924000000000" Dst="2" />
