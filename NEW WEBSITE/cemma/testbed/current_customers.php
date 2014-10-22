@@ -27,7 +27,7 @@ include_once(DOCUMENT_ROOT."includes/buildViewComponent.class.php");
 							<tr>
 								<td>
 									<h2 class="Our">
-										 Manage Current Customers 
+										 Manage Current Customers 1
 									</h2> 
                                  
 									<!-- <input type="hidden" name = "o" id = "o" value = "<?=$_POST['o']?>">
