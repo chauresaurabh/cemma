@@ -30,13 +30,13 @@ include_once("includes/instrument_action.php");
    
    if ($_FILES["uploadFile"]["error"] > 0)
 	  {
-		  echo "Error Uploading Image, No Image selected ";
+		  echo "<b>No Image selected</b>";
   	  }
 	else
 	  {
  			  if ( !move_uploaded_file($_FILES["uploadFile"]["tmp_name"], "staffmembers/".$fileName ) )
 			  {
-				  	echo "Error Copying Image ";
+				  	echo "<b>Error Copying Image </b>";
 			  }
 	  }
 			
