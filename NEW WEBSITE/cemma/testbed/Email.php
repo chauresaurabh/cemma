@@ -430,8 +430,7 @@ $headers = 'From: cemma@usc.edu' . "\r\n". 'MIME-Version: 1.0'	. "\r\n" ."Conten
     echo "$j. ".$names[$i]."- ".$emails[$i]. "<br> ";
 	 $to = $emails[$i];
 	//$to ="chaure@usc.edu";
-	$mail->addAddress($to, $to);    
-	}
+	
 	//$message = $bodyy;
 	//$message = $message."\n\nTo opt out of the group Mailing list, Click here   http://cemma-usc.net/cemma/testbed/EmailOptOut.php?email=".$emails[$i]."&first=true";
 	//$message = $message."\nNote: This is an auto generated mail. Please do not reply.";
@@ -468,15 +467,15 @@ $headers = 'From: cemma@usc.edu' . "\r\n". 'MIME-Version: 1.0'	. "\r\n" ."Conten
 		$mail->Subject = $subject;
 		$mail->Body    = $message ;
 		$mail->AltBody = $message ;
+		$mail->addAddress($to, $to);   
 		
 		if(!$mail->send()) {
 			echo 'Message could not be sent.';
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		} else {
-			echo 'Message has been sent';
-		}
-    
+		} 
 	
+	 
+	}
 	// Email to copied persons
 	$subject2="Emails Sent-".$subject;
 	if( $N==1)

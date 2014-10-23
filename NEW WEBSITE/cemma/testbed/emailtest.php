@@ -100,7 +100,7 @@ function selectEmailGroup(){
             }
          }
 	
-	var getString =   "http://cemma-usc.net/cemma/testbed/emailtest.php?all=1"+SelBranchVal;
+	var getString =   "http://cemma-usc.net/cemma/testbed/emailtest?all=1"+SelBranchVal;
 	window.location.href = getString;
 }
 </script>
@@ -149,9 +149,7 @@ if($_GET['submit']!='yes' )
 	echo "<html><body style='margin-top: 0px; margin-left: 0px; margin-right: 0px;'><form name='myForm' id='myForm' method='post' enctype='multipart/form-data' action='emailtest.php?submit=yes&emailtypee=1'>";
 
 	echo "<h2 class = 'Our'> Email All</h2>";
-
-echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font></p><br>";
- 	
+  	
 	echo " <select id='emailgroup' name='emaillist[]' multiple='multiple'>
 		 
  		  <option value='0' $selval0 >All Customers & Users</option>
@@ -181,7 +179,7 @@ echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing 
 	echo "<br>Subject<br><input type='text' size='50' name='subj' value='Center for Electron Microscopy and Microanalysis'/><br><br>"; 
 	
 	echo " <label for='file'>Filename:</label>
-<input type='file' name='file[]' id='file' multiple=multiple'><br> ";
+<input type='file' name='file' id='file'><br> ";
 
 	echo "Body<br><TEXTAREA NAME='bod' COLS=40 ROWS=6 wrap='physical'></TEXTAREA><br><br>";
 	
@@ -230,7 +228,8 @@ echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing 
 	echo "<input type='hidden' name = 'emailtypee' value='1'>";
 	echo "<input type='hidden' name = 'temp' id = 'temp' value='1'>";
 	
-	
+	echo " <font color='#FF0000'>Note: Names in Red have opted out of the mailing list</font> <br>";
+
 	echo "<div style='float:left;valign:top; margin-top:0; text-align:top;'>";
 	echo "<table width='100%' cellspacing='0' border='1'>";// style='padding-top:0; margin-top:0;' align='top'>";
 //	echo "<tr><td colspan='3'>Users</td></tr>";
@@ -431,8 +430,7 @@ $headers = 'From: cemma@usc.edu' . "\r\n". 'MIME-Version: 1.0'	. "\r\n" ."Conten
     echo "$j. ".$names[$i]."- ".$emails[$i]. "<br> ";
 	 $to = $emails[$i];
 	//$to ="chaure@usc.edu";
-	$mail->addAddress($to, $to);    
-	}
+	
 	//$message = $bodyy;
 	//$message = $message."\n\nTo opt out of the group Mailing list, Click here   http://cemma-usc.net/cemma/testbed/EmailOptOut.php?email=".$emails[$i]."&first=true";
 	//$message = $message."\nNote: This is an auto generated mail. Please do not reply.";
@@ -463,21 +461,20 @@ $headers = 'From: cemma@usc.edu' . "\r\n". 'MIME-Version: 1.0'	. "\r\n" ."Conten
 		
 		 
 		$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-		$mail->addAttachment(DOCUMENT_ROOT."emailattachments/Cemma.pdf");         // Add attachments
-		$mail->addAttachment(DOCUMENT_ROOT."emailattachments/MPI-VG.pdf");         // Add attachments
+		$mail->addAttachment(DOCUMENT_ROOT."emailattachments/".$fileName);         // Add attachments
 		$mail->isHTML(true);                                  // Set email format to HTML
 		
 		$mail->Subject = $subject;
 		$mail->Body    = $message ;
 		$mail->AltBody = $message ;
-		
+		$mail->addAddress($to, $to);  
+		   
 		if(!$mail->send()) {
-			echo 'Message could not be sent.';
+			echo 'Mail could not be sent.';
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		} else {
-			echo 'Message has been sent';
-		}
-    
+		}  
+   
+	}
 	
 	// Email to copied persons
 	$subject2="Emails Sent-".$subject;
@@ -581,10 +578,22 @@ if($_GET['submit']!='yes' )
 	<script type="text/javascript">
 			function instclicked()
 	{
-var instr=document.getElementById('instlist').options[document.getElementById('instlist').selectedIndex].value;
-var emailgroup=document.getElementById('emailgroup').options[document.getElementById('emailgroup').selectedIndex].value;
-
-	var url="emailtest.php?all=2&inst="+instr+"&emailgroup="+emailgroup;
+		
+	var instrindex = document.getElementById('instlist').selectedIndex;
+	if(instrindex==0){
+		alert('Please Select Instrument Name');	
+		return;
+	}
+	var instr=document.getElementById('instlist').options[instrindex].value;
+	
+	var emailindex = document.getElementById('emailgroup').selectedIndex;
+	if(emailindex==0){
+		alert('Please Select List of Users');	
+		return;
+	}
+	var emailgroup=document.getElementById('emailgroup').options[emailindex].value;
+ 	
+ 	var url="emailtest.php?all=2&inst="+instr+"&emailgroup="+emailgroup;
 	//alert(url);
 	window.location =url;
 	}
@@ -801,7 +810,7 @@ $message = "Hello ". $names[$i]. ",<br><br>".nl2br($bodyy)."<br><br>Center for E
 
   }
 echo "<script type='text/javascript'>setTimeout('delayer()', 5000); function delayer(){
-   window.location='Email.php?all=2&inst=".$instsel."'; }</script>";
+   window.location='emailtest.php?all=2&inst=".$instsel."'; }</script>";
 
 }
 
