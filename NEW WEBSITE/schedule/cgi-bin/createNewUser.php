@@ -229,7 +229,7 @@ $to = "curulli@usc.edu";
 	
 $headers = "From:" . $from;
 
-mail($to, $subject, $body, $headers);
+//mail($to, $subject, $body, $headers);
 
 session_write_close();
 ?>

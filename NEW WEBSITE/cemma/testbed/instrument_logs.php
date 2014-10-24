@@ -113,7 +113,7 @@
                 </td></tr>
                 <tr><td style="border-collapse:collapse; border-color:#ccd5cc; border-style:solid; border-width:1pt" >
                 <div class="printcontent2" id="div2">
-                <table align="center" cellpadding="0" cellspacing="0" class="Tcontent" width = "100%">
+                <table align="center" cellpadding="0" cellspacing="0" class="Tcontent" width = "100%"  >
                 	<col width="30px"/>
                     <col width="100px"/>
                     <col width="150px"/>
@@ -123,8 +123,8 @@
                     
                     <tbody>
                        <tr bgcolor="#F4F4F4" align="center" class="Ttitle">
-                        <td>Entry</td>
-                        <td>User</td>
+                        <td onclick="javascript:doAction(1, 1)" style="cursor:pointer">Entry</td>
+                        <td onclick="javascript:doAction(1, 2)" style="cursor:pointer">User</td>
                         <td>Instrument</td>
                         <td>Remark</td>
                         <td>Date</td>
@@ -156,7 +156,7 @@
                                 <?
                                 }
                                 ?>
-                                <tr class = "Trow" align = "center" style="font-size:12px"	 id="entryrow<?=$count1?>">
+                                <tr class = "Trow" align = "center" style="font-size:12px;color:#000"	 id="entryrow<?=$count1?>">
                                     <div  id="entry<?=$count1?>">
                                         <td id="entre<?=$count1?>"><? echo "$count1"; ?></td>
                                         <td id="entre3<?=$count1?>"><? echo $row['username']; ?></td>

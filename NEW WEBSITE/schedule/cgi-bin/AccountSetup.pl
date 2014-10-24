@@ -282,7 +282,7 @@ $db= DBI->connect($dsn, "dbo260244667", "curu11i");
 	print "		<td>Security Check:</td>\n";
 	print "		<td><img name=\"captchabox\" id=\"captchabox\" src=\"captcha.php\"/><br/>
 				<label style='font-size:18px' >Enter the Answer here</label>
-				<input placeholder=\"Enter the Answer here\" type=\"text\" name=\"captcha_code\" size=\"20\" maxlength=\"6\"/>
+				<input placeholder=\"Enter the Answer here\" type=\"text\" id=\"captcha_code\" name=\"captcha_code\" size=\"20\" maxlength=\"6\"/>
 				 </td></tr>\n";
 #print "<td>refresh the page if you can't see the picture</td>";
 	print "</tr>";
@@ -541,6 +541,38 @@ $db= DBI->connect($dsn, "dbo260244667", "curu11i");
 		xmlhttp.send();	\n
 		";
  		
+		
+		
+		
+		print "		
+		 
+		 	var captcha_code = document.getElementById('captcha_code').value; 
+			 
+			var xmlhttp;	 
+	 		if (window.XMLHttpRequest)	 
+	  		 { 	 	
+	  			 xmlhttp=new XMLHttpRequest(); 	
+	 		 } 
+ 			 else	 
+	 	 	 { 	 
+	 			 xmlhttp=new ActiveXObject(\"Microsoft.XMLHTTP\");  
+		 	 } \n  
+  				xmlhttp.onreadystatechange=function()	{	
+			 		
+					if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+							 
+								if(xmlhttp.responseText==0){
+									alert('Security Answer is Incorrect ! Example: 2 + 3 = 5, Enter 5 as the Answer');
+ 									flag = false;
+								}else if(xmlhttp.responseText==1){
+									flag = true;
+								} 
+						 }	 
+ 				 } \n 
+ 		xmlhttp.open(\"GET\",\"http://cemma-usc.net/schedule/cgi-bin/validatecaptcha.php?captcha_code=\"+captcha_code,false);  \n 
+		xmlhttp.send();	\n
+		";
+		
 	print "	return flag;\n";
 	print "}\n";
 	

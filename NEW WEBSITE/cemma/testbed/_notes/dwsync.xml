@@ -116,7 +116,7 @@
 <file name="index.php" server="cemma-usc.net" local="130584365947501836" remote="129669372000000000" Dst="2" />
 <file name="index1.php" server="cemma-usc.net" local="130584365956260025" remote="129669372000000000" Dst="2" />
 <file name="info.php" server="cemma-usc.net" local="130584365956260025" remote="129669372000000000" Dst="2" />
-<file name="instrument_logs.php" server="cemma-usc.net" local="130584365957100586" remote="130573208400000000" Dst="2" />
+<file name="instrument_logs.php" server="cemma-usc.net" local="130586171096264271" remote="130586278800000000" Dst="2" />
 <file name="instruments.php" server="cemma-usc.net" local="130584365964035201" remote="130454283000000000" Dst="2" />
 <file name="invoices.php" server="cemma-usc.net" local="130584365964035201" remote="130358844000000000" Dst="2" />
 <file name="loadManualData.php" server="cemma-usc.net" local="130584365998687764" remote="130275036000000000" Dst="2" />
@@ -159,13 +159,13 @@
 <file name="schools.php" server="cemma-usc.net" local="130584366970272953" remote="130453876800000000" Dst="2" />
 <file name="searchInvoices.php" server="cemma-usc.net" local="130584366994139022" remote="130573204200000000" Dst="2" />
 <file name="search_customers.php" server="cemma-usc.net" local="130584366999627875" remote="130455732000000000" Dst="2" />
-<file name="searchRecords.php" server="cemma-usc.net" local="130584367001178927" remote="130580977800000000" Dst="2" />
+<file name="searchRecords.php" server="cemma-usc.net" local="130586159051840911" remote="130586266800000000" Dst="2" />
 <file name="search_users.php" server="cemma-usc.net" local="130584367001188926" remote="130455730800000000" Dst="2" />
 <file name="sendInvoiceEmail2.php" server="cemma-usc.net" local="130584368709433201" remote="129775644000000000" Dst="2" />
 <file name="sendInvoiceEmail.php" server="cemma-usc.net" local="130584368710263767" remote="129775644000000000" Dst="2" />
 <file name="showPermit.php" server="cemma-usc.net" local="130584368715861557" remote="130389084000000000" Dst="2" />
 <file name="showPolicyDetails.php" server="cemma-usc.net" local="130584368716622045" remote="130389084000000000" Dst="2" />
-<file name="statistics.php" server="cemma-usc.net" local="130584368768104152" remote="130580149200000000" Dst="2" />
+<file name="statistics.php" server="cemma-usc.net" local="130586166231829495" remote="130586274600000000" Dst="2" />
 <file name="table.php" server="cemma-usc.net" local="130584368908490938" remote="129669372000000000" Dst="2" />
 <file name="temprecord.php" server="cemma-usc.net" local="130584368909341506" remote="130580945400000000" Dst="2" />
 <file name="test.php" server="cemma-usc.net" local="130584368915280258" remote="129996828000000000" Dst="2" />

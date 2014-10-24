@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="ArchivedUsers.pl" server="cemma-usc.net" local="130584372330407540" remote="129343644000000000" Dst="2" />
-<file name="AccountSetup.pl" server="cemma-usc.net" local="130584372332008605" remote="130566966000000000" Dst="2" />
+<file name="AccountSetup.pl" server="cemma-usc.net" local="130585990735708128" remote="130586098200000000" Dst="2" />
 <file name="Chanda_Feliz.ttf" server="cemma-usc.net" local="130584372359913182" remote="130422780000000000" Dst="2" />
 <file name="CGI.pm" server="cemma-usc.net" local="130584372364489449" remote="128293020000000000" Dst="2" />
 <file name="DecodePolicy.php" server="cemma-usc.net" local="130584372382195227" remote="130136796000000000" Dst="2" />
@@ -27,7 +27,7 @@
 <file name="changepassword.cgi" server="cemma-usc.net" local="130584372432154509" remote="128293020000000000" Dst="2" />
 <file name="changepassword.pl" server="cemma-usc.net" local="130584372437076546" remote="130323420000000000" Dst="2" />
 <file name="changesignupdata.pl" server="cemma-usc.net" local="130584372439288023" remote="130091004000000000" Dst="2" />
-<file name="createNewUser.php" server="cemma-usc.net" local="130584372440268670" remote="130579627200000000" Dst="2" />
+<file name="createNewUser.php" server="cemma-usc.net" local="130585983658743382" remote="130586091600000000" Dst="2" />
 <file name="createNewUsersInQuery.pl" server="cemma-usc.net" local="130584372445360279" remote="130040892000000000" Dst="2" />
 <file name="createnew.cgi" server="cemma-usc.net" local="130584372448000362" remote="129453372000000000" Dst="2" />
 <file name="createnew.pl" server="cemma-usc.net" local="130584372448922473" remote="129453372000000000" Dst="2" />
@@ -130,4 +130,5 @@
 <file name="zAccountSetup.pl" server="cemma-usc.net" local="130584372804100030" remote="130566883200000000" Dst="2" />
 <file name="zcreateNewUser.php" server="cemma-usc.net" local="130584372804110040" remote="130555933800000000" Dst="2" />
 <file name="zvalidateCreateNewUser.php" server="cemma-usc.net" local="130584372810264766" remote="130556796000000000" Dst="2" />
+<file name="validatecaptcha.php" server="cemma-usc.net" local="130585988809431017" remote="130586096400000000" Dst="2" />
 </dwsync>
