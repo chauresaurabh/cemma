@@ -348,7 +348,7 @@
              
             <tr>
                 <td align="center">
-                      <span style="font-size:48px; font-family:'Times New Roman', Times, serif;">Center for Electron Microscopy and Microanalysis  </span>
+                      <span style="font-size:35px; font-family: 'Arial','sans-serif'; color:#000">Center for Electron Microscopy and Microanalysis  </span>
                  </td>
             </tr>
 			<tr>

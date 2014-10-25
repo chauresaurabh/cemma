@@ -565,7 +565,11 @@ $db= DBI->connect($dsn, "dbo260244667", "curu11i");
 									alert('Security Answer is Incorrect ! Example: 2 + 3 = 5, Enter 5 as the Answer');
  									flag = false;
 								}else if(xmlhttp.responseText==1){
-									flag = true;
+									if(flag==false){
+										flag = false;
+									}else{
+										flag = true;
+									}
 								} 
 						 }	 
  				 } \n 
