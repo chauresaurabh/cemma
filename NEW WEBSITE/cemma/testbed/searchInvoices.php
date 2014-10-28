@@ -2,6 +2,8 @@
 include_once ('constants.php');
 include_once (DOCUMENT_ROOT . "includes/checklogin.php");
 include_once (DOCUMENT_ROOT . "includes/checkadmin.php");
+
+$class = $_SESSION['ClassLevel'];
 if ($class != 1) {
 	header('Location: login.php');
 }

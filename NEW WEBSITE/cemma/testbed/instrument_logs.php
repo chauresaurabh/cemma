@@ -33,7 +33,10 @@
 	$fromDate = "$fromYear:$fromMonth:$fromday";
 	$toDate = "$toYear:$toMonth:$today";
 	$pagenum = $_GET['resultpage'];
-?><head>
+	
+ 	$orderby = $_POST['orderby'];
+	//echo "received " . $orderby;
+ ?><head>
 
 <style>
 	@media print {
@@ -62,6 +65,7 @@
         <h2 class = "Our"> Instrument Logs</h2>
         
         <form action = "instrument_logs.php" method = "post" name="myForm">
+        <input type = "hidden" name="orderby" id = "orderby" value = "">
         	<?
 			foreach ($_POST as $field=>$value) {
 				if($field != "Instrument")
@@ -93,7 +97,8 @@
                 //Getting Record Details
                 
                 $rs = new InstrumentLogDAO();
-                $rs->searchLogs($pagenum, 50, $fromDate, $toDate, $machineName);
+				 
+                $rs->searchLogs($pagenum, 50, $fromDate, $toDate, $machineName ,  $_POST['orderby']   );
                 $currentRowNum = $rs->getStartRecord()*1; 
                 
                 ?> 
@@ -123,12 +128,12 @@
                     
                     <tbody>
                        <tr bgcolor="#F4F4F4" align="center" class="Ttitle">
-                        <td onclick="javascript:doAction(1, 1)" style="cursor:pointer">Entry</td>
-                        <td onclick="javascript:doAction(1, 2)" style="cursor:pointer">User</td>
-                        <td>Instrument</td>
-                        <td>Remark</td>
-                        <td>Date</td>
-                        <td>Time</td>
+                        <td style="cursor:pointer">Entry</td>
+                        <td onclick="orderByAction(1)" style="cursor:pointer">User</td>
+                        <td  >Instrument</td>
+                        <td onclick="orderByAction(2)" style="cursor:pointer">Remark</td>
+                        <td onclick="orderByAction(3)" style="cursor:pointer">Date</td>
+                        <td >Time</td>
                       </tr>
 						<?php
                             // If there are no records
@@ -202,3 +207,25 @@
   
 		</td></tr></table>
    <? include ('tpl/footer.php'); ?>
+   
+   <script type="text/javascript">
+ 
+		function orderByAction(id){
+			 
+				switch(id){
+					case 1:
+						document.forms['myForm'].orderby.value='username';
+						break;
+					case 2:
+						document.forms['myForm'].orderby.value='remarks';					
+						break;						
+					case 3:
+						document.forms['myForm'].orderby.value='date';					
+						break;
+ 				}
+ 				alert(document.forms['myForm'].orderby.value);
+ 				document.forms['myForm'].submit();
+ 			
+		}
+   	
+   </script>

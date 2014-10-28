@@ -178,7 +178,7 @@ if($_GET['submit']!='yes' )
 	echo "<br>CC 2<br><input type='text' size='50' name='cc' value=''/><br>"; 
 	echo "<br>Subject<br><input type='text' size='50' name='subj' value='Center for Electron Microscopy and Microanalysis'/><br><br>"; 
 	
-	echo " <label for='file'>Filename:</label>
+	echo " <label for='file'>Attach file:</label><br>
 <input type='file' name='file' id='file'><br> ";
 
 	echo "Body<br><TEXTAREA NAME='bod' COLS=40 ROWS=6 wrap='physical'></TEXTAREA><br><br>";
@@ -520,8 +520,8 @@ if($emailtype==2 || $_GET['emailtypee']==2)
 {
 if($_GET['submit']!='yes' )
 {
-
-	echo "<form name='myForm' id='myForm' method='post' action='Email.php?submit=yes&inst=$instsel&emailtypee=2'>";
+ 
+ 	echo "<form name='myForm' id='myForm' method='post' enctype='multipart/form-data'  action='Email.php?submit=yes&inst=$instsel&emailtypee=2&emailgroup=$emailgroup'>";
 	echo "<h2 class = 'Our'> Email Instrument List</h2>";
 	 
 //SELECT INSTRUMENT START
@@ -540,21 +540,29 @@ if($_GET['submit']!='yes' )
 		$instcount++;
 	}
 	$jj=0;
+	$selectedinstr = $_GET['inst'];
+	
 	echo "Select Instrument: <select id='instlist' >";
 	while($jj<$instcount)
 	{
 		if (  $jj == 0 ){
-			$checked='SELECTED';
+			$checked='selected';
 			echo "<option ".$checked." >";
 		echo "--Please select an Instrument--";
 		echo "</option>";
 		$checked='';
+		if($selectedinstr ==  $instlist[$jj] ){
+			$checked='selected';
+		}
 		echo "<option ".$checked." >";
 		echo $instlist[$jj];
 		echo "</option>";
 		}
 		else{
 			$checked='';
+		 if($selectedinstr ==  $instlist[$jj] ){
+			$checked='selected';
+		}
 		echo "<option ".$checked." >";
 		echo $instlist[$jj];
 		echo "</option>";
@@ -563,13 +571,33 @@ if($_GET['submit']!='yes' )
 	}
 	echo "</select>";
 	
+
+   
+  switch ($emailgroup) {
+    case 0:
+        $selval0 ="selected";
+         break;
+    case 1:
+        $selval1 ="selected";
+        break;
+    case 2:
+        $selval2 ="selected";
+        break;
+	 case 3:
+         $selval3 ="selected"; 
+        break;
+	 case 4:
+         $selval4 ="selected";
+        break;
+ 	}
+	
 	echo "  <select id='emailgroup' name='emailgroup' >
 		 
-		  <option value='0' $selval1>Select Users</option>
+		  <option value='0' $selval0>Select Users</option>
  		  <option value='1' $selval1>All Users</option>
 		  <option value='2' $selval2>Life Science</option>
 		  <option value='3' $selval3>Physical Science</option>
-		  <option value='4' $selval3>Both Life Science & Physical Science</option>
+		  <option value='4' $selval4>Both Life Science & Physical Science</option>
  		</select>  ";
 ?>
 		
@@ -707,6 +735,10 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 	echo "<br>To<br><input type='text' size='50' name='tocc' value='curulli@usc.edu'/><br>"; 
  	echo "<br>CC<br><input type='text' size='50' name='cc' value=''/><br>"; 
 	echo "<br>Subject<br><input type='text' size='30' name='subj' value='$instsel'/><br>"; 
+	
+	echo "<br> <label for='file'>Attach file:</label>
+<input type='file' name='file' id='file'><br> ";
+
 	echo "Body<br><TEXTAREA NAME='bod' COLS=40 ROWS=6 wrap='physical'></TEXTAREA><br><br>";
 	
 	echo "<center><input type='submit' name='submit' value='Send' align='center'/></center>";
@@ -718,6 +750,27 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 	}
 else //after clicking on email button
 {
+  
+$fileName = $_FILES["file"]["name"];
+ echo "Filename is : ".$fileName; 
+ $fileUploaded = false;
+
+  //if(in_array($extension, $allowedExts)){
+	if ($_FILES["file"]["error"] > 0)
+	  {
+	 	 echo "Error : ";
+ 	  }
+	else
+	  {
+ 			  if ( move_uploaded_file($_FILES["file"]["tmp_name"], DOCUMENT_ROOT."emailattachments/".$fileName ) )
+			   {  
+			  	echo "<br/><b>File '$fileName' attached successfully</b>". "<br>"; // need to style this information
+ 			   }else{
+ 			 	 echo "<br/><b>Could not save file.</b>". "<br>"; // need to style this information
+			  }
+	  }
+ 
+// EMAIL INSTRUMENT MODULE ENDS
 
   $emailss = $_POST['email']; //checkboxes
   $emailsoptin = $_POST['emailoptin'];
@@ -776,7 +829,26 @@ $message = "Hello ". $names[$i]. ",<br><br>".nl2br($bodyy)."<br><br>Center for E
  	$message = $message."<br><br>You are receiving this e-mail because you have an active account with the Center for Electron Microscopy and Microanalysis (CEMMA). To Unsubscribe from this e-mail communications, click <a href='http://cemma-usc.net/cemma/testbed/EmailOptOut.php?email=curulli@usc.edu&first=true'>Unsubscribe</a>";
 	$message = $message."<br><br>Note: This is an auto generated mail. Please do not reply.";
 	
-	mail($to,$subject,$message,$headers);
+		$mail = new PHPMailer;
+		$mail->From = 'cemma@usc.edu';
+		$mail->FromName = 'CEMMA';
+		
+		 
+		$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+		$mail->addAttachment(DOCUMENT_ROOT."emailattachments/".$fileName);         // Add attachments
+		$mail->isHTML(true);                                  // Set email format to HTML
+		
+		$mail->Subject = $subject;
+		$mail->Body    = $message ;
+		$mail->AltBody = $message ;
+		$mail->addAddress($to, $to);   
+		
+		if(!$mail->send()) {
+			echo 'Message could not be sent.';
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		} 
+		
+	//mail($to,$subject,$message,$headers);
     }
  
 	$subject2=$instsel.' Group Email: '.$subj;
@@ -810,7 +882,7 @@ $message = "Hello ". $names[$i]. ",<br><br>".nl2br($bodyy)."<br><br>Center for E
 
   }
 echo "<script type='text/javascript'>setTimeout('delayer()', 5000); function delayer(){
-   window.location='Email.php?all=2&inst=".$instsel."'; }</script>";
+   window.location='Email.php?all=2&inst=$instsel&emailgroup=$emailgroup'; }</script>";
 
 }
 
