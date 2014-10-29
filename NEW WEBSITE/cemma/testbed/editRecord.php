@@ -200,12 +200,9 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
 								</form></td>
 							</tr>
 							<tr>
-								<td class="t-bot2"><a href="javascript: changeRecord()"><?php echo(($_GET['submit_mode'] == 'add') ? 'Add' : 'Modify');?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href = "<?php
-								if (strpos($_SERVER['HTTP_REFERER'], "name") === false)
-									echo $_SERVER['HTTP_REFERER'] . "?name=" . $row['Name'] . "&view=0";
-								else
-									echo $_SERVER['HTTP_REFERER'];
-								?> ">Return</a></td>
+								<td class="t-bot2"><a href="javascript: changeRecord()"><?php echo(($_GET['submit_mode'] == 'add') ? 'Add' : 'Modify');?></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                           
+                                <a href="#" onclick="closeWindow();return false;">Close</a></td>
 							</tr>
 						</table></td>
 					</tr>
@@ -496,6 +493,9 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
 			return xmlHttp;
 		}
 
+		function closeWindow(){
+ 			 window.close();
+ 		}
 		function changeRecord() {
 
 			if(!confirm("Are you sure you want to continue?"))
