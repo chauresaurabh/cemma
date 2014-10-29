@@ -33,6 +33,9 @@ $cemmaStaff = $_GET['CemmaStaff'];
 
 $accountnumber = $_GET['accountnumber'];
 
+$logintime = $_GET['logintime'];
+$logouttime = $_GET['logouttime'];
+
 $films = array();
 $films = array("Film - EM Film TEM");
 
@@ -73,7 +76,7 @@ $discountFlag = 0;
 //echo "Qty is " .$qty."<Br>";
 //echo "Current Qty before going is " .$currQty."<Br>";
 echo 'Record Successfully Updated!!';
-$sql = "UPDATE Customer_data SET Qty = '$qty', Machine = '$machine', Unit = '$unitPrice', Total= '$total', Operator = '$operator', Date = '$insert_date', Type = '$type', WithOperator = '$woperator', DiscountFlag = '$discountFlag',OverriddenFlag='$overriddenFlag' , Name='$name' , CemmaStaffMember='$cemmaStaff' where Number='$number'";
+$sql = "UPDATE Customer_data SET Qty = '$qty', Machine = '$machine', Unit = '$unitPrice', Total= '$total', Operator = '$operator', Date = '$insert_date', Type = '$type', WithOperator = '$woperator', DiscountFlag = '$discountFlag',OverriddenFlag='$overriddenFlag' , Name='$name' , CemmaStaffMember='$cemmaStaff', Time='$logintime', logouttime='$logouttime' where Number='$number'";
 mysql_query($sql) or die ("Error in Edit Data");
 
 updateFurtherDiscounts($fromdate, $todate, $name, $machine, $films);

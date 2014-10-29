@@ -137,7 +137,7 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
                                         	<tr class="Trow">
 											<td>Logout Time: *</td>
 											<td>
-											<input type="text" class="box" size="20" name="logintime" id = "logintime" value = "<?php echo $row['logouttime'] ?>" style="font-weight:normal; width:48mm" >
+											<input type="text" class="box" size="20" name="logouttime" id = "logouttime" value = "<?php echo $row['logouttime'] ?>" style="font-weight:normal; width:48mm" onblur="updateQuantity()" >
 											</td>
 										</tr>
                                         
@@ -519,6 +519,9 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
 			var unit = theform.unit.value;
 			var total = theform.total.value;
 
+			var logintime = theform.logintime.value;
+			var logouttime = theform.logouttime.value;
+			 
 			var CemmaStaff = "NA";
 			
 			if( document.getElementById('woperatoryes').checked ){
@@ -580,7 +583,7 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
 				}
 			}
 		 
-			xmlHttp.open("GET", "editrecord2.php?CustomerName=" + CustomerName + "&OperatorName=" + OperatorName + "&MachineName=" + MachineName + "&newOperator=" + newOperator + "&Date=" + date + "&qty=" + qty + "&type=" + type + "&woperator=" + woperator + "&Gdate=" + Gdate + "&overriddenFlag=" + overriddenFlag + "&unit=" + unit + "&total=" + total + "&number=" + number + "&invoiceno=" + invoiceno + "&accountnumber=" + accountnumber + "&CemmaStaff=" + CemmaStaff + "&submit=submit", true);
+			xmlHttp.open("GET", "editrecord2.php?CustomerName=" + CustomerName + "&OperatorName=" + OperatorName + "&MachineName=" + MachineName + "&newOperator=" + newOperator + "&Date=" + date + "&qty=" + qty + "&type=" + type + "&woperator=" + woperator + "&Gdate=" + Gdate + "&overriddenFlag=" + overriddenFlag + "&unit=" + unit + "&total=" + total + "&number=" + number + "&invoiceno=" + invoiceno + "&accountnumber=" + accountnumber + "&CemmaStaff=" + CemmaStaff + "&logintime=" + logintime+ "&logouttime=" + logouttime+"&submit=submit", true);
 			xmlHttp.send(null);
 		}
 
@@ -595,6 +598,50 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
 <script type="text/javascript">
 	initializeData();
 
+	function updateQuantity(){
+	
+		var logintime = document.getElementById('logintime').value;
+		var logouttime = document.getElementById('logouttime').value;
+		
+		var loginsplit = logintime.split(":");
+		var logoutsplit = logouttime.split(":"); 
+		
+		var loginhr = loginsplit[0];
+		var loginmin = loginsplit[1];
+		
+		var logouthr = logoutsplit[0];
+		var logoutmin = logoutsplit[1];
+		
+		var hourdiff = logouthr - loginhr;
+		var mindfiff = logoutmin - loginmin;
+				  
+
+		 if(mindfiff < 0)
+		{
+			hourdiff = hourdiff - 1;
+			mindfiff = mindfiff + 60;
+		}
+		if(hourdiff > 0)
+		{
+			//more than or equal 1hour of time Qty (1 hour~):
+			// add 0.25hr in every 15min
+			hourdiff = hourdiff + 0.25* parseInt(mindfiff/15+1);
+			
+		} else {
+			//less than 1 hour of time Qty (0.xx hour): 
+			// add 0.5hr in first 30min, or add 0.25 in every next 15min
+			if(mindfiff >= 0 && mindfiff < 30){
+				hourdiff = hourdiff + 0.5;
+			}else if(mindfiff >= 30 && mindfiff < 45){
+				hourdiff = hourdiff + 0.75;
+			}else if(mindfiff >= 45){
+				hourdiff = hourdiff + 1.0;
+			}
+ 		}
+		
+		document.getElementById('qty').value = hourdiff;
+		
+	}
 </script>
 <?
 include ('tpl/footer.php');
