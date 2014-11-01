@@ -46,7 +46,7 @@
 						<div class="menu-button"><a href="/dept/CEMMA/"><img src="/dept/CEMMA/images/home_180.gif" BORDER=0></a></div>
 						<div class="menu-button"><a href="/dept/CEMMA/mission"><img src="/dept/CEMMA/images/mission_statement_180.jpg" BORDER=0></a></div>
 						<div class="menu-button"><a href="/dept/CEMMA/instruments/"><img src="/dept/CEMMA/images/instruments_180.jpg" BORDER=0></a></div>
-						<div class="menu-button"><a href="/dept/CEMMA/people_1/"><img src="/dept/CEMMA/images/professional_staff_180.jpg" BORDER=0></a></div>
+						<div class="menu-button"><a href="http://cemma-usc.net/cemma/testbed/cemmastaff.php"><img src="/dept/CEMMA/images/professional_staff_180.jpg" BORDER=0></a></div>
 						<div class="menu-button"><a href="/dept/CEMMA/people_2/"><img src="/dept/CEMMA/images/oversight_committee_180.gif" BORDER=0></a></div>
 						<div class="menu-button"><a href="/dept/CEMMA/gallery/"><img src="/dept/CEMMA/images/gallery.jpg" BORDER=0></a></div>
 						<div class="menu-button"><a href="/dept/CEMMA/publication/"><img src="/dept/CEMMA/images/publications.jpg" BORDER=0></a></div>

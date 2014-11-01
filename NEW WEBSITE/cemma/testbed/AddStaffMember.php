@@ -21,13 +21,18 @@ include_once("includes/instrument_action.php");
 	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in DB");
   	 
-	 $staffname = $_POST['name'];  
+	 $firstname = $_POST['firstname'];  
+	 $lastname = $_POST['lastname'];  
+	 $name = $firstname." ".$lastname;
+	 
 	 $email = $_POST['email'];
   	 $phonenumber = $_POST['phonenumber'];
    	 $designation = $_POST['designation'];
    
    	 $fileName = $_FILES["uploadFile"]["name"];
-   
+   	 
+	  $stafftype = $_POST['stafftype'];
+	  
    if ($_FILES["uploadFile"]["error"] > 0)
 	  {
 		  echo "<b>No Image selected</b>";
@@ -43,10 +48,10 @@ include_once("includes/instrument_action.php");
 	 $sql="";
 	 if($fileName==''){
 			 		 	 $imagelocation = "staffmembers/nophoto.jpg";	  
- 	  $sql = "insert into PROFESSIONAL_STAFF (name, email, phonenumber, designation, image) VALUES ('$staffname','$email', '$phonenumber', '$designation' ,'$imagelocation');";
+ 	  $sql = "insert into PROFESSIONAL_STAFF (name, firstname, lastname, email, phonenumber, designation, image , fulltimestaff) VALUES ('$name','$firstname','$lastname','$email', '$phonenumber', '$designation' ,'$imagelocation', '$stafftype');";
 	 }else{
 		 	 $imagelocation = "staffmembers/".$fileName;	
- 	  $sql = "insert into PROFESSIONAL_STAFF (name, email, phonenumber, designation, image) VALUES ('$staffname','$email', '$phonenumber', '$designation' ,'$imagelocation');";
+ 	  $sql = "insert into PROFESSIONAL_STAFF (name, firstname, lastname , email, phonenumber, designation, image , fulltimestaff) VALUES ('$name','$firstname','$lastname','$email', '$phonenumber', '$designation' ,'$imagelocation' , '$stafftype');";
 
 	 }
 	 $result = mysql_query($sql);
@@ -99,8 +104,13 @@ session_write_close();
                             <tr class="Trow">
                                <td>  
                                <form action="AddStaffMember.php?submit=1" method="post" enctype="multipart/form-data" > 
-  									 Name   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	<input type="text" id="name" name="name" size="35"/> <br /><br />
+  									 First Name   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	<input type="text" id="firstname" name="firstname" size="35"/> <br /><br />
+                                      Last Name    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	<input type="text" id="lastname" name="lastname" size="35"/> <br /><br />
    									 Designation   &nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="designation" name="designation" size="35" /> <br /><br />
+                                       Staff Type : &nbsp;&nbsp;&nbsp;&nbsp;
+                                      <input type="radio" name="stafftype" id="fulltimestaff" value="1">Full Time&nbsp;&nbsp;&nbsp;&nbsp;
+									  <input type="radio" name="stafftype" id="otherstaff"  value="0">Other Staff <br ><br >
+                                      
    									 Email   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 <input type="text" id="email" name="email" size="35"/> <br /><br />
 									 Phone Number   <input type="text" id="phonenumber" name="phonenumber" size="35"/> <br /><br />
                                      Image     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="file" id="uploadFile" name="uploadFile" accept="image/*">
@@ -130,51 +140,4 @@ session_write_close();
          </td>
        </tr>
     </table>
- 
-<script type="text/javascript">
- 
- 
- function createNewMember(){
-	   var staffname = document.getElementById("name").value;
- 	   var phonenumber = document.getElementById("phonenumber").value;
-	    var email = document.getElementById("email").value;
-		 var designation = document.getElementById("designation").value;
-		    
-  			if (window.XMLHttpRequest) {
-						try {
-							req = new XMLHttpRequest();
-						} catch (e) {
-							req = false;
-						}
-					} else if (window.ActiveXObject) {
-						try {
-							req = new ActiveXObject("Msxml2.XMLHTTP");
-						} catch (e) {
-							try {
-								req = new ActiveXObject("Microsoft.XMLHTTP");
-							} catch (e) {
-								req = false;
-							}
-						}
-					}
-					if (req) {
-   						req.onreadystatechange = showStaffDataUpdate;
-						req.open("GET", "createStaffMember.php?staffname="+staffname+"&designation="+designation+"&email="+email+"&phonenumber="+phonenumber, true);
-						req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
-						req.send("");
- 					} else {
-						alert("Please enable Javascript");
-					}
-		}
-		
-		function showStaffDataUpdate(){
-			 
-					if (req.readyState == 4 && req.status == 200) {    
-					 var doc = eval("(" + req.responseText + ")");     																 						 alert( doc.recordupdated);
-					}
- 	 
- }
- 
-		 
-</script>
  

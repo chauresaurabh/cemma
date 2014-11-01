@@ -18,7 +18,7 @@ class InstrumentLogDAO extends TableHandler{
 		);
 	}
 	
-	function searchLogs($pagenum, $pageSize = 20, $fromDate, $toDate, $instruments, $orderby=''){
+	function searchLogs($pagenum, $pageSize = 20, $fromDate, $toDate, $instruments, $orderby='' , $ascordesc ){
 		$where = "";
 		if($fromDate!='00:00:0000' && $toDate != '00:00:0000'){
 			$where = " WHERE STR_TO_DATE(date, '%Y:%m:%d') between STR_TO_DATE('$fromDate', '%Y:%m:%d') and STR_TO_DATE('$toDate', '%Y:%m:%d')";
@@ -39,11 +39,17 @@ class InstrumentLogDAO extends TableHandler{
 			}
 			$where.=")";
 			
-		 echo $orderby;
-		}
+ 		}
 		//echo $pagenum." ".$fromDate." ".$toDate." ".$instrument." ".$where;
 		//$this->getList($pageSize, 'Date','DESC, Time DESC', $where, $pagenum);
-		$this->getList($pageSize, 'Time','DESC', $where, $pagenum);
+		$ordertype = "ASC";
+		if($ascordesc % 2 == 0)
+			$ordertype = "DESC";
+			
+		if( $orderby == '' )
+			$this->getList($pageSize, 'Time', $ordertype , $where, $pagenum);
+		else
+			$this->getList($pageSize,  $orderby , $ordertype , $where, $pagenum);
 	}
 	
  

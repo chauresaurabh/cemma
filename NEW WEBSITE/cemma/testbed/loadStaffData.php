@@ -14,12 +14,16 @@
 	 $result = mysql_query($sql);
 	$numRows =  mysql_affected_rows();
 	$outputStr="";
+	 
 	if($numRows > 0)
 	{
 		$outputStr="[ ";
 			while($row=mysql_fetch_array($result)){ 
 		$outputStr = $outputStr.
 		  " {'name':'".$row['name']."',
+			'firstname':'".$row['firstname']."',
+			'lastname':'".$row['lastname']."',
+			'fulltimestaff':".$row['fulltimestaff'].",
 		    'email': '".$row['email']."',
 			'phonenumber': '".$row['phonenumber']."',
 			'image': '".$row['image']."',

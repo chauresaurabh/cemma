@@ -78,11 +78,17 @@
 										$SelectedDB = mysql_select_db($dbname) or die ("Error in DB");
 										 $instrumentNo = $_GET['instrumentNo'];  
 									
-										 $sql = "SELECT * from PROFESSIONAL_STAFF";
+										 $sql = "SELECT * from PROFESSIONAL_STAFF order by fulltimestaff desc, lastname asc";
  										 $result = mysql_query($sql);
-										 while($row=mysql_fetch_array($result)){ 
+										 $count = 0;
+										 $staffseparator = 0;
 										 ?>
-									<tr>
+                                         <tr>
+                                         <?
+										 while($row=mysql_fetch_array($result)){ 
+										 $count ++;
+										 ?>
+										 
                                    		<td><img alt="" src="<? echo $row['image'] ; ?>" height="100" width="100"></td>
   										<td>
 											<font size="4" color="#990000" ><b>
@@ -100,11 +106,14 @@
 											?><br>
 											</font>												
 										</td>
-                                        
-									</tr>
-                                    
-                                    <? } ?>
- 									
+                                      
+                                    <?
+ 										if( $count%2==0){
+ 									?>
+                                    </tr> 
+                                    <tr>
+                                    <? }	} ?>
+ 									</tr>
 								</tbody>
 							</table>
 							

@@ -1,5 +1,7 @@
 <?
-	include_once('constants.php');
+ 
+	
+  	include_once('constants.php');
 
 	include_once(DOCUMENT_ROOT."includes/checklogin.php");
 	include_once(DOCUMENT_ROOT."includes/checkadmin.php");
@@ -9,33 +11,47 @@
 	}
 
  	$id =  $_GET['id'];
-	if(!isset($_POST['fromDateIns'])){
-		header('Location: statistics.php?id=$id');
-	}
-	
+ 
 	include (DOCUMENT_ROOT.'tpl/header.php');
 	include_once(DOCUMENT_ROOT."includes/action.php");
-
-	$fromDate = isset($_REQUEST["fromDateIns"]) ? $_REQUEST["fromDateIns"] : "";
+	
+	$fromDate="";
+	$toDate="";
+	$machineName="";
+	$pagenum="";
+	$submittype = $_GET['submittype'];
+	$orderby="";
+	$ascordesc = "";
+	if( $submittype!=1){
+			$fromDate = isset($_REQUEST["fromDateIns"]) ? $_REQUEST["fromDateIns"] : "";
+			$toDate = isset($_REQUEST["toDateIns"]) ? $_REQUEST["toDateIns"] : "";
+			$machineName = $_POST['Instrument'];
+			$pagenum = $_GET['resultpage'];
+			$ascordesc = 0;
+	}else{
+			$fromDate = $_GET['fromDateIns'];
+			$toDate = $_GET['toDateIns'];
+			$machineName = $_GET['Instrument'];
+			$pagenum = $_GET['resultpage'];
+			$orderby = $_GET['orderby'];
+			$ascordesc = $_GET['ascordesc'];
+  	}
+	 
 	$dateArray = explode('/',$fromDate);
 	$fromday = 	$dateArray[2];
 	$fromMonth = $dateArray[1];
 	$fromYear = $dateArray[0];
 	
-	$toDate = isset($_REQUEST["toDateIns"]) ? $_REQUEST["toDateIns"] : "";
 	$dateArray = explode('/',$toDate);
 	$today = $dateArray[2];
 	$toMonth = $dateArray[1];
 	$toYear = $dateArray[0];
 
-	$machineName = $_POST['Instrument'];
 	
 	$fromDate = "$fromYear:$fromMonth:$fromday";
 	$toDate = "$toYear:$toMonth:$today";
-	$pagenum = $_GET['resultpage'];
 	
- 	$orderby = $_POST['orderby'];
-	//echo "received " . $orderby;
+	 
  ?><head>
 
 <style>
@@ -59,13 +75,21 @@
 	<tr><td class="body" valign="top" align="center">
     <? include (DOCUMENT_ROOT.'tpl/admin-loged-in.php'); ?>
     <table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td class="body_resize">
-    	<table border="0" cellpadding="0" cellspacing="0" align="left"><tr>
+    	<table border="0" cellpadding="0" cellspacing="0" align="left" bgcolor="#FFFFFF"><tr>
        <td>
                 
         <h2 class = "Our"> Instrument Logs</h2>
         
-        <form action = "instrument_logs.php" method = "post" name="myForm">
-        <input type = "hidden" name="orderby" id = "orderby" value = "">
+        <form action = "instrument_logs.php" method = "get" name="staffform">
+         <input type="hidden" name="orderby" id="orderby" value="<?=$_GET['orderby']?>"/>
+         <input type="hidden" name="fromDateIns" id="fromDateIns" value="<?=$_GET['fromDateIns']?>"/>
+         <input type="hidden" name="toDateIns" id="toDateIns" value="<?=$_GET['toDateIns']?>"/>
+         <input type="hidden" name="Instrument" id="Instrument" value="<?=$_GET['Instrument']?>"/>
+          <input type="hidden" name="resultpage" id="resultpage" value="<?=$_GET['resultpage']?>"/>
+          <input type="hidden" name="id" id="id" value="<?=$_GET['id']?>"/>
+          <input type="hidden" name="ascordesc" id="ascordesc" value="<?= $ascordesc ?> "/> 
+           <input type="hidden" name="submittype" id="submittype" value=""/>
+             
         	<?
 			foreach ($_POST as $field=>$value) {
 				if($field != "Instrument")
@@ -77,7 +101,7 @@
 				  echo '<input type="hidden" name="'.$name.'" value="'.$val.'">';
 			 }
 			?>
-            <table width="500" border="0" cellpadding="5" cellspacing="5"> 
+            <table width="500" border="0" cellpadding="5" cellspacing="5" > 
                 <tr valign="top"> 
                     <td width="100%"> 
                         <div align="center" class="err" id="error" style="display:none">Error Detected</div>
@@ -98,7 +122,7 @@
                 
                 $rs = new InstrumentLogDAO();
 				 
-                $rs->searchLogs($pagenum, 50, $fromDate, $toDate, $machineName ,  $_POST['orderby']   );
+                $rs->searchLogs($pagenum, 50, $fromDate, $toDate, $machineName ,  $orderby , $ascordesc );
                 $currentRowNum = $rs->getStartRecord()*1; 
                 
                 ?> 
@@ -133,7 +157,7 @@
                         <td  >Instrument</td>
                         <td onclick="orderByAction(2)" style="cursor:pointer">Remark</td>
                         <td onclick="orderByAction(3)" style="cursor:pointer">Date</td>
-                        <td >Time</td>
+                        <td onclick="orderByAction(4)" style="cursor:pointer">Time</td>
                       </tr>
 						<?php
                             // If there are no records
@@ -161,7 +185,11 @@
                                 <?
                                 }
                                 ?>
-                                <tr class = "Trow" align = "center" style="font-size:12px;color:#000"	 id="entryrow<?=$count1?>">
+                                <? if($loopcount%2 == 0) {?>
+                               	 <tr class = "Trow" align = "center" style="font-size:12px;color:#000" id="entryrow<?=$count1?>">
+                                  <? } else {  ?>
+                             	 <tr class = "Trow" align = "center" style="font-size:12px;color:#000" bgcolor="#EFEFFF" id="entryrow<?=$count1?>">
+								  <? }?>
                                     <div  id="entry<?=$count1?>">
                                         <td id="entre<?=$count1?>"><? echo "$count1"; ?></td>
                                         <td id="entre3<?=$count1?>"><? echo $row['username']; ?></td>
@@ -212,20 +240,20 @@
  
 		function orderByAction(id){
 			 
-				switch(id){
-					case 1:
-						document.forms['myForm'].orderby.value='username';
-						break;
-					case 2:
-						document.forms['myForm'].orderby.value='remarks';					
-						break;						
-					case 3:
-						document.forms['myForm'].orderby.value='date';					
-						break;
- 				}
- 				alert(document.forms['myForm'].orderby.value);
- 				document.forms['myForm'].submit();
- 			
-		}
-   	
+			 if(id==1){
+				 		document.getElementById('orderby').value = "username";
+ 			 }else if(id==2){
+				 	 document.getElementById('orderby').value= "remarks";  
+ 			 }else if(id==3){
+					 document.getElementById('orderby').value= "Date";    	
+ 			 }else if(id==4){
+					 document.getElementById('orderby').value= "time";    	
+ 			 }
+			 document.getElementById('ascordesc').value = parseInt(document.getElementById('ascordesc').value) + 1;
+			     	 
+		  		document.getElementById('submittype').value = 1;
+ 				document.forms["staffform"].submit();
+ 		}
+		
+		 
    </script>

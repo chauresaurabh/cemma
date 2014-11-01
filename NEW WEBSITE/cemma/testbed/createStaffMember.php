@@ -9,14 +9,16 @@
 	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in DB");
   	 
-	 $staffname = $_GET['staffname'];  
+	 $firstname = $_GET['firstname'];  
+	 $lastname = $_GET['lastname'];  
+	  
 	 $email = $_GET['email'];
   	 $phonenumber = $_GET['phonenumber'];
    	 $designation = $_GET['designation'];
    
    	 $fileName = $_FILES["file"]["name"];
    
-	 $sql = "insert into PROFESSIONAL_STAFF (name, email, phonenumber, designation) VALUES ('$staffname','$email', '$phonenumber', '$designation' );";
+	 $sql = "insert into PROFESSIONAL_STAFF (firstname, lastname, email, phonenumber, designation) VALUES ('$firstname','$lastname','$email', '$phonenumber', '$designation' );";
 	 $result = mysql_query($sql);
 	 
 	 $numRows =  mysql_affected_rows();
