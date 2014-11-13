@@ -33,11 +33,11 @@
 	
 	
 	<? include (DOCUMENT_ROOT.'tpl/header.php'); ?>
-	<table border="0" cellpadding="0" cellspacing="0" width="100%">   
+	<table border="0" cellpadding="0" cellspacing="0" width="100%"  bgcolor="#FFFFFF">   
 	
 	<tr><td class="body" valign="top" align="center">
     <? include (DOCUMENT_ROOT.'tpl/admin-loged-in.php'); ?> 
-    <table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td class="body_resize">
+    <table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td class="body_resize"  bgcolor="#FFFFFF">
     	<table border="0" cellpadding="0" cellspacing="0" align="center">
         <tr>
       	<td>
@@ -78,9 +78,9 @@
                     <tr>
                     <td>
 					<input type="hidden" id="hiddencurrentuserid" value="<? echo $_SESSION['login'];?>" />
-					<input type="hidden" id="hiddeninstrumentname" value="<? echo $_GET['hiddeninstrumentname'];?>" />
+					<input type="hidden" id="calinstrumentname" value="<? echo $_GET['calinstrumentname'];?>" />
                         
-                        <select id="InstrName">
+                        <select id="InstrName" >
                             <option value="none">-- Select Instrument--</option>
                             <? for($i=0;$i<$instr_no;$i++) {
                                 print "<option value=\"$instr_name[$i]\">$instr_name[$i]</option>\n";
@@ -88,10 +88,12 @@
                         </select>
                         |
                     </td>
-                    <td><div class="offpeak-hours" style="width:20px;height:10px;border:1px solid #000;"></div></td><td><span style="font-size:12px;color:#000">Off-Peak time</span> | </td>
+                    <td ><span style="font-size:16px"> <? echo $_GET['calinstrumentname'] ;?> </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
+                    <td><div class="offpeak-hours" style="width:20px;height:10px;border:1px solid #000;"></div> </td><td><span style="font-size:12px;color:#000">Off-Peak time</span> | </td>
                     <td><div style="width:20px;height:10px;border:1px solid #000;background:#FFF"></div></td><td><span style="font-size:12px;color:#000">Peak time</span></td>
                     </tr>
                 </table>
+                 
             </div>
             <div id="loadingpannel" class="ptogtitle loadicon" style="display: none;"></div>
              <div id="errorpannel" class="ptogtitle loaderror" style="display: none;">Sorry, could not load your data, please try again later</div>

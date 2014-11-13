@@ -113,7 +113,7 @@ $toDate = "$toYear-$toMonth-$toDay";
 <div class="printcontent1">
 	<div class="hide">
 		<?
-		echo "<center>INVOICES</center>";
+		/*echo "<center>INVOICES</center>";
 
 		echo "From: $fromMonth/$fromYear To: $toMonth/$toYear";
 
@@ -139,7 +139,7 @@ $toDate = "$toYear-$toMonth-$toDay";
 
 		if ($status == -1) {echo " Status = Any";
 		} else {echo " Status =$status";
-		}
+		} */
 		?>
 	</div>
 </div>
@@ -152,7 +152,7 @@ $toDate = "$toYear-$toMonth-$toDay";
 				<td class="body_resize">
 				<table border="0" cellpadding="0" cellspacing="0" align="left">
 					<tr>
-						<td><h2 class = "Our"><img src = "images/h2_servises.gif" style="margin-right:10px; vertical-align:middle">Find Invoices</h2>
+						<td><h2 class = "Our"> Find Invoices</h2>
 						<form action = "searchInvoices.php" method="post" name="myForm">
 							<input type="hidden" name = "o" id = "o" value = "<?=$_POST['o']?>">
 							<input type = "hidden" name="orderby" id = "orderby" value = "<?=$_POST['orderby']?>">
@@ -310,7 +310,7 @@ $toDate = "$toYear-$toMonth-$toDay";
 									<tr>
 									<td class="t-bot2-800">
 
-									<a href = "statistics.php?open=invoice">Return to Query&nbsp&nbsp</a>
+									<a href = "statistics.php?id=1&open=invoice">Return to Query&nbsp&nbsp</a>
 									</td>
 									</tr>
 									</table>

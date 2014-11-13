@@ -262,6 +262,13 @@ include ("editRecordHelper.php");
 										document.getElementById("fromyear").options[5] = new Option("2012");
 										document.getElementById("fromyear").options[6] = new Option("2013");
 										document.getElementById("fromyear").options[7] = new Option("2014");
+										document.getElementById("fromyear").options[8] = new Option("2015");
+										document.getElementById("fromyear").options[9] = new Option("2016");
+										document.getElementById("fromyear").options[10] = new Option("2017");
+										document.getElementById("fromyear").options[11] = new Option("2018");
+										document.getElementById("fromyear").options[12] = new Option("2019");
+ 										document.getElementById("fromyear").options[13] = new Option("2020");
+
 										document.getElementById("tomonth").options[0] = new Option("Jan", "01");
 										document.getElementById("tomonth").options[1] = new Option("Feb", "02");
 										document.getElementById("tomonth").options[2] = new Option("Mar", "03");
@@ -283,7 +290,13 @@ include ("editRecordHelper.php");
 										document.getElementById("toyear").options[6] = new Option("2013");
 										document.getElementById("toyear").options[7] = new Option("2014");
 										document.getElementById("toyear").options[7].selected = true;
-
+										document.getElementById("toyear").options[8] = new Option("2015");
+										document.getElementById("toyear").options[9] = new Option("2016");
+										document.getElementById("toyear").options[10] = new Option("2017");
+										document.getElementById("toyear").options[11] = new Option("2018");
+										document.getElementById("toyear").options[12] = new Option("2019");
+										document.getElementById("toyear").options[13] = new Option("2020");
+										
 									</script></td>
 								</tr>
 								<tr>

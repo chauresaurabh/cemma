@@ -1,13 +1,18 @@
 @charset "utf-8";
-body { margin:0; padding:0; width:100%; background:url(../images/valtxtr.gif); font:normal 13px Arial, Helvetica, sans-serif; color:#666666; vertical-align:top; }
+body { margin:0; padding:0; width:100%;  font:normal 13px Arial, Helvetica, sans-serif; color:#666666; vertical-align:top; }
 html { padding:0; margin:0;}
+
+input { border-radius: 5px; moz-border-radius: 5px;  webkit-border-radius: 5px ;  border:1px #BBBBBB solid;  }
+fieldset { border-radius: 5px; moz-border-radius: 5px;  webkit-border-radius: 5px ;  border:1px #BBBBBB solid;  }
+select { border-radius: 5px; moz-border-radius: 5px;  webkit-border-radius: 5px ;  border:1px #BBBBBB solid;  }
+p { border-radius: 5px; moz-border-radius: 5px;  webkit-border-radius: 5px ;  border:1px #BBBBBB solid;  }
 
 /* main */
 .main {width:100%; padding:0; margin:0 auto; }
 .resize { width:955px; margin:0 auto; text-align:left;}
 /********** header **********/
 .association {float:right; padding:4px 0 0 0; width:300px;}
-.header {  background:url(../images/bg_gold.gif) ; top repeat-x; border-bottom:1px solid #fff;}
+.header {  background:url(../images/bg_red.jpg) ; top repeat-x; border-bottom:1px solid #fff;}
 
 .block_header {margin:0 auto; width:980px; text-align:left;}
 .top_menu { float:right; padding:4px 10px; font:normal 11px Tahoma, Geneva, sans-serif; color:#4e4e4e; line-height:1.6em;}
@@ -31,7 +36,7 @@ html { padding:0; margin:0;}
 .menu ul { padding:0; margin:0; list-style:none; height:37px; border:0; border-left:1px solid #d6d6d6;}
 .menu ul li { float:left; margin:0; padding:0; height:37px; border:0; border-left:1px solid #FFF; border-right:1px solid #d6d6d6;}
 .menu ul li a { float:left; padding:10px 25px; color:#6e6e6e; font:bold 13px Arial, Helvetica, sans-serif; text-decoration:none;}
-.menu ul li a:hover { color:#6e6e6e; background: url(../images/menu_hover.gif) left repeat-x;}e
+.menu ul li a:hover { color:#6e6e6e; background: url(../images/menu_hover.gif) left repeat-x;}
 
 
 
@@ -52,7 +57,7 @@ html { padding:0; margin:0;}
 .header_text ul.buttons li { float:left; padding:0 5px; margin:0;}
 
 /********** block index **********/
-.body { background:url(../images/valtxtr.gif); padding:0; margin:0; vertical-align:top; height:600px;}
+.body {  padding:0; margin:0; vertical-align:top; height:600px;}
 .body_resize { width:100%; margin:0 auto; padding:10px 0;text-align:left;vertical-align:top;}
 .body h2 { font:normal 24px Arial, Helvetica, sans-serif; color:#424a55; padding:5px 10px; margin:0;}
 .body h3 { font:bold 28px Arial, Helvetica, sans-serif; color:#424a55; padding:5px 5px; margin:0 0 5px 0;}
@@ -183,6 +188,13 @@ span.link:hover { color:#0066CC; text-decoration:none; font-size:11px; cursor:po
 .t-top div.pagin {font-size:11px; text-align:right; color:#0f75a0;font-family : Tahoma,Verdana,Arial; float:right; padding-right:10px;}
 .t-top div.pagin a {font-size:11px; color:#993300;font-family : Tahoma,Verdana,Arial;}
 
+.t-toprecs  div.title {font-size:14px; text-align:left; color:#b51c15;font-family : Tahoma,Verdana,Arial; padding-bottom:7px;  }
+.t-toprecs div.title2 {font-size:20px; text-align:left; color:#333333;font-family : Tahoma,Verdana,Arial; padding:9px 0 9px 15px;  }
+.t-toprecs div.details {font-size:12px; text-align:left; color:#0f75a0;font-family : Tahoma,Verdana,Arial; float:left;}
+.t-toprecs div.pagin {font-size:11px; text-align:right; color:#0f75a0;font-family : Tahoma,Verdana,Arial; float:right; padding-right:10px;}
+.t-toprecs div.pagin a {font-size:11px; color:#993300;font-family : Tahoma,Verdana,Arial;}
+
+
 .searchRowClass {background:#EEEEEE}
 /*right*/
 .right { width:600px;  margin:0px 5px 0px 5px; padding:5px 5px; vertical-align:top;}
@@ -222,8 +234,8 @@ span.link:hover { color:#0066CC; text-decoration:none; font-size:11px; cursor:po
 #contactform li.buttons input { padding:3px 0; margin:0; border:0; color:#FFF; float:left;}
 p.response { text-align:center; color:#2c2c2c; font: bold 11px Arial, Helvetica, sans-serif; line-height:1.8em; width:auto;}
 
-/********** footer **********/
-.footer { background: url(../images/bg_footer.gif); padding:20px 0; border-top:1px solid #fff;}
+/********** footer changed background**********/
+.footer { background: url(../images/footer_black.jpg); padding:20px 0; border-top:1px solid #fff;}
 .footer .resize p.footer_logo { float:right; padding:0; margin:0 10px;}
 .footer .resize div { color:#afafaf; font:normal 11px Arial, Helvetica, sans-serif; text-align: left;}
 .footer .resize div p {padding:0; margin:0; text-align:justify;}
@@ -231,6 +243,9 @@ p.response { text-align:center; color:#2c2c2c; font: bold 11px Arial, Helvetica,
 .footer .resize div a { color:#afafaf; font:normal 11px Arial, Helvetica, sans-serif; padding:0 5px;}
 .text_left { text-align: left; }
 
+.testclass {
+	
+}
 p.clr, .clr { clear:both; padding:0; margin:0; background:none;}
 
 li.bg, .bg { clear:both; border-top:1px solid #d7d7d7; padding:0; margin:0; background:none;}

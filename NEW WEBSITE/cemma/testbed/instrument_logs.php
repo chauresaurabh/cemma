@@ -154,7 +154,7 @@
                        <tr bgcolor="#F4F4F4" align="center" class="Ttitle">
                         <td style="cursor:pointer">Entry</td>
                         <td onclick="orderByAction(1)" style="cursor:pointer">User</td>
-                        <td  >Instrument</td>
+                        <td onclick="orderByAction(5)" style="cursor:pointer">Instrument</td>
                         <td onclick="orderByAction(2)" style="cursor:pointer">Remark</td>
                         <td onclick="orderByAction(3)" style="cursor:pointer">Date</td>
                         <td onclick="orderByAction(4)" style="cursor:pointer">Time</td>
@@ -222,7 +222,7 @@
     text-align: right;
     vertical-align: top;
     width: 800px;">
-					<a href = "statistics.php">Return to Query&nbsp&nbsp</a>
+					<a href = "statistics.php?id=2">Return to Query&nbsp&nbsp</a>
 				</td>
             </tr>
 		</table>
@@ -248,6 +248,8 @@
 					 document.getElementById('orderby').value= "Date";    	
  			 }else if(id==4){
 					 document.getElementById('orderby').value= "time";    	
+ 			 } else if(id==5){
+					 document.getElementById('orderby').value= "instrument";    	
  			 }
 			 document.getElementById('ascordesc').value = parseInt(document.getElementById('ascordesc').value) + 1;
 			     	 

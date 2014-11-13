@@ -81,7 +81,7 @@
 	}
 	</style>
 	</head>
-	<div class="printcontent1">
+	<!-- <div class="printcontent1"> -->
 	<div class="hide">
 	<?
 	echo "<center>Records</center>";
@@ -156,10 +156,10 @@
 	?>
 	</div>
 	</div>
-	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
 	<tr><td class="body" valign="top" align="center">
 	<? include (DOCUMENT_ROOT.'tpl/admin-loged-in.php'); ?>
-	<table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td class="body_resize">
+	<table border="0" cellpadding="0" cellspacing="0" align="center" ><tr><td class="body_resize">
 	<table border="0" cellpadding="0" cellspacing="0" align="left"><tr>
 	<td>
 	<h2 class = "Our"> Find Records</h2>
@@ -188,7 +188,7 @@
 	?>
 	<input type="hidden" name = "o" id = "o" value = "<?=$_POST['o']?>">
 	<input type = "hidden" name="orderby" id = "orderby" value = "<?=$_POST['orderby']?>">
-	<table width="100%" border="0" cellpadding="5" cellspacing="0">
+	<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">
 	<tr valign="top">
 	<td width="100%">
 	<div align="center" class="err" id="error" style="display:none">Error Detected</div>
@@ -199,7 +199,7 @@
 	</td>
 	</tr>
 	</table>
-	<table width="850" border="0" cellpadding="5" cellspacing="0">
+	<table width="950" border="0" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">
 	<tr><td class="t-top-800">
 	<?
 	$count1=0;
@@ -226,8 +226,7 @@
 	</div>
 	</td></tr>
 	<tr><td style="border-collapse:collapse; border-color:#ccd5cc; border-style:solid; border-width:1pt" >
-	<div class="printcontent2" id="div2">
-	<table align="center" cellpadding="0" cellspacing="0" class="Tcontent" width = "100%">
+	<div class="printcontent2" id="div2"> <table align="center" cellpadding="0" cellspacing="0" class="Tcontent" width = "100%" bgcolor="#FFFFFF">
 	<tbody>
 	<tr bgcolor="#F4F4F4" align="center" class="Ttitle">
 	<td onclick="javascript:doAction(1, 1)" style="cursor:pointer">Entry</td>
@@ -552,7 +551,11 @@
 	<?
 	}
 	?>
-	<tr class = "Trow" align = "center" style="font-size:13px;color:#000" id="entryrow<?=$count1?>">
+     <? if($loopcount%2 == 0) {?>
+	<tr class = "Trow" align = "center" style="font-size:12px;color:#000" id="entryrow<?=$count1?>">
+      <? } else {  ?>
+       <tr class = "Trow" align = "center" style="font-size:12px;color:#000" bgcolor="#EFEFFF" id="entryrow<?=$count1?>">
+	 <? }?>
 	<div id="entry<?=$count1?>">
 	<?
 	if ($row['WithOperator'] == 1)
@@ -579,8 +582,8 @@
 	$row['recordNum'] = $count1;?>
 	<td id="entre<?=$count1?>"><? echo "$count1"; ?></td>
 	<td id="entre2<?=$count1?>">&nbsp;<? echo "$var_month/$var_day/$var_year"; ?></td>
-	<td id="entre9<?=$count1?>">&nbsp;&nbsp;<? echo $row['Time'];?>&nbsp;&nbsp;</td>
-	<td id="entrel<?=$count1?>">&nbsp;&nbsp;<? echo $row['logouttime'];?>&nbsp;&nbsp;</td>
+	<td id="entre9<?=$count1?>">&nbsp;&nbsp;<? echo date("h:i:s A", strtotime($row['Time']));?>&nbsp;&nbsp;</td>
+	<td id="entrel<?=$count1?>">&nbsp;&nbsp;<? echo date("h:i:s A", strtotime($row['logouttime']));?>&nbsp;&nbsp;</td>
 	<td id="entre3<?=$count1?>"><? echo $row['Name']; ?></td>
 	<td id="entre4<?=$count1?>"><? echo $row['Qty']; ?></td>
 	<td id="entre5<?=$count1?>"><? echo $row['Machine']; ?></td>
@@ -660,7 +663,7 @@
 	</td>
 	</tr>
 	<tr>
-	<td class="t-bot2-800">
+	<td >
 	<?
 	$string .= "&fromyear=".$fromDatePost;
 	$string .= "&toyear=".$toDatePost;
@@ -676,47 +679,9 @@
 	$string .= "&type=".$type;
 	$string .= "&customerindex=".$customerindex;
 	?>
-	<a href = "statistics.php?open=record<?=$string?>">Return to Query&nbsp&nbsp</a>
+	<a href = "statistics.php?id=0&open=record<?=$string?>">Return to Query&nbsp&nbsp</a>
 	</td>
-	<!--
-	<td>
-	11/8/2010
-	<img src = "images/printer.png" class = "printImg"
-	onclick="window.open('PrintRecords.php',
-	'windowname2',
-	'width=1000, \
-	height=700, \
-	directories=no, \
-	location=no, \
-	menubar=no, \
-	resizable=no, \
-	scrollbars=1, \
-	status=no, \
-	toolbar=no');
-	return false;" value=" Print " height = "20" width = "20" style="cursor:pointer"/>
-	-->
-	<?
-	// pass variables for printing in PrintRecords.php
-	/*
-	echo "<input type=\"hidden\" name=\"frommonth1\" value=\"" . $fromMonth . "\" />";
-	echo "<input type=\"hidden\" name=\"fromyear1\" value=\"" . $fromYear . "\" />";
-	echo "<input type=\"hidden\" name=\"tomonth1\" value=\"" . $toMonth . "\" />";
-	echo "<input type=\"hidden\" name=\"toyear1\" value=\"" . $toYear . "\" />";
-	echo "<input type=\"hidden\" name=\"MachineName1\" value=\"" . $machineName . "\" />";
-	echo "<input type=\"hidden\" name=\"CustomerName1\" value=\"" . $customerName . "\" />";
-	echo "<input type=\"hidden\" name=\"OperatorName1\" value=\"" . $operatorName . "\" />";
-	echo "<input type=\"hidden\" name=\"minQty1\" value=\"" . $minQty . "\" />";
-	echo "<input type=\"hidden\" name=\"maxQty1\" value=\"" . $maxQty . "\" />";
-	echo "<input type=\"hidden\" name=\"minTotal1\" value=\"" . $minTotal . "\" />";
-	echo "<input type=\"hidden\" name=\"maxTotal1\" value=\"" . $maxTotal . "\" />";
-	echo "<input type=\"hidden\" name=\"woperator1\" value=\"" . $woperator . "\" />";
-	echo "<input type=\"hidden\" name=\"generated1\" value=\"" . $generated . "\" />";
-	echo "<input type=\"hidden\" name=\"type1\" value=\"" . $type . "\" />";
-	//echo "<input type=\"hidden\" name=\"pageId1\" value=\"" . $pagenum . "\" />";
-	*/
-	// echo "<a href='PrintRecords.php?pageId1=1&frommonth1=$fromMonth&fromyear1=$fromYear&tomonth1=$toMonth&toyear1=$toYear&MachineName1=$machineName&CustomerName1=$customerName&OperatorName1=$operatorName&minQty1=$minQty&maxQty1=$maxQty&minTotal1=$minTotal&maxTotal1=$maxTotal&woperator1=$woperator&generated1=$generated&type1=$type'>..</a>";
-	?>
-	<!-- a -->
+ 
 	</tr>
 	</table>
 	</form>

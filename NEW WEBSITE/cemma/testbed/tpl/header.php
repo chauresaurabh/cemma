@@ -242,7 +242,7 @@
 			
 			function changehiddeninstrument(instrumentname){
 			
-					   	alert(' inside change instrument '+instrumentname); 
+					//   	alert(' inside change instrument '+instrumentname); 
 				//setTimeout(function(){ }, 2000);
  				$("#caltoolbar div.fcurrent").each(function() {
                     $(this).removeClass("fcurrent");
@@ -252,25 +252,25 @@
                 if (p && p.datestrshow) {
                     $("#txtdatetimeshow").text(p.datestrshow);
                 }
-				if($("#InstrName").val()=="Akashi 002B - TEM"){
+				if(instrumentname=="Akashi 002B - TEM"){
 					changeCalBackGround($('.akashi').css('background-color'));
-				} else if($("#InstrName").val()=="DeltaVision OMX") {
+				} else if(instrumentname=="DeltaVision OMX") {
 					changeCalBackGround($('.delta').css('background-color'));
-				} else if($("#InstrName").val()=="JEOL 100CX - TEM") {
+				} else if(instrumentname=="JEOL 100CX - TEM") {
 					changeCalBackGround($('.jeol-100cx').css('background-color'));
-				} else if($("#InstrName").val()=="JEOL JEM-2100F") {
+				} else if(instrumentname=="JEOL JEM-2100F") {
 					changeCalBackGround($('.jeol-2100').css('background-color'));
-				} else if($("#InstrName").val()=="JEOL JIB-4500 - FIB SEM") {
+				} else if(instrumentname=="JEOL JIB-4500 - FIB SEM") {
 					changeCalBackGround($('.jeol-4500').css('background-color'));
-				} else if($("#InstrName").val()=="JEOL JSM-6610 - SEM") {
+				} else if(instrumentname=="JEOL JSM-6610 - SEM") {
 					changeCalBackGround($('.jeol-6610').css('background-color'));
-				} else if($("#InstrName").val()=="JEOL JSM-7001 - SEM") {
+				} else if(instrumentname=="JEOL JSM-7001 - SEM") {
 					changeCalBackGround($('.jeol-7001').css('background-color'));
-				} else if($("#InstrName").val()=="Tousimis 815 - Critical Point Dryer") {
+				} else if(instrumentname=="Tousimis 815 - Critical Point Dryer") {
 					changeCalBackGround($('.tousimis').css('background-color'));
-				} else if($("#InstrName").val()=="Ultramicrotomes") {
+				} else if(instrumentname=="Ultramicrotomes") {
 					changeCalBackGround($('.ultramicrotomes').css('background-color'));
-				} else if($("#InstrName").val()=="Kratos AXIS Ultra") {
+				} else if(instrumentname=="Kratos AXIS Ultra") {
 					changeCalBackGround($('.kratos').css('background-color'));
 				} else {
 					changeCalBackGround('#c3d9ff');
@@ -316,9 +316,11 @@
                 }
             });
            
-		   var hiddeninstrumentname =  $("#hiddeninstrumentname").val();  
-			if (typeof(hiddeninstrumentname) != 'undefined' && hiddeninstrumentname != null && hiddeninstrumentname!=''){
- 					changehiddeninstrument(hiddeninstrumentname);
+		   var calinstrumentname =  $("#calinstrumentname").val();  
+			if (typeof(calinstrumentname) != 'undefined' && calinstrumentname != null && calinstrumentname!=''){
+ 					setTimeout(function(){
+											changehiddeninstrument(calinstrumentname);
+ 						 }, 400);
 			}
         });
     </script>    
@@ -348,7 +350,7 @@
              
             <tr>
                 <td align="center">
-                      <span style="font-size:35px; font-family: 'Times New Roman', Times, serif; color:#000">Center for Electron Microscopy and Microanalysis  </span>
+                      <span style="font-size:35px; font-family: 'Times New Roman', Times, serif; color:#FFF">Center for Electron Microscopy and Microanalysis  </span>
                  </td>
             </tr>
 			<tr>

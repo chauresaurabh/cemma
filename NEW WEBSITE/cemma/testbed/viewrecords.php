@@ -56,7 +56,7 @@ $result = mysql_query($sql);
 
     <table width="900" border="0" cellpadding="5" cellspacing="0">
         <tr>
-        	<td class="t-top">
+        	<td class="t-toprecs">
             <div class="title">Records for <? echo $name ?> between <? echo $frommonth ?> / <? echo $fromyear ?> and <? echo $tomonth ?> / <? echo $toyear ?></div>
             <div class="details">
 			
@@ -179,13 +179,13 @@ else
 		$var_day2 = $date_array2[2];
 		
 		
-		echo '<tr class = "Trow" align = "center">';
+		echo '<tr align = "center">';
 		
 		
 		?>
 			<td><? echo "$var_month/$var_day/$var_year"; ?></td>
 				<td><? echo $row['Qty']; ?></td>
-				<td><? echo $row['Machine']; ?></td>
+				<td bgcolor="#0066FF"><? echo $row['Machine']; ?></td>
 				<td><? echo $row['Operator']; ?></td>
 				<td><? echo $withoperator; ?> </td>
 				<td><?php 

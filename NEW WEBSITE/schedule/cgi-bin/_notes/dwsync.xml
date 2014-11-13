@@ -131,4 +131,5 @@
 <file name="zcreateNewUser.php" server="cemma-usc.net" local="130584372804110040" remote="130555933800000000" Dst="2" />
 <file name="zvalidateCreateNewUser.php" server="cemma-usc.net" local="130584372810264766" remote="130556796000000000" Dst="2" />
 <file name="validatecaptcha.php" server="cemma-usc.net" local="130585988809431017" remote="130586096400000000" Dst="2" />
+<file name="kratos.pl" server="cemma-usc.net" local="130602202072802964" remote="130602309600000000" Dst="1" />
 </dwsync>

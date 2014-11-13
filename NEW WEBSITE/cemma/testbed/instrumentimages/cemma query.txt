@@ -1,0 +1,5 @@
+
+
+
+
+SELECT table_schema, table_name, column_name, character_set_name, collation_name FROM information_schema.columns WHERE table_schema='db260244667' and collation_name != 'latin1_general_ci' ORDER BY table_schema, table_name,ordinal_position 

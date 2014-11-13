@@ -42,21 +42,21 @@
 			<li class="top"><a href="#nogo2" id="products" class="top_link"><span class="down">Manage</span></a>
 				<ul class="sub">
 					<? if($_SESSION['ClassLevel'] == 1){ ?>
-						<li><a href="#nogo3" class="fly">Manage Customers</a>
+						<li><a href="#nogo3" class="fly">  Customers</a>
 								<ul>
                  					<li><a href="current_customers.php">Current</a></li>
 									<li><a href="editCustomer.php?id=&submit_mode=add">New Customer</a></li>
 									<li><a href="ArchivedCustomers.php">Archived</a></li>
 								</ul>
 						</li>
-                        <li><a href="#nogo3" class="fly">Manage Calendar</a>
+                        <li><a href="#nogo3" class="fly">  Calendar</a>
                         	<ul>
 								<li><a href="manageCalendar.php">View Events</a></li>
                                 <li><a href="addFullDayEvent.php">Add Event</a></li>
                             </ul>
                         </li>
 					<? }?>
-					<li><a href="#nogo3" class="fly">Manage Instruments</a>
+					<li><a href="#nogo3" class="fly">  Instruments</a>
 							<ul>
 								<li><a href="instruments.php">Instruments</a></li>
 								<? if($_SESSION['ClassLevel'] == 1){ ?>
@@ -65,7 +65,7 @@
 								<? }?>
 							</ul>
 					</li>
-					<li><a href="#nogo3" class="fly">Manage Users</a>
+					<li><a href="#nogo3" class="fly">  Users</a>
 							<ul>
 								<li><a href="currentusers.php">Current</a></li>
 								<li><a href="NewRequestsUsers.php">New Requests</a></li>
@@ -77,14 +77,14 @@
 							</ul>
 					</li>
 					<? if($_SESSION['ClassLevel'] == 1){ ?>
-						<li><a href="#no" class="fly">Manage Schools</a>
+						<li><a href="#no" class="fly">  Schools</a>
                         	<ul>
 								<li><a href="AddSchool.php?id=&submit_mode=add">New School</a></li>
                                 <li><a href="schools.php">Current</a></li>
                             </ul>
                         </li>
                     
-						<li><a href="#nogo3" class="fly">Manage Forms</a>
+						<li><a href="#nogo3" class="fly">  Forms</a>
 								<ul>
 									<li><a href="Permit.php">Permit</a></li>
 									<li><a href="Manual.php">Manual</a></li>
@@ -92,6 +92,13 @@
                                     <li><a href="StaffMembers.php">Staff Members</a></li>
 								</ul>
 						</li>
+                        
+                        <li><a href="#nogo3" class="fly">  Web Page</a>
+								<ul>
+                                     <li><a href="StaffMembers.php">Staff Members</a></li>
+								</ul>
+						</li>
+                        
 					<? }?>
 				</ul>
 			</li>
@@ -160,10 +167,29 @@
             </ul>
         </li>
          
-       <li class="top"><a href="#nogo2" id="products" class="top_link"><span class="down">Calendar</span></a>
+       <li class="top"><a href="schedule_event.php" id="products" class="top_link"><span class="down">Calendar</span></a>
 		 <ul class="sub">
-				 
-			 <li><a href="schedule_event.php">Calendar</a></li>
+			 <?
+			 if($_SESSION['ClassLevel'] ==1 ){ 
+			 	$userName = $_SESSION['login'];
+				include (DOCUMENT_ROOT.'includes/DatabaseOld.php');
+				$instrsql = "select InstrumentName from instrument, instr_group, user where user.UserName = '$userName' and instr_group.Email=user.Email and instrument.InstrumentNo = instr_group.InstrNo order by InstrumentName";
+				
+				$instrresult = mysql_query($instrsql) or die(mysql_error());
+			 
+					while($instrrow=mysql_fetch_array($instrresult))
+					{
+ 			?>
+						<li><a href="schedule_event.php?calinstrumentname=<?= $instrrow['InstrumentName'];?>"><?= $instrrow['InstrumentName'];?> </a></li>
+				   <?  
+                    }
+                    ?>
+			 <?
+				 } 
+			 else{
+			 ?>	 
+				 <li><a href="schedule_event.php">Calendar</a></li>
+             <? } ?>
  	 	</ul>
 	  </li>
         

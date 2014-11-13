@@ -36,11 +36,11 @@
 	
 	
 	<? include (DOCUMENT_ROOT.'tpl/header.php'); ?>
-	<table border="0" cellpadding="0" cellspacing="0" width="100%">   
+	<table border="0" cellpadding="0" cellspacing="0" width="100%"  bgcolor="#FFFFFF">   
 	
 	<tr><td class="body" valign="top" align="center">
     <? include (DOCUMENT_ROOT.'tpl/admin-loged-in.php'); ?> 
-    <table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td class="body_resize">
+    <table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td class="body_resize" bgcolor="#FFFFFF">
     	<? //echo DOCUMENT_ROOT.'tpl/admin-loged-in.php'; ?>
         <table cellpadding="0" cellspacing="0" border="0" width="820px">
         <tr><td>

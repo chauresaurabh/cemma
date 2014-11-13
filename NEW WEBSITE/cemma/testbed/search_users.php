@@ -283,7 +283,7 @@ function removeitemfromreport(id) {
     text-align: right;
     vertical-align: top;
     width: 800px;">
-					<a href = "statistics.php">Return to Query&nbsp&nbsp</a>
+					<a href = "statistics.php?id=3">Return to Query&nbsp&nbsp</a>
 				</td>
             </tr>
 		</table>

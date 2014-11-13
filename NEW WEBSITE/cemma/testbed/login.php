@@ -110,10 +110,14 @@ function forgotPassword(){
 							}
 							?>
 							<form action = "authentication/authentication.php" method = "post">
-                                <tr><td align="right" class="lg-txt loginForm">Username:</td><td><input id="username" name="username" type="text" class="text loginForm" /></td></tr>
-                                <tr><td align="right" class="lg-txt loginForm">Password:</td><td><input name="password" type="password" class="text loginForm" /></td></tr>
+                             
+                                <tr><td align="right" class="lg-txt loginForm">Username:</td><td>
+                                <input id="username" name="username" type="text" class="text loginForm" style="-moz-border-radius: 15px; border-radius: 15px; height:25px; color:#000"/></td></tr>
+                               
+                                <tr><td align="right" class="lg-txt loginForm">Password:</td><td>
+                                <input name="password" type="password" class="text loginForm" style="-moz-border-radius: 15px; border-radius: 15px;  height:25px; color:#000"/></td></tr>
                                 <tr><td colspan="2" align="center">
-                                <input name="login" type="submit" id="login" value="" class="btnlogin loginForm">                            </form>
+                                <input name="login" type="submit" id="login" value="" class="btnlogin loginForm">                            </form> 
                             
                             </td>
                             </tr>
@@ -123,8 +127,8 @@ function forgotPassword(){
 						   </tr>
                            <tr>
                            		<td colspan="2" align="center">
-				 <input type="button" value="" onClick="forgotPassword()"	class="btnForgotPassword loginForm">                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 <input  type="button" value="" class="btnForgotId" onclick="forgotUsername();">
+				 <button value="" onClick="forgotPassword()" style="border-radius: 4px; moz-border-radius: 4px;  webkit-border-radius: 4px; height: 25px; width: 110px;  border:1px #BBBBBB solid; font-size:11px; cursor:pointer   " >Forgot Password</button>                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <button  type="button" value=""style="border-radius: 4px; moz-border-radius: 4px;  webkit-border-radius: 4px; height: 25px; width: 110px;  border:1px #CDCDCD solid; font-size:11px;  cursor:pointer"  onclick="forgotUsername();">Forgot Username</button>
                                  </td>
                            </tr>
                            <tr>
@@ -137,8 +141,7 @@ function forgotPassword(){
         </div>
         
         
-        <h2 class="horline"></h2>
-        
+         
       </td></tr></table>
       <div class="clr"></div>
 </td></tr></table>

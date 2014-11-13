@@ -8,13 +8,14 @@ $html_content="";
 
 	if($name=="akashi")				{	$instrument_no="4";		}
 	elseif($name=="jeol")			{	$instrument_no="2";		}
-	elseif($name=="jeol-jsm-6610")	{	$instrument_no="36";	}
-	elseif($name=="jib-4500")		{	$instrument_no="45";	}
-	elseif($name=="jsm-7001")		{	$instrument_no="37";	}
+	elseif($name=="jeol-jsm-6610")	{	$instrument_no="13";	}
+	elseif($name=="jib-4500")		{	$instrument_no="12";	}
+	elseif($name=="jsm-7001")		{	$instrument_no="11";	}
 	elseif($name=="leica-em-uc6")	{	$instrument_no="9";		}
 	elseif($name=="tousimis-815")	{	$instrument_no="10";	}
-	elseif($name=="jem-2100f")	{	$instrument_no="47";	}
-	elseif($name=="omx")	{	$instrument_no="52";	}
+	elseif($name=="jem-2100f")	{	$instrument_no="14";	}
+	elseif($name=="omx")	{	$instrument_no="15";	}
+	elseif($name="kratos") { $instrument_no="17"; }
 	else{}
 	
 	//$html_content.=$name;
@@ -49,14 +50,15 @@ $html_content="";
 			$html_content.="<tr>";
 			$html_content.="<td align=\"center\">".$row['InstrumentName']."</td>";
 			if($row['Availablity']=="1")
-				$html_content.="<td align=\"center\">Yes</td>";
+				$html_content.="<td align='center' style='font-weight:bold;color:green'>Yes</td>";
 			elseif($row['Availablity']=="0")
-				$html_content.="<td align=\"center\">No</td>";
+				$html_content.="<td align='center' style='font-weight:bold;color:red'>No</td>";
 			else
 				$html_content.="<td align=\"center\">??</td>";
 			$html_content.="<td align=\"center\">".$row['Comment']."</td>";
 			$html_content.="</tr>";
 		}while($row = mysql_fetch_array($result));
+		$html_content.=" </table></body></html>";
 	}
 
 	//$resultString .= sprintf("1|%s|", "Everything was ok");

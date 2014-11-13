@@ -365,6 +365,21 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
 		i=0;
 		j=0;
 		k=0;
+		
+		var logintime = document.getElementById('logintime').value;
+		var logouttime = document.getElementById('logouttime').value;
+			
+ 		var loginsplit = logintime.split(":");
+		var logoutsplit = logouttime.split(":"); 
+		
+		var loginhr = loginsplit[0];
+		var loginmin = loginsplit[1];
+		
+		var logouthr = logoutsplit[0];
+		var logoutmin = logoutsplit[1];
+		 
+		document.getElementById('logintime').value=loginhr+":"+loginmin;
+		document.getElementById('logouttime').value=logouthr+":"+logoutmin;
 
 		document.getElementById("MachineName").options[i++] = new Option("Select the Instrument", "Default");
 		document.getElementById("OperatorName").options[k++] = new Option("Select the Operator", "Default");
@@ -519,8 +534,8 @@ $accountSql="SELECT AccountNum FROM user WHERE ActiveUser='active' AND Name LIKE
 			var unit = theform.unit.value;
 			var total = theform.total.value;
 
-			var logintime = theform.logintime.value;
-			var logouttime = theform.logouttime.value;
+			var logintime = theform.logintime.value+":00";
+			var logouttime = theform.logouttime.value+":00";
 			 
 			var CemmaStaff = "NA";
 			

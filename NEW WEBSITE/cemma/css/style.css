@@ -1,7 +1,7 @@
 @charset "utf-8";
 body { margin:0; padding:0; width:100%; background:#ffffff; font:normal 13px Arial, Helvetica, sans-serif; color:#666666; vertical-align:top; }
 html { padding:0; margin:0;}
-
+ 
 /* main */
 .main {width:100%; padding:0; margin:0 auto; }
 .resize { width:955px; margin:0 auto; text-align:left;}
@@ -205,8 +205,8 @@ span.link:hover { color:#0066CC; text-decoration:none; font-size:11px; cursor:po
 #contactform li.buttons input { padding:3px 0; margin:0; border:0; color:#FFF; float:left;}
 p.response { text-align:center; color:#2c2c2c; font: bold 11px Arial, Helvetica, sans-serif; line-height:1.8em; width:auto;}
 
-/********** footer **********/
-.footer { background: url(../images/bg_footer.gif); padding:20px 0; border-top:1px solid #fff;}
+/********** footer changed background**********/
+.footer { background: url(../images/footer_black.jpg); padding:20px 0; border-top:1px solid #fff;}
 .footer .resize p.footer_logo { float:right; padding:0; margin:0 10px;}
 .footer .resize div { color:#afafaf; font:normal 11px Arial, Helvetica, sans-serif; text-align: left;}
 .footer .resize div p {padding:0; margin:0; text-align:justify;}
