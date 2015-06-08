@@ -141,7 +141,7 @@
 	
 	//Get Rate(UnitPrice) of Instrument
 	$sql = "SELECT * FROM rates WHERE machine_name = '$instrument'";
-	$result3 = mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+	$result3 = mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 	
 	$instrNo  = 0 ;
 	$trainingRate = 0;
@@ -160,7 +160,7 @@
 	
 	//Get Training Rate
 	$sqlInstr = "SELECT * FROM instr_group WHERE InstrNo = '$instrNo' and Email='$userEmail' ";
-	$resultInstr = mysql_query($sqlInstr) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+	$resultInstr = mysql_query($sqlInstr) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 		
 	if(mysql_num_rows($resultInstr)==0){
 		$status = "ERROR";
@@ -185,36 +185,36 @@
 						$finalQty =  $UsedTrainingHrs-$qty ;
 							if(  $finalQty  >= 0  ){
  								$sqlss = "UPDATE instr_group SET UsedTrainingHrs = '$finalQty' where InstrNo = '$instrNo' and Email='$userEmail' ";	
- 								mysql_query($sqlss) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+ 								mysql_query($sqlss) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
  						
 						$finalTotal = $trainingRate * $qty;
 	$sql = "INSERT INTO Customer_data (Name, Machine, Qty, Date, Time, Operator, UserCharged, Type, WithOperator, CemmaStaffMember, Unit, Total, Manager_ID, Customer_ID, OverriddenFlag, DiscountQty, isTraining, logouttime ) 
 				VALUES ('$customerName', '$instrument', '$qty', '$loginYear-$loginMonth-$loginDay', '$loginTime', '$operator','$userCharged', '$type', '$withOperator', '$operatorSelected', '$trainingRate', '$finalTotal', '$mid', '$cid', '$overriddenFlag', '$unit' , '$isTraining' ,'$logoutTime' )";
-			mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+			mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 			
 							}else if( $finalQty < 0 ){
 								// insert flag for training check
 								$finalQty123 = 0.0;
  $sqlss123 = "UPDATE instr_group SET UsedTrainingHrs = '$finalQty123' where InstrNo = '$instrNo' and Email='$userEmail' ";	
- 								mysql_query($sqlss123) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+ 								mysql_query($sqlss123) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
  						
 								$finalTotal = $trainingRate * $UsedTrainingHrs;
 	$sql = "INSERT INTO Customer_data (Name, Machine, Qty, Date, Time, Operator, UserCharged, Type, WithOperator, CemmaStaffMember, Unit, Total, Manager_ID, Customer_ID, OverriddenFlag, DiscountQty, isTraining , logouttime) 
 				VALUES ('$customerName', '$instrument', '$UsedTrainingHrs', '$loginYear-$loginMonth-$loginDay', '$loginTime', '$operator','$userCharged', '$type', '$withOperator', '$operatorSelected', '$trainingRate', '$finalTotal', '$mid', '$cid', '$overriddenFlag', '$unit', '$isTraining' , '$logoutTime' )";
-			mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+			mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 						
 								$finalQty = abs($finalQty);
 								$finalTotal = $unit * $finalQty;
 
 								$sql = "INSERT INTO Customer_data (Name, Machine, Qty, Date, Time, Operator, UserCharged, Type, WithOperator, CemmaStaffMember, Unit, Total, Manager_ID, Customer_ID, OverriddenFlag, DiscountQty , logouttime) 
 				VALUES ('$customerName', '$instrument', '$finalQty', '$loginYear-$loginMonth-$loginDay', '$loginTime', '$operator','$userCharged', '$type', '$withOperator', '$operatorSelected', '$unit', '$finalTotal', '$mid', '$cid', '$overriddenFlag', '$unit' , '$logoutTime' )";
-			mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+			mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 			
 							}
 			}else{
 				$sql = "INSERT INTO Customer_data (Name, Machine, Qty, Date, Time, Operator, UserCharged, Type, WithOperator, CemmaStaffMember, Unit, Total, Manager_ID, Customer_ID, OverriddenFlag, DiscountQty , logouttime) 
 				VALUES ('$customerName', '$instrument', '$qty', '$loginYear-$loginMonth-$loginDay', '$loginTime', '$operator','$userCharged', '$type', '$withOperator', '$operatorSelected', '$unit', '$total', '$mid', '$cid', '$overriddenFlag', '$unit' , '$logoutTime' )";
-			mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+			mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 			}
 		}
 	

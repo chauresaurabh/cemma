@@ -33,7 +33,7 @@ function updateRecords($invoiceno, $Gdate){
 	$BalUsed=0;
 	$counter=0;
   	$sql11 = "SELECT Balance_Used,Name FROM Customer_data WHERE invoiceno = '$invoiceno' and Gdate = '$Gdate'";
-	$result11=mysql_query($sql11) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result11=mysql_query($sql11) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	
 
 

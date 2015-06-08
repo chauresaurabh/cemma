@@ -41,8 +41,8 @@
 	else
 	{
 		$sql1 = "INSERT INTO Invoice VALUES ('', ". $_SESSION['mid'].", curdate(), '$invoiceno', '$curyear', '$name', '$fromdate', '$todate', '$total_amount', '$pq', 'Unpaid', '$manager_name', '$begbalance', '$balance')";
-		mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 		
-		#mysql_query("UPDATE Customer_data SET Generated = '1', Gdate = curdate(), invoiceno = '$invoiceno' WHERE Number = '$number'") or die( "An error has ocured in query2: ");
+		mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 		
+		#mysql_query("UPDATE Customer_data SET Generated = '1', Gdate = curdate(), invoiceno = '$invoiceno' WHERE Number = '$number'") or die( "An error has occurred in query2: ");
 		
 		/*
 		$output='name='.$name.' | ';
@@ -61,19 +61,19 @@
 		
 		if($payment_type=='3')
 		{
-			mysql_query("UPDATE Advance_Payment SET Balance = '$balance' WHERE Customer_Name = '$name'") or die( "An error has ocured in query3: ");
+			mysql_query("UPDATE Advance_Payment SET Balance = '$balance' WHERE Customer_Name = '$name'") or die( "An error has occurred in query3: ");
 		}
 	}
 	
 	for($i=0; $i<count($checked_numbers_arr); $i++)
 	{
 		$number = $checked_numbers_arr[$i];
-		mysql_query("UPDATE Customer_data SET Generated = '1', Gdate = curdate(), invoiceno = '$invoiceno' WHERE Number = '$number'")  or die ("An error has ocured in query5");
+		mysql_query("UPDATE Customer_data SET Generated = '1', Gdate = curdate(), invoiceno = '$invoiceno' WHERE Number = '$number'")  or die ("An error has occurred in query5");
 		#$output .= $number.',';
 	}
 	/*
 	$sql2 = "SELECT * FROM Customer_data WHERE Date between '$fromdate' and '$todate' and Generated = '0' and Name = '$name' and Manager_ID = ". $_SESSION['mid']." order by Date";
-	$result2 = mysql_query($sql2) or die("An error has ocured in query4");
+	$result2 = mysql_query($sql2) or die("An error has occurred in query4");
 
 	$cnt = 0;
 	$cc = 0;

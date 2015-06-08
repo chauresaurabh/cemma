@@ -108,13 +108,13 @@ if($_GET['submit']!='yes' )
 	 include_once('constants.php');
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 
 // email id's from user
 	$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt FROM user where UserClass =2 and ActiveUser='active' OR ActiveUser IS NULL ORDER BY FirstName";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$totalemailcountuser=0;
 
@@ -238,7 +238,7 @@ else //after clicking on email button
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	session_start();
 
-	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
  
  	$sql="delete from INSTRUMENT_REQUEST_STATUS where Email ='$emailUser' and InstrumentName='$instrName' "; 	

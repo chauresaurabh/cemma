@@ -17,7 +17,7 @@
 		$instrNo = $_GET['instrNo'];	
  		 
 		$sql = "DELETE from INSTRUMENT_REQUEST_STATUS where UserName='$userName' and InstrNo='$instrNo'";
-		mysql_query($sql) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+		mysql_query($sql) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 		
 	}
 	
@@ -83,7 +83,7 @@
 
 			include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 			$sql13 = "SELECT UserName, Email, InstrNo, InstrumentName, DATE_FORMAT(requested_date, '%m-%d-%Y') as requested_date from INSTRUMENT_REQUEST_STATUS";
-			$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+			$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 			
 			?>     
 						

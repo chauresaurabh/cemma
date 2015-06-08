@@ -544,7 +544,7 @@ array[2]=2;*/
 											<select id="SchoolName_Invoice"  name="SchoolNameI" onchange="getCustomerList_Record_School(this)" style="font-weight:normal; width:50mm">
 												<?
 													$sql_fs = "SELECT SchoolNo, SchoolName FROM Schools";
-													$result_fs=mysql_query($sql_fs) or die( "An error has ocured in query: " .mysql_error (). ":" .mysql_errno ()); 
+													$result_fs=mysql_query($sql_fs) or die( "An error has occurred in query: " .mysql_error (). ":" .mysql_errno ()); 
 													while($row_fs = mysql_fetch_array($result_fs))
 													{
 														echo "<option value='".$row_fs['SchoolNo']."'>";

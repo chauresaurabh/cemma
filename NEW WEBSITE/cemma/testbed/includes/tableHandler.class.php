@@ -111,7 +111,7 @@ class TableHandler
 		foreach( $this->fields as $field )
 		$temp[] = $field."='".addslashes($env[$field])."'";
 		$query = "UPDATE ".$this->table." set ".join(",",$temp)."    where ".$this->id."='$id'";
-		mysql_query($query) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ());  
+		mysql_query($query) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ());  
 	}
 	 
 	 
@@ -126,7 +126,7 @@ class TableHandler
 		}
 		$query = "INSERT INTO ".$this->table." (".implode(',', $field_name).") VALUES (".join(",",$field_value).") ";
 		//echo ">>".$query;exit;
-		mysql_query($query) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ());  
+		mysql_query($query) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ());  
 	}
 	 
 	 

@@ -19,7 +19,7 @@ if($submit=='true')
 $typename=$_POST['typename'];
 include_once(DOCUMENT_ROOT."includes/database.php");
 $sql3 = "UPDATE Instrument_Types SET Type = '$typename' WHERE TypeNumber = '$InstrumentTypeNumber'";
-mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 echo "<center>You have successfully updated the Instrument Type</center>";
 
@@ -56,7 +56,7 @@ document.getElementById("alert").style.display = "";
 
 	include_once(DOCUMENT_ROOT."includes/database.php");
 	$sql1 = "select Type from Instrument_Types where TypeNumber = '$InstrumentTypeNumber'";
-	$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	$row = mysql_fetch_array($result);
 	
 	//	echo $row222['Email']." ".$row222['FirstName']." ".$row222['LastName']." ".$row222['Telephone'];

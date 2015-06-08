@@ -109,7 +109,7 @@ if($_SESSION['ClassLevel']==1){
 			echo '	<option value="" ></option>';
 		}
 	$sql12 = "SELECT TypeNumber,Type FROM Instrument_Types ORDER BY Type ";
-	$values1=mysql_query($sql12) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values1=mysql_query($sql12) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
   while($row2 = mysql_fetch_array($values1))
 	{
 
@@ -298,13 +298,13 @@ $InstrumentType = $_GET['InstrumentType'];
 echo $comments;
 
 $sql = "DELETE FROM rates WHERE machine_name = '$machine'";
-$result = mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ());  
+$result = mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ());  
 
 $sql = "insert into rates values ('','$instrumentNo', '$machine', '$usc_with_cemma', '$cemma_unit', '$usc_without_cemma', '$off_with_cemma', '$off_without_cemma', '$industry_with_cemma','$industry_without_cemma','','$trainingRate')";
-$result = mysql_query($sql) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ());  
+$result = mysql_query($sql) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ());  
 
 $sql = "update instrument SET Availablity = '$availibility', DisplayOnStatusPage='$DisplayOnStatusPage', Comment = '$comments',Type='$InstrumentType', DisplayOnPricingPage='$DisplayOnPricingPage' where InstrumentName = '$machine'";
-$result = mysql_query($sql) or die( "An error has ocured in query3: " .mysql_error (). ":" .mysql_errno ());  
+$result = mysql_query($sql) or die( "An error has occurred in query3: " .mysql_error (). ":" .mysql_errno ());  
 
 //echo "Instrument Modified Successfullyy".$DisplayOnStatusPage;
 
@@ -315,10 +315,10 @@ else if(isset($_GET['submit2'])){
 $machine_name = $_GET['MachineName'];
 
 $sql = "DELETE FROM rates WHERE machine_name = '$machine_name'";
-$result = mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());  
+$result = mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());  
 
 $sql = "DELETE FROM instrument WHERE InstrumentName = '$machine_name'";
-$result = mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());  
+$result = mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());  
 
 echo "Instrument Deleted Successfully";
 

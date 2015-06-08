@@ -9,7 +9,7 @@ $username=$_GET["username"];
 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
 $sql="SELECT * FROM user WHERE UserName = '".$username."'";
-mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 $result = mysql_query($sql);
 
@@ -95,7 +95,7 @@ $row = mysql_fetch_array($result);
 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
 $sql2="SELECT  InstrNo, InstrSigned FROM instr_group WHERE Email = '".$row['Email']."'";
-mysql_query($sql2) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+mysql_query($sql2) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 $result2 = mysql_query($sql2);
 $rows = mysql_num_rows($result2);
 if ($rows==0)
@@ -111,7 +111,7 @@ while($row2 = mysql_fetch_array($result2))
 	$dd=$pieces[2];
 
 	$sql3="SELECT  InstrumentName FROM  instrument WHERE  InstrumentNo = '".$row2['InstrNo']."'";
-	mysql_query($sql3) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+	mysql_query($sql3) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 	$result3 = mysql_query($sql3);
 	$row3 = mysql_fetch_array($result3);
 

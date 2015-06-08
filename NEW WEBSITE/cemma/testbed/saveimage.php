@@ -22,7 +22,7 @@
    	mysql_query($sql) or die("Error in query");
  
  	$sql2  = "SELECT signature from user where UserName='". $username ."'";
-	$values1	=	mysql_query($sql2) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values1	=	mysql_query($sql2) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
   	
 	while($row  = mysql_fetch_array($values1))
 	{

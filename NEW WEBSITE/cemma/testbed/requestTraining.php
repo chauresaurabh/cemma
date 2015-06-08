@@ -3,7 +3,7 @@
 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	session_start();
 
-	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 
 	$instrName = $_GET['instrName'];

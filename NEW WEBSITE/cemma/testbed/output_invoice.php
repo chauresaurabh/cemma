@@ -115,7 +115,7 @@
 
 	// Retrieve Payment type from Enrolled_Payment_Types
 	$sql_ptype = "SELECT Payment_Type_ID FROM Enrolled_Payment_Types where Customer_Name='$name' ";
-	$result=mysql_query($sql_ptype) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql_ptype) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 	while($row = mysql_fetch_array($result))
 	{
@@ -135,7 +135,7 @@
 	
 	// Retrieve Membership details
 	$sql1 = "SELECT Duration,All_Selected,Instrument_Name, Amount FROM Membership where Customer_Name='$name' ";
-	$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	
 	while($row = mysql_fetch_array($result))
 	{
@@ -149,7 +149,7 @@
 
 	// Retrieve Balance from Advance_Payment
 	$sql1 = "SELECT Balance FROM Advance_Payment where Customer_Name='$name' ";
-	$Bal=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$Bal=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	$row1 = mysql_fetch_array($Bal); 
 	$Balance=$row1[0];
 	#if($paytypelist[0]==3 || $paytypelist[1]==3 || $paytypelist[2]==3)

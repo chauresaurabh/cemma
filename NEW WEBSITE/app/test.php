@@ -129,7 +129,7 @@
 	
 	//Get Rate(UnitPrice) of Instrument
 	$sql = "SELECT * FROM rates WHERE machine_name = '$instrument'";
-	$result3 = mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+	$result3 = mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 	
 	if(mysql_num_rows($result3)==0){
 		$status = "ERROR";
@@ -149,7 +149,7 @@
 	$sql = "INSERT INTO Customer_data (Name, Machine, Qty, Date, Operator, Type, WithOperator, Unit, Total, Manager_ID, Customer_ID, OverriddenFlag) 
 				VALUES ('$customerName', '$instrument', '$qty', '$loginYear-$loginMonth-$loginDay', '$operator', '$type', '$woperator', '$unit', '$total', '$mid', '$cid', '$overriddenFlag')";
 	
-	mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+	mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 	
 	//updateFurtherDiscounts($fromdate, $todate, $name, $machine, $films);
 	

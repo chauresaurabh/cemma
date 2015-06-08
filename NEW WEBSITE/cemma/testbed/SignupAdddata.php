@@ -83,7 +83,7 @@ $dateselected=$pieces[1];
 
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	 $query ="insert into schedule (InstrumentNo, InstrumentName, Date, Slot, Status, UsedBy) values('0', '$instr_name', '$dateselected', '$slot', '1', '$login')";
-	 mysql_query($query) or die( "An error has ocured in query1: "); 
+	 mysql_query($query) or die( "An error has occurred in query1: "); 
 }
 
 

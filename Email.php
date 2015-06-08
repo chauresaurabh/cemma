@@ -223,7 +223,7 @@ echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing 
 	}
 	
  
- $values1=mysql_query($customerSql) or die("An error has ocured in customerSql: " .mysql_error (). ":" .mysql_errno ()); 
+ $values1=mysql_query($customerSql) or die("An error has occurred in customerSql: " .mysql_error (). ":" .mysql_errno ()); 
 
 	$totalemailcountcustomer=0;
 
@@ -279,7 +279,7 @@ echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing 
 		 include_once('constants.php');
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
-	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 	
 	$userSql = "";
@@ -302,7 +302,7 @@ echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing 
 // email id's from user
 	 	echo "<tr><td colspan=4><font color='blue'><b><center>User List : $userPrint </center></b></font></td></tr>";
 	
-	$values=mysql_query($userSql) or die("An error has ocured in userSql: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($userSql) or die("An error has occurred in userSql: " .mysql_error (). ":" .mysql_errno ()); 
 	 
 	$totalemailcountuser=0;
 
@@ -531,7 +531,7 @@ if($_GET['submit']!='yes' )
 	include_once(DOCUMENT_ROOT."includes/database.php");
 	//retrieve instrument name, number list
 	$sql13 = "SELECT InstrumentName, InstrumentNo FROM instrument";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 		//$row33 = mysql_fetch_array($values); 
 		$instcount=0;
 	while($row33 = mysql_fetch_array($values))
@@ -608,13 +608,13 @@ if($_GET['submit']!='yes' )
  	 include_once('constants.php');
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
  
 //retrieve instrument name, number list
  
 	$sql13 = "SELECT InstrumentName, InstrumentNo FROM instrument where InstrumentName='$instsel'";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	 
 	$instcount=0;
  
@@ -629,7 +629,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 	//retrieve instrument number, emailid list from instr_group
  
 	$sql13 = "SELECT Email, InstrNo FROM instr_group where InstrNo='$instnolist[0]'";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	 
 	while($row33 = mysql_fetch_array($values))
 	{
@@ -666,7 +666,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 		$displayString="Life Science & Physical Science Users";
 	}
  	
- 	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+ 	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  	$totalemailcountuser=0;
 
  	while($row33 = mysql_fetch_array($values))

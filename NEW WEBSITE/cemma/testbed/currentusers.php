@@ -82,7 +82,7 @@ include_once("includes/instrument_action.php")
 																	
 																include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 																$sql13 = "SELECT UserName,LastName,Email, FirstName,FieldofInterest,ResponseEmail,LastEmailSentOn FROM user where ( ActiveUser='active' OR ActiveUser IS NULL OR ActiveUser ='') AND ( UserName like '".$usersa."%' OR UserName like '".$usersb."%' ) ORDER BY UserName";
-																$values=mysql_query($sql13) or die("An error has ocured in query11: " .mysql_error (). ":" .mysql_errno ());
+																$values=mysql_query($sql13) or die("An error has occurred in query11: " .mysql_error (). ":" .mysql_errno ());
  																?>
 
 																	<div class="title">Current Users

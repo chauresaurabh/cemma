@@ -237,7 +237,7 @@ if($_GET["id"]){
 			if($_SESSION['ClassLevel']<3) {
 				include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 				$sql = "SELECT UserName,LastName, FirstName FROM user where ActiveUser='active' OR ActiveUser IS NULL OR ActiveUser ='' ORDER BY UserName";
-				$values=mysql_query($sql) or die("An error has ocured in query11: " .mysql_error (). ":" .mysql_errno ());
+				$values=mysql_query($sql) or die("An error has occurred in query11: " .mysql_error (). ":" .mysql_errno ());
 				?>
 				<select id="Subject" name="Subject">
 					<?

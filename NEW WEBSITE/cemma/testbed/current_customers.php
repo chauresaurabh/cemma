@@ -88,11 +88,11 @@ include_once(DOCUMENT_ROOT."includes/buildViewComponent.class.php");
 														if($deleteFlag==1)
 														{
 														$sql13 = "DELETE from Customer where Customer_ID=".$customerId;
-														mysql_query($sql13) or die("An error has ocured in query11: " .mysql_error (). ":" .mysql_errno ());	
+														mysql_query($sql13) or die("An error has occurred in query11: " .mysql_error (). ":" .mysql_errno ());	
 															echo "Customer deleted";
 														}		
 																$sql13 = "SELECT * FROM Customer where Activated = 1 AND ( LastName like '".$usersa."%' OR LastName like '".$usersb."%' ) order by LastName ";
-																$values=mysql_query($sql13) or die("An error has ocured in query11: " .mysql_error (). ":" .mysql_errno ());
+																$values=mysql_query($sql13) or die("An error has occurred in query11: " .mysql_error (). ":" .mysql_errno ());
 																$totalRows = mysql_num_rows ( $values  )
 																?>
    									

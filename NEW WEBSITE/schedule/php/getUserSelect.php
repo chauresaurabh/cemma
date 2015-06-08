@@ -3,7 +3,7 @@
 	
 	$sql = "SELECT UserName FROM user WHERE ActiveUser='active' ORDER BY UserName";
 		
-	$result=mysql_query($sql) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 	$row = mysql_fetch_array($result);
 	
 	#$html = '<select style="width:100px">';

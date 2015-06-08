@@ -6,7 +6,7 @@ $dbname="db210021972";
 $dbusername="dbo210021972";
 $dbpass="XhYpxT5v";
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 
 $sid=$_GET["SID"];
@@ -465,7 +465,7 @@ $passworddb=$row['Passwd']; $ClassAdmin=$row['Class']; $AdminUserClass=$row['Use
 	$instr_count = 0;
 	
 	$sql123 = "select * from instr_group where Email ='".$email."'";
-	$result123=mysql_query($sql123) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result123=mysql_query($sql123) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 	$i123=0;
 	while($row123 = mysql_fetch_array($result123))

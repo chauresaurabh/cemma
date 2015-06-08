@@ -44,7 +44,7 @@
 				
 		if($newOperator == "1"){
 			$sql = "INSERT into operators (Manager_ID, customer, operator) values ('$mid', '$name','$operator')";
-			mysql_query($sql) or die("An error has occured, please try again later");
+			mysql_query($sql) or die("An error has occurred, please try again later");
 		}
 		
 		if($woperator == 1){
@@ -64,7 +64,7 @@
 				
 		#echo $sql;
 		
-		mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+		mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 		
 		updateFurtherDiscounts($fromdate, $todate, $name, $machine, $films);
 		
@@ -235,7 +235,7 @@ $dbname="db260244667";
 $dbusername="dbo260244667";
 $dbpass="curu11i";
 
-	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 

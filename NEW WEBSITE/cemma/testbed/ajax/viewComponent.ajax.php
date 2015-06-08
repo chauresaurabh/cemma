@@ -24,7 +24,7 @@ require_once(DOCUMENT_ROOT."includes/buildViewComponent.class.php");
 	}
 	
 	else if(!isset($maxResults) || !isset($sortColumn) || !isset($sortOrder)){
-		echo "Error occured";
+		echo "Error occurred";
 	}
 	
 	else{

@@ -70,7 +70,7 @@ class BuildViewComponent{
 	$viewComponent = $viewComponentDao->fetchSingleObject();
 	
 	if($viewComponent == NULL){
-		echo ("Error occured while building the Component");
+		echo ("Error occurred while building the Component");
 		exit();
 	}
 	
@@ -140,7 +140,7 @@ class BuildViewComponent{
 		
 		include_once("database.php");
 		$sql23 = "SELECT EmailId FROM Customer";
-		$values1=mysql_query($sql23) or die("An error has ocured in query14: " .mysql_error (). ":" .mysql_errno ()); 
+		$values1=mysql_query($sql23) or die("An error has occurred in query14: " .mysql_error (). ":" .mysql_errno ()); 
 		//$row33 = mysql_fetch_array($values1); 
 		$totalemailcountcustomer=0;
 
@@ -159,13 +159,13 @@ class BuildViewComponent{
 		$dbusername="dbo210021972";
 		$dbpass="XhYpxT5v";
 
-		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 		$SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 		//retrieve instrument name, number list
 		
 		$sql13 = "SELECT InstrumentName, InstrumentNo FROM instrument";
-		$values=mysql_query($sql13) or die("An error has ocured in query11: " .mysql_error (). ":" .mysql_errno ()); 
+		$values=mysql_query($sql13) or die("An error has occurred in query11: " .mysql_error (). ":" .mysql_errno ()); 
 		//$row33 = mysql_fetch_array($values); 
 		$instcount=0;
 
@@ -184,7 +184,7 @@ class BuildViewComponent{
 
 
 		$sql13 = "SELECT Email, InstrNo FROM instr_group";
-		$values=mysql_query($sql13) or die("An error has ocured in query11: " .mysql_error (). ":" .mysql_errno ()); 
+		$values=mysql_query($sql13) or die("An error has occurred in query11: " .mysql_error (). ":" .mysql_errno ()); 
 		//$row33 = mysql_fetch_array($values); 
 		
 
@@ -206,7 +206,7 @@ class BuildViewComponent{
 // retrieve email id's
 //$name1='Ameya';
 	$sql13 = "SELECT Email FROM user";
-	$values=mysql_query($sql13) or die("An error has ocured in query12: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query12: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$totalemailcountuser=0;
 

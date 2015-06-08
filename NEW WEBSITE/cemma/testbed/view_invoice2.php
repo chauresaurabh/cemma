@@ -49,7 +49,7 @@ while ($row = mysql_fetch_array($result)) {
 $paytypelist = Array();
 $payment_type = 0;
 $sql_ptype = "SELECT Payment_Type_ID FROM Enrolled_Payment_Types where Customer_Name='$name' ";
-$result = mysql_query($sql_ptype) or die("An error has ocured in query1: " . mysql_error() . ":" . mysql_errno());
+$result = mysql_query($sql_ptype) or die("An error has occurred in query1: " . mysql_error() . ":" . mysql_errno());
 
 while ($row = mysql_fetch_array($result)) {
 	$paytypelist[$paytypetotal] = $row[0];
@@ -60,7 +60,7 @@ if ($paytypelist[0] == 3 || $paytypelist[1] == 3 || $paytypelist[2] == 3) {
 	$payment_type = 3;
 	// Retrieve Balance from Advance_Payment
 	$sql_advpmt = "SELECT Balance FROM Advance_Payment where Customer_Name='$name' ";
-	$result_advpmt = mysql_query($sql_advpmt) or die("An error has ocured in query1: " . mysql_error() . ":" . mysql_errno());
+	$result_advpmt = mysql_query($sql_advpmt) or die("An error has occurred in query1: " . mysql_error() . ":" . mysql_errno());
 	$row = mysql_fetch_array($result_advpmt);
 	$rmBalance = $row[0];
 } else if ($paytypelist[0] == 2 || $paytypelist[1] == 2 || $paytypelist[2] == 2) {
@@ -122,7 +122,7 @@ if ($paytypelist[0] == 3 || $paytypelist[1] == 3 || $paytypelist[2] == 3) {
 
 $sql = "SELECT * FROM Customer_data WHERE Gdate = '$Gdate' and  invoiceno = '$invoiceno' and Generated = '1' order by Date";
 
-$result = mysql_query($sql) or die( "An error has ocured in query_usedbalance: ");
+$result = mysql_query($sql) or die( "An error has occurred in query_usedbalance: ");
 
 $rows = mysql_num_rows($result);
 $usedBalance = 0.0;

@@ -5,7 +5,7 @@
  	include_once('constants.php');
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 							$sql1 = "select InstrumentNo, InstrumentName from instrument";
-							$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+							$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  							$no=0;
 							echo "Request Training for below Instruments<br><br>";
 							while($row2 = mysql_fetch_array($result))

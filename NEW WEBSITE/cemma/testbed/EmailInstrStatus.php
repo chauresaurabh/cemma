@@ -90,7 +90,7 @@ echo "<html><body style='margin-top: 0px; margin-left: 0px; margin-right: 0px;'>
 //echo "in all".$_GET['emailtype'];
 // try 
 	$sql23 = "SELECT Name , FirstName, LastName, EmailId,MailingListCust FROM Customer ORDER BY Name";
-	$values1=mysql_query($sql23) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values1=mysql_query($sql23) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values1); 
 	$totalemailcountcustomer=0;
 //	echo "zx";
@@ -162,7 +162,7 @@ echo "<html><body style='margin-top: 0px; margin-left: 0px; margin-right: 0px;'>
 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 // email id's from user
 	$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt FROM user where ActiveUser='active' OR ActiveUser IS NULL ORDER BY FirstName";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$totalemailcountuser=0;
 
@@ -253,7 +253,7 @@ $dbname="db260244667";
 $dbusername="dbo260244667";
 $dbpass="curu11i";
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 
@@ -261,7 +261,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 	$sql13 = "select InstrumentNo, InstrumentName, Availablity,Comment, DisplayOnStatusPage  from instrument";
 
 
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$totalemailcountuser=0;
 	$instrdata="<br/></br><table border='1' cellspacing='0' cellpadding='0' ><tr><td> Instrument name</td><td> Availability</td><td> Comments</td></tr> ";

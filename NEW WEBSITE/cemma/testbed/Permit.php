@@ -16,7 +16,7 @@ include_once("includes/instrument_action.php");
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 		
 		
-		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 		$SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 
 		$title = $_POST['title'];
@@ -106,7 +106,7 @@ $dbhost="db948.perfora.net";
 		$dbusername="dbo210021972";
 		$dbpass="XhYpxT5v";
 		
-		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 		$SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 /*		
 $sql="select * from permit_forms";

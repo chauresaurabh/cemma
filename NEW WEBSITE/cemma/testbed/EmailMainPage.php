@@ -47,12 +47,12 @@
 		 include_once('constants.php');
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
-	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 	//retrieve instrument name, number list
 	$sql13 = "SELECT InstrumentName, InstrumentNo FROM instrument";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$instcount=0;
 	while($row33 = mysql_fetch_array($values))

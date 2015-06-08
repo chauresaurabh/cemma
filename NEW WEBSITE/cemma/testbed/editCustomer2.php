@@ -144,7 +144,7 @@
 											$name=$row['Name'];
 											// Retrieve Payment type from Enrolled_Payment_Types
 											$sql1 = "SELECT Payment_Type_ID FROM Enrolled_Payment_Types where Customer_Name='$name' ";
-											$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+											$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 											while($row111 = mysql_fetch_array($result))
 											{
@@ -168,7 +168,7 @@
 											
 											// Retrieve Membership details
 											$sql1 = "SELECT Duration,All_Selected,Instrument_Name, Amount FROM Membership where Customer_Name='$name' ";
-											$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+											$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 					
 											while($row222 = mysql_fetch_array($result))
 											{
@@ -183,7 +183,7 @@
 
 											// Retrieve Balance from Advance_Payment
 											$sql1 = "SELECT Balance, Advance_Amount_ID FROM Advance_Payment where Customer_Name='$name' ";
-											$Bal=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+											$Bal=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 											$row333 = mysql_fetch_array($Bal); 
 											$RmBalance=$row333[0];
 											$AdPayId = $row333[1];
@@ -198,13 +198,13 @@
 											
 											// Retrieve PO Internal # from Invoice
 											$sql1 = "SELECT PO FROM Invoice where Name='$name' ";
-											$PoNum=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+											$PoNum=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 											$row444 = mysql_fetch_array($PoNum); 
 											$PoNumber=$row444[0];
 											
 											// Retrieve Remaining # from Invoice
 											/*$sql1 = "SELECT PO FROM Invoice where Name='$name' ";
-											$RmBal=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+											$RmBal=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 											$row555 = mysql_fetch_array($PoNum); 
 											$RmBalance=$row555[0];*/
 										}
@@ -1163,13 +1163,13 @@ function insertintomembership()
 
 	// Retrieve Cust_ID from Name
 	<? $sql = "SELECT Customer_ID FROM Customer where Name='$custname' ";?>
-	<? $LastID=mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
+	<? $LastID=mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
 	<? $row = mysql_fetch_array($LastID); ?>
 	<? $custid=$row[0];?>
 
 	// Retrieve Inst_ID from Name
 	<? $sql = "SELECT InstrumentNo FROM instrument where InstrumentName='$instSelected' ";?>
-	<? $LastID=mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
+	<? $LastID=mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
 	<? $row = mysql_fetch_array($LastID); ?>
 	<? $instid=$row[0];?>
 	
@@ -1182,7 +1182,7 @@ function insertintomembership()
 	//	alert("add all");
 		 $query = "INSERT INTO Membership (Customer_ID,Customer_Name, Duration, All_Selected, Instrument_ID, Instrument_Name, Amount)"; 
 		 $query.=" VALUES ('$custid','$custname','$dur',1,'99','N','$memAmt')";  
-			mysql_query($query) or die( "An error has ocured in query1: ");  
+			mysql_query($query) or die( "An error has occurred in query1: ");  
 	
 	}
 	else
@@ -1193,7 +1193,7 @@ function insertintomembership()
 		
 			 $query = "INSERT INTO Membership (Customer_ID,Customer_Name, Duration, All_Selected, Instrument_ID, Instrument_Name, Amount)"; 
 			 $query.=" VALUES ('$custid','$custname','$dur',0,'instid','$instSelected','$memAmt')";  
-			 mysql_query($query) or die( "An error has ocured in query1: "); 
+			 mysql_query($query) or die( "An error has occurred in query1: "); 
 		
 
 
@@ -1207,13 +1207,13 @@ function insertintomembership()
 			
 			// Retrieve Inst_ID from Name
 			$sql = "SELECT InstrumentNo FROM instrument where InstrumentName='$instSelected' ";
-			$LastID=mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+			$LastID=mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 			$row = mysql_fetch_array($LastID); 
 			$instid=$row[0];
 					
 			$query = "INSERT INTO Membership (Customer_ID,Customer_Name, Duration, All_Selected, Instrument_ID, Instrument_Name, Amount)"; 
 			$query.=" VALUES ('$custid','$custname','$dur',0,'instid','$instSelected','$memAmt')";  
-			mysql_query($query) or die( "An error has ocured in query1: ");  
+			mysql_query($query) or die( "An error has occurred in query1: ");  
 	
 		}
 		
@@ -1239,14 +1239,14 @@ function insertintoadvancepayment()
 
 	// Retrieve name from ID
 	<? $sql = "SELECT Name FROM Customer where Customer_ID=50";?>
-	<?	$name=mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
+	<?	$name=mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
 	<? $row = mysql_fetch_array($name); ?>
 	var whatever="<?=$row[0]?>";
 	//alert("Name"+whatever);
 
 	// Retrieve ID from Name
 	<? $sql = "SELECT Customer_ID FROM Customer where Name='$custname' ";?>
-	<? $LastID=mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
+	<? $LastID=mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
 	<? $row = mysql_fetch_array($LastID); ?>
 	<? $custidd=$row[0];?>
 
@@ -1256,7 +1256,7 @@ function insertintoadvancepayment()
 
 	// Insert into Advance Payment table
 	<? $query = "INSERT INTO Advance_Payment (Customer_ID,Customer_Name,Balance) VALUES ('$custidd','$custname','$advamt')";  ?>
-	<? mysql_query($query) or die( "An error has ocured in query1: ");  ?>
+	<? mysql_query($query) or die( "An error has occurred in query1: ");  ?>
 }
 
 function insertintoEnrolledPaymentPype()
@@ -1269,7 +1269,7 @@ function insertintoEnrolledPaymentPype()
 
 	// Retrieve ID from Name
 	<? $sql = "SELECT Customer_ID FROM Customer where Name='$custname' ";?>
-	<? $LastID=mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
+	<? $LastID=mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); ?>
 	<? $row = mysql_fetch_array($LastID); ?>
 	<? $custidd=$row[0];?>
 	<?
@@ -1278,17 +1278,17 @@ function insertintoEnrolledPaymentPype()
 			if ($PaymenttypeSelected[$i]=='Regular')
 			{
 				$query = "INSERT INTO Enrolled_Payment_Types (Customer_ID,Customer_Name,Payment_Type_ID) VALUES ('$custidd','$custname',1)";  
-				mysql_query($query) or die( "An error has ocured in query1: ");  
+				mysql_query($query) or die( "An error has occurred in query1: ");  
 			}
 			if ($PaymenttypeSelected[$i]=='Membership')
 			{
 				$query = "INSERT INTO Enrolled_Payment_Types (Customer_ID,Customer_Name,Payment_Type_ID) VALUES ('$custidd','$custname',2)";  
-				mysql_query($query) or die( "An error has ocured in query1: ");   
+				mysql_query($query) or die( "An error has occurred in query1: ");   
 			}
 			if ($PaymenttypeSelected[$i]=='AdvancePayment')
 			{
 				$query = "INSERT INTO Enrolled_Payment_Types (Customer_ID,Customer_Name,Payment_Type_ID) VALUES ('$custidd','$custname',3)";  
-				mysql_query($query) or die( "An error has ocured in query1: ");  
+				mysql_query($query) or die( "An error has occurred in query1: ");  
 			}
 
 			
