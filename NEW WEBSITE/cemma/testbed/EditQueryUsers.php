@@ -47,7 +47,7 @@
 
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 		$sql3 = "UPDATE UsersInQuery SET Passwd = '$password', Email='$Email', FirstName='$FirstName', LastName='$LastName', Telephone='$Telephone', Dept='$Dept', Advisor='$Advisor',GradYear='$GradYear' ,Position='$position', FieldofInterest='$fieldofinteresttosave' WHERE UserName = '$username'";
-		mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+		mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 		$InstrumentName=$_POST['InstrumentName'];
 
@@ -55,7 +55,7 @@
 
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 		//$sql3 = "DELETE FROM UsersInQuery_instr_group WHERE Email='$Email'";  
-		//mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+		//mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 		for ($i=0;$i<$countInstrumentName ; $i++)
 		{ 
@@ -78,7 +78,7 @@
 				$datetoput=$yy."-".$mm."-".$dd;
 				include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 			$sql3 = "INSERT INTO UsersInQuery_instr_group (InstrNo,  Email , InstrSigned, UserName) VALUES ('$instrno', '$Email', '$datetoput','$username')";  
-			mysql_query($sql3) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+			mysql_query($sql3) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 		}
 	echo "<center>You have successfully updated the User in Query</center>";
 }
@@ -114,7 +114,7 @@
 
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	$sql1 = "select Passwd, Class, Email, FirstName, LastName, Telephone, Dept, Advisor, GradYear, GradTerm, Position, FieldofInterest,Comments  from UsersInQuery where UserName = '$username'";
-	$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	$row = mysql_fetch_array($result);
 		?>
 	   
@@ -232,7 +232,7 @@
 						  <?
 							include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 							$sql1 = "select * from UsersInQuery_instr_group where Email ='".$row['Email']."'";
-							$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+							$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  							$i=0;
 							while($row3 = mysql_fetch_array($result))
 							{
@@ -245,7 +245,7 @@
 							}
 							include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 							$sql1 = "select InstrumentNo, InstrumentName from instrument";
-							$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+							$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  							$no=0;
 							$testCount=0;
 							while($row2 = mysql_fetch_array($result))

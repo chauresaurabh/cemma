@@ -56,7 +56,7 @@
 		//$fieldofinteresttosave="";
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	// $sql3 = "DELETE FROM instr_group WHERE Email='$Email'";  
-	//	mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	//	mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 		for ($i=0;$i<$countInstrumentName ; $i++)
 		{ 
@@ -79,13 +79,13 @@
 			$datetoput=$yy."-".$mm."-".$dd;
 			include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 			$sql3 = "INSERT INTO instr_group (InstrNo,  Email , InstrSigned) VALUES ('$instrno', '$Email', '$datetoput')";  
-			mysql_query($sql3) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+			mysql_query($sql3) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 		}
 	
 		$Dept=$_POST['Dept'];
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 		$sql3 = "UPDATE user SET Passwd = '$password', Email='$Email',Class='$adminclass', FirstName='$FirstName', LastName='$LastName', Telephone='$Telephone', Dept='$Dept', Advisor='$Advisor',GradYear='$GradYear', Position='$position', FieldofInterest ='$fieldofinteresttosave' WHERE UserName = '$username'";
-		mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+		mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 		echo "<center>You have successfully updated the User</center>";
 ?>
@@ -134,13 +134,13 @@ $dbname="db210021972";
 $dbusername="dbo210021972";
 $dbpass="curu11i";
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 */
 
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	$sql1 = "select Passwd, Class, Email, FirstName, LastName, Telephone, Dept, Advisor, GradYear, GradTerm, Position, FieldofInterest, LastStatusUpdate, Comments, MemberSince  from user where UserName = '$username'";
-	$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	$row = mysql_fetch_array($result);
 	
 	//	echo $row222['Email']." ".$row222['FirstName']." ".$row222['LastName']." ".$row222['Telephone'];
@@ -265,7 +265,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 						  <?
 							include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 							$sql1 = "select * from instr_group where Email ='".$row['Email']."'";
-							$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+							$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  							$i=0;
 							while($row3 = mysql_fetch_array($result))
 							{
@@ -278,7 +278,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 							}
 							include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 							$sql1 = "select InstrumentNo, InstrumentName from instrument";
-							$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+							$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  							$no=0;
 							$testCount=0;
 							while($row2 = mysql_fetch_array($result))

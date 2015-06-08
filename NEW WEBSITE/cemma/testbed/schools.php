@@ -65,7 +65,7 @@
 //mysql_close($connection);
 			//include_once(DOCUMENT_ROOT."includes/database.php");
 			$sql13 = "SELECT SchoolNo, SchoolName FROM Schools ORDER BY SchoolNo";
-			$values=mysql_query($sql13) or die("An error has ocured in query12: " .mysql_error (). ":" .mysql_errno ()); 
+			$values=mysql_query($sql13) or die("An error has occurred in query12: " .mysql_error (). ":" .mysql_errno ()); 
 			
 			?>     
 						

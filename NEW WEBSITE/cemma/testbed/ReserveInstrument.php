@@ -21,7 +21,7 @@ echo "log-".$_SESSION['login'];
 
 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 $sql3 = "UPDATE schedule set UsedBy = '".$_SESSION['login']."' where InstrumentName='$instr' and 	Date='$datesigned' and Slot='$slot' and UsedBy='$usedby'";  
-mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 			
 
 

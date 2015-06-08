@@ -117,7 +117,7 @@ if($_GET['submit']!='yes' )
 	echo "<html><body style='margin-top: 0px; margin-left: 0px; margin-right: 0px;'><form name='myForm' id='myForm' method='post' action='Email.php?submit=yes&emailtypee=1'>";
 
 	$sql23 = "SELECT Name, EmailId,MailingListCust FROM Customer ORDER BY Name";
-	$values1=mysql_query($sql23) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values1=mysql_query($sql23) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 	$totalemailcountcustomer=0;
 
@@ -168,13 +168,13 @@ $count=$totalemailcountcustomer;
 	 include_once('constants.php');
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 
 // email id's from user
 	$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt FROM user ORDER BY FirstName";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$totalemailcountuser=0;
 
@@ -329,7 +329,7 @@ echo "<p><font color='#FF0000'>Note: Names in Red have opted out of the mailing 
 	 include_once('constants.php');
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 
@@ -338,7 +338,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 
 	$sql13 = "SELECT InstrumentName, InstrumentNo FROM instrument where InstrumentName='$instsel'";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$instcount=0;
 
@@ -366,7 +366,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 
 	$sql13 = "SELECT Email, InstrNo FROM instr_group where InstrNo='$instnolist[0]'";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	
 
@@ -391,7 +391,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 // 2 email id's from user
 
 	$sql13 = "SELECT FirstName, LastName, Email, MailingListOpt FROM user where Email IN (SELECT Email FROM instr_group where InstrNo='$instnolist[0]') ORDER BY FirstName";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values); 
 	$totalemailcountuser=0;
 

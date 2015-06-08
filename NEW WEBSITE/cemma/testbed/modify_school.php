@@ -18,7 +18,7 @@ if($submit=='true')
 $school_name=$_POST['schoolname'];
 include_once(DOCUMENT_ROOT."includes/database.php");
 $sql3 = "UPDATE Schools SET SchoolName = '$school_name' WHERE SchoolNo = '$school_no'";
-mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 echo "<center>You have successfully updated the School</center>";
 
@@ -47,7 +47,7 @@ document.getElementById("alert").style.display = "";
 
 	include_once(DOCUMENT_ROOT."includes/database.php");
 	$sql1 = "SELECT SchoolName from Schools WHERE SchoolNo = '$school_no'";
-	$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	$row = mysql_fetch_array($result);
 		?>
 	   

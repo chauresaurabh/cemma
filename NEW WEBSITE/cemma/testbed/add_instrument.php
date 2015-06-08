@@ -130,7 +130,7 @@ else
 <?			
 	//include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	$sql13 = "SELECT TypeNumber,Type FROM Instrument_Types ORDER BY Type ";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 ?>			
                                                             <td>Type:</td>
                                                             <td>

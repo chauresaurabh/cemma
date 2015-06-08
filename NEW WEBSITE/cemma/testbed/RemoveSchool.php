@@ -10,6 +10,6 @@ include_once (DOCUMENT_ROOT."Objects/customer.php");
 $school_no=$_GET['id'];
 include_once (DOCUMENT_ROOT."includes/database.php");
 $sql3="DELETE FROM Former_Schools WHERE SchoolNo = '$school_no'";
-mysql_query($sql3) or die("An error has occured in query1: ".mysql_error().":".mysql_errno());
+mysql_query($sql3) or die("An error has occurred in query1: ".mysql_error().":".mysql_errno());
 //header("refresh:0; currentusers.php");
 ?>

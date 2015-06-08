@@ -13,7 +13,7 @@
 		$sql = "SELECT Date, COUNT(UsedBy) FROM  `schedule` WHERE DATE >= '$date_from' AND DATE <=  '$date_to' GROUP BY Date";
 		#echo $sql."<br>";
 		
-		$result=mysql_query($sql) or die( "An error has ocured in query: " .mysql_error (). ":" .mysql_errno ()); 
+		$result=mysql_query($sql) or die( "An error has occurred in query: " .mysql_error (). ":" .mysql_errno ()); 
 		
 		$usedCount = array();
 		$html='';

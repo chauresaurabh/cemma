@@ -41,7 +41,7 @@ else
 	$dbusername="dbo210021972";
 	$dbpass="XhYpxT5v";
 
-	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 	*/
 	$dbhost="db948.perfora.net";
@@ -49,11 +49,11 @@ else
 	$dbusername="dbo210021972";
 	$dbpass="XhYpxT5v";
 	
-	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 	
 	$sql23 = "SELECT Email FROM user  WHERE Email = '$Emailid'";
-	$values1=mysql_query($sql23) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values1=mysql_query($sql23) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values1); 
 	$totalemailcountcustomer=0;
 	
@@ -69,7 +69,7 @@ else
 		echo "<center>You have successfully updated the Status to $statusselected</center>";
 	}
 	$sql="SELECT UserName ,Passwd  FROM user WHERE Email = '".$Emailid."'";
-	mysql_query($sql) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	mysql_query($sql) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	$result = mysql_query($sql);
 	$row = mysql_fetch_array($result);
 

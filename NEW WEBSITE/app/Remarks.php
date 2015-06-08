@@ -35,7 +35,7 @@
 	*/
    $sql = "INSERT INTO Remarks(username,instrument,remarks, date, time) 
 		VALUES('$userName', '$instrument','$remarks', '$loginDate', '$loginTime')";
-		 mysql_query($sql,$connection) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+		 mysql_query($sql,$connection) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 		
 	
 	if ($status == "ERROR")

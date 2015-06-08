@@ -19,12 +19,12 @@
 				$sql3 = "UPDATE user SET Passwd = '$password', Email='$Email',Class='$adminclass', FirstName='$FirstName', LastName='$LastName',Name = '".$FirstName." ".$LastName."', Telephone='$Telephone', Dept='$Dept', Advisor='$Advisor',GradYear='$GradYear', Position='$position',Prevent='$prevent', FieldofInterest ='$fieldofinteresttosave',UserClass='$UserClass',Comments='$Comments', AccountNum='$AccountNum'  WHERE UserName = '$username'";
 		
 		#echo $sql3;
-		mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+		mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 		$sql123 = "DELETE FROM instr_group WHERE Email='$Email'  ";  
 			#echo $permission[$k]."<br>";
 			#echo $sql3."<br>";
-			mysql_query($sql123) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+			mysql_query($sql123) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 		
 		echo "<center>You have successfully updated the User</center>";
 
@@ -50,7 +50,7 @@
 			$sql3 = "INSERT INTO instr_group (InstrNo,  Email , InstrSigned, Permission) VALUES ('$instrno', '$Email', 		'$datetoput', '$permission[$k]')";  
 			#echo $permission[$k]."<br>";
 			#echo $sql3."<br>";
-			mysql_query($sql3) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+			mysql_query($sql3) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 
 				}
 								 echo 'Instrument Updated';
@@ -60,7 +60,7 @@
 							include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 							    $userId = $_GET['userId'];
  							$sql1 = "select * from instr_group where Email ='".$userId."'";
-							$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+							$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  							$i=0;
  							while($row3 = mysql_fetch_array($result))
 							{
@@ -75,7 +75,7 @@
 							}
 							include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 							$sql1 = "select InstrumentNo, InstrumentName from instrument";
-							$result=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+							$result=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  							$no=0;
 							while($row2 = mysql_fetch_array($result))
 							{

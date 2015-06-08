@@ -28,7 +28,7 @@
 						 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 					$sql3 = "UPDATE instr_group SET TotalTrainingHrs = '$totalTrainingHrs', 
 					UsedTrainingHrs='$totalTrainingHrs' , personLoggedIn = '$personLoggedIn' , requested_date='$date' WHERE Email = '$userEmailId' AND InstrNo=".$instrumentNo;
- 			 		mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+ 			 		mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
  				//echo $sql3;
   					echo "<center>Training Hours : ".$totalTrainingHrs ." successfully updated for User : ". $username ."</center>";
 		

@@ -48,11 +48,11 @@ mysql_query($sql3) or die ("Error33");
 		include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 		
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in DBbb");
 
 $sql23 = "SELECT Email FROM user  WHERE Email = '$Emailid'";
-	$values1=mysql_query($sql23) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values1=mysql_query($sql23) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	//$row33 = mysql_fetch_array($values1); 
 	$totalemailcountcustomer=0;
 //	echo "zx";

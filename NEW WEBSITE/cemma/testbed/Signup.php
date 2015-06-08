@@ -57,7 +57,7 @@
 <?
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	$sql13 = "select InstrumentName from instrument, instr_group, user where user.UserName = '".$_SESSION['login']."' and instr_group.Email=user.Email and instrument.InstrumentNo = instr_group.InstrNo order by InstrumentName";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 ?>			
                                                            <!-- <td>Type:</td> -->
 														    <td></td> 

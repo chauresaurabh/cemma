@@ -18,7 +18,7 @@ include_once("includes/instrument_action.php");
 		 include_once('constants.php');
 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 
-		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 		$SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 		
 	 $vars = $_POST['element'];
@@ -58,7 +58,7 @@ include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
         <? 
 		} else { ?>
      		<script type="text/javascript">
-				alert(" Unknown Error occured .. Policy details have not been updated !");
+				alert(" Unknown Error occurred .. Policy details have not been updated!");
 			</script>
 		 <? } 
 		}
@@ -120,7 +120,7 @@ function submitclicked()
 		include_once('constants.php');
 include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 		
-		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+		$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 		$SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
  
 	$sql = "select * from POLICY_HDR";

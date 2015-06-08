@@ -69,7 +69,7 @@ $Slot=$_POST['Slot'];
 echo $instrname." ".$login." ".$Date." ".$Slot;
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	 $query ="delete from schedule where InstrumentName='$instrname' and Date='$Date' and Slot='$Slot' and UsedBy='$login'";
-	 mysql_query($query) or die( "An error has ocured in query1: "); 
+	 mysql_query($query) or die( "An error has occurred in query1: "); 
 ?>
 
 		</form>

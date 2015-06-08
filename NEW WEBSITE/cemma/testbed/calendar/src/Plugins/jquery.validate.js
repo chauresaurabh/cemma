@@ -473,7 +473,7 @@
                             return false;
                         }
                     } catch (e) {
-                        this.settings.debug && window.console && console.log("exception occured when checking element " + element.id
+                        this.settings.debug && window.console && console.log("exception occurred when checking element " + element.id
 						 + ", check the '" + rule.method + "' method");
                         throw e;
                     }

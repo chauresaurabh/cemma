@@ -202,7 +202,7 @@ $toDate = "$toYear-$toMonth-$toDay";
 									{
 										$customerNameBySchool = "''";
 										$sql_sch = "SELECT Name FROM Customer WHERE School='".$schoolName."'";
-										$result_sch = mysql_query($sql_sch) or die( "An error has ocured in query: " .mysql_error (). ":" .mysql_errno ());
+										$result_sch = mysql_query($sql_sch) or die( "An error has occurred in query: " .mysql_error (). ":" .mysql_errno ());
 										$first_flag = true; 
 										while($row_sch = mysql_fetch_array($result_sch))
 										{

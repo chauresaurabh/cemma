@@ -19,7 +19,7 @@
 	}
 	
 	$sql .= " ORDER BY Name";
-	$result=mysql_query($sql) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 	#$row = mysql_fetch_array($result);
 	
 	//$html.='<option value="Select a Customer">Select the Customer</option>';

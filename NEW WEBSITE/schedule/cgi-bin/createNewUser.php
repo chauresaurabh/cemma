@@ -6,7 +6,7 @@ $dbname="db210021972";
 $dbusername="dbo210021972";
 $dbpass="XhYpxT5v";
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 
 	if ($_POST['captcha_code'] != $_SESSION['captcha']) {
@@ -120,7 +120,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 	
 	$nameconcat = $firstname." ".$lastname;
  $insertQuery = "insert into UsersInQuery(UserName, Passwd, AccountNum, Class, Email, Name, FirstName, LastName, Telephone, Dept,Advisor, Position, GradYear, GradTerm, FieldofInterest, Comments, SubmittedDate, uscid) values('$login', '$password', '$accountNum', '$class', '$email','$nameconcat','$firstname','$lastname', '$tel', '$dept', '$advisor','$position', $gradyear, '$gradterm' , '$fieldofinteresttosave', '$Comments', '$today' , '$uscid' )";
-	mysql_query($insertQuery) or die( "An error has ocured in query11: " .mysql_error (). ":" .mysql_errno ()); 
+	mysql_query($insertQuery) or die( "An error has occurred in query11: " .mysql_error (). ":" .mysql_errno ()); 
 	
 	$instrNum = $_POST["InstrNum"];
 	for ($ii=1; $ii <= $instrNum; $ii++)
@@ -135,7 +135,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 	$InstrumentName=$_POST['InstrumentName'];
 	$countInstrumentName = count($InstrumentName);
 	$sql3 = "DELETE FROM instr_group WHERE Email='$Email'";  
-	mysql_query($sql3) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	mysql_query($sql3) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 	$instrlist="";
 	for ($i=0;$i<$countInstrumentName ; $i++)
@@ -151,11 +151,11 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 		
 		$today = date("Y-d-m");
 		
-		mysql_query("insert into UsersInQuery_instr_group (InstrNo, Email, InstrSigned, UserName) values('$instrno', '$email', '$today','$login')") or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+		mysql_query("insert into UsersInQuery_instr_group (InstrNo, Email, InstrSigned, UserName) values('$instrno', '$email', '$today','$login')") or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 /*		$sql3 = "INSERT INTO instr_group (InstrNo,  Email , InstrSigned, Permission) VALUES ('$instrno', '$email', '$today', 'Peak time only')";  
 	
-		mysql_query($sql3) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); */
+		mysql_query($sql3) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); */
 	}
 	
 	//have to add user in the new database as well
@@ -167,7 +167,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 	$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 	$SelectedDB = mysql_select_db($dbname) or die ("Error in DB");
 	
-	mysql_query($insertQuery, $connection) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ());
+	mysql_query($insertQuery, $connection) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ());
 	
 	$instrNum = $_POST["InstrNum"];
 	for ($ii=1; $ii <= $instrNum; $ii++)
@@ -182,7 +182,7 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 	$InstrumentName=$_POST['InstrumentName'];
 	$countInstrumentName = count($InstrumentName);
 	$sql3 = "DELETE FROM instr_group WHERE Email='$Email'";  
-	mysql_query($sql3, $connection) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	mysql_query($sql3, $connection) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 	$instrlist="";
 	for ($i=0;$i<$countInstrumentName ; $i++)
@@ -198,11 +198,11 @@ $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 		
 		$today = date("Y-d-m");
 		
-		mysql_query("insert into UsersInQuery_instr_group (InstrNo, Email, InstrSigned, UserName) values('$instrno', '$email', '$today','$login')", $connection) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+		mysql_query("insert into UsersInQuery_instr_group (InstrNo, Email, InstrSigned, UserName) values('$instrno', '$email', '$today','$login')", $connection) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 /*		$sql3 = "INSERT INTO instr_group (InstrNo,  Email , InstrSigned, Permission) VALUES ('$instrno', '$email', '$today', 'Peak time only')";  
 	
-		mysql_query($sql3) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); */
+		mysql_query($sql3) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); */
 	}
 	
 

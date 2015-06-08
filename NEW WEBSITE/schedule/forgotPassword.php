@@ -5,7 +5,7 @@ $dbname="db210021972";
 $dbusername="dbo210021972";
 $dbpass="XhYpxT5v";
 
-$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connectionnn");
+$connection = mysql_connect($dbhost, $dbusername, $dbpass) or die("Error in Connection");
 $SelectedDB = mysql_select_db($dbname) or die ("Error in Old DB");
 
 $username = $_GET['username'];
@@ -38,7 +38,7 @@ if($pos === false){
 			$sql = "SELECT Username, Passwd, Email, Prevent FROM user WHERE username = '$username'";
 		}
 		
-		$result = mysql_query($sql) or die( "An error has ocured: " .mysql_error (). ":" .mysql_errno ());
+		$result = mysql_query($sql) or die( "An error has occurred: " .mysql_error (). ":" .mysql_errno ());
 	
 		if(mysql_num_rows($result)==0){
 			echo "Invalid user details!";

@@ -32,11 +32,11 @@
 		$Room = $row['Room'];
 	}
 	
-	#mysql_query("UPDATE Advance_Payment SET Balance = '$Balnew' WHERE Customer_Name = '$name'") or die( "An error has ocured in query1: ");
+	#mysql_query("UPDATE Advance_Payment SET Balance = '$Balnew' WHERE Customer_Name = '$name'") or die( "An error has occurred in query1: ");
 	
 	// Retrieve Balance from Advance_Payment
 	$sql1 = "SELECT Balance FROM Advance_Payment where Customer_Name='$name' ";
-	$Bal=mysql_query($sql1) or die( "An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$Bal=mysql_query($sql1) or die( "An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	$row1 = mysql_fetch_array($Bal); 
 	$Balance=$row1[0];
 

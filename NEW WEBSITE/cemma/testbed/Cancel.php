@@ -84,7 +84,7 @@ You have signed up: (from <?echo date("m/d/Y"); ?>) </h3><div align="center"><ce
 $login=$_SESSION['login'];
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	$sql13 = "select InstrumentName, Date, Slot from schedule where UsedBy = '$login' and Date>='$todaydate'";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 	while($row = mysql_fetch_array($values))
 	{
 		if ($row['Slot'] == 1)

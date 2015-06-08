@@ -7,7 +7,7 @@
 	$date_to = $year.'-'.$month.'-31'
 	
 	$sql = "SELECT Date, UsedBy, Slot FROM schedule WHERE Instrumentname = '$instrument' AND Date >= '$date_from' and Date < '$date_to' ");
-	$result=mysql_query($sql) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+	$result=mysql_query($sql) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 	$row = mysql_fetch_array($result);
 	
 	$html.='<option value="Select the Customer">Select the Customer</option>';

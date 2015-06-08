@@ -43,7 +43,7 @@ $insert_date = "$year-$month-$date";
 
 if($newOperator == "1"){
 $sql = "INSERT into operators (Manager_ID, customer, operator) values ('$manager', '$name','$operator')";
-mysql_query($sql) or die ("An error has occured. Please try again later");
+mysql_query($sql) or die ("An error has occurred. Please try again later");
 }
 
 if($woperator == 1){

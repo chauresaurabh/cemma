@@ -164,7 +164,7 @@ for($i=0;$i<6;$i++)
 		# query the date with the specified slot
 	include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 	$sql13 = "select Date, UsedBy from schedule where InstrumentName = '$instr_name' and Slot = '$i' and Date >= '$firstdate' and Date < '$lastdate' order by Date";
-	$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+	$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 
 	$count = 0;
 		$k=0;

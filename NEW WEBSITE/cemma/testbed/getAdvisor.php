@@ -1,7 +1,7 @@
 <?
 	include_once(DOCUMENT_ROOT."includes/database.php");
 	$sql2 = "select Customer_ID,Name  from  Customer ORDER BY Name";
-	$result2=mysql_query($sql2) or die( "An error has ocured in query2: " .mysql_error (). ":" .mysql_errno ()); 
+	$result2=mysql_query($sql2) or die( "An error has occurred in query2: " .mysql_error (). ":" .mysql_errno ()); 
 	$row_advisor = mysql_fetch_array($result2);
 	
 	$html_advisor.='<select name="Advisorlist" id="Advisorlist" onchange="OtherAdvisorClicked()" size="30" name="Advisor" class="text">';

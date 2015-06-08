@@ -71,7 +71,7 @@
 			include_once(DOCUMENT_ROOT."includes/DatabaseOld.php");
 			$sql13 = "SELECT UserName,LastName,Email, FirstName,FieldofInterest,TransferredToUsers, DATE_FORMAT(SubmittedDate, '%m-%d-%Y') as SubmittedDate  FROM UsersInQuery where TransferredToUsers != 1 ORDER BY FirstName";
 			 
-			$values=mysql_query($sql13) or die("An error has ocured in query1: " .mysql_error (). ":" .mysql_errno ()); 
+			$values=mysql_query($sql13) or die("An error has occurred in query1: " .mysql_error (). ":" .mysql_errno ()); 
 			
 			?>     
 						
